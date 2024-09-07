@@ -28,7 +28,7 @@ export function RSVPForm() {
 
   return (
     <div>
-      <h1>RSVP FORM</h1>
+      <h1 className="mb-4">RSVP FORM</h1>
 
       {isPending ? <p>Loading...</p> : null}
 
