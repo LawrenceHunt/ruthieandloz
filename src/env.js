@@ -8,6 +8,11 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
+    // NOTION_CLIENT_ID: z.string(),
+    // NOTION_SECRET: z.string(),
+    NOTION_TOKEN: z.string(),
+    NOTION_GUEST_DB_ID: z.string(),
+    NOTION_GUEST_PAGE_ID: z.string(),
   },
 
   /**
@@ -25,6 +30,11 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
+    NOTION_TOKEN: process.env.NOTION_TOKEN,
+    NOTION_GUEST_DB_ID: process.env.NOTION_GUEST_DB_ID,
+    NOTION_GUEST_PAGE_ID: process.env.NOTION_GUEST_PAGE_ID,
+    // NOTION_CLIENT_ID: process.env.NOTION_CLIENT_ID,
+    // NOTION_SECRET: process.env.NOTION_SECRET,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**

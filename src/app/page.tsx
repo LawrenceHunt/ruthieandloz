@@ -1,4 +1,5 @@
-import { HydrateClient } from "~/trpc/server";
+import { api, HydrateClient } from "~/trpc/server";
+import { RSVPForm } from "~/components/RSVPForm";
 
 export default async function Home() {
   return (
@@ -9,14 +10,10 @@ export default async function Home() {
         <p className="text-3xl">Please join</p>
 
         <div className="w-full">
-          <h1 className="font-vintage-brush flex flex-col text-center text-green-800">
-            <span className="mr-[200px] text-[100px] leading-[100px]">
-              Ruth
-            </span>
-            <span className="my-[40px] text-[140px] leading-[100px]">&</span>
-            <span className="ml-[240px] text-[100px] leading-[100px]">
-              Lawrence
-            </span>
+          <h1 className="flex flex-col">
+            <span className="">Ruth</span>
+            <span className="">&</span>
+            <span className="">Lawrence</span>
           </h1>
         </div>
 
@@ -27,6 +24,8 @@ export default async function Home() {
           <p>Ewen, Gloucestershire</p>
         </div>
       </main>
+
+      <RSVPForm />
     </HydrateClient>
   );
 }
