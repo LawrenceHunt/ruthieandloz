@@ -6,7 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        canela: ["var(--font-canela)", ...fontFamily.sans],
+        "vintage-brush": ["var(--font-vintage-brush)", ...fontFamily.sans],
       },
     },
   },
