@@ -1,6 +1,7 @@
 "use client";
 
 import { type TextRichTextItemResponse } from "@notionhq/client/build/src/api-endpoints";
+import {} from "react-hook-form";
 import { api } from "~/trpc/react";
 import { type Checkbox, type NotionGuestDBRow } from "~/types/guests.types";
 
@@ -13,15 +14,14 @@ function getValueFromCheckbox(checkbox: Checkbox) {
 }
 
 export function RSVPForm() {
+  const [latestGuests] = api.guests.getGuests.useSuspenseQuery();
+
+  const guestDBRows = latestGuests.guests;
+
   const utils = api.useUtils();
-
-  const { data } = api.guests.getGuests.useQuery();
-
-  const guestDBRows = data?.guests;
 
   const { mutate, isPending } = api.guests.updateRSVP.useMutation({
     onSuccess: async () => {
-      console.log("RSVP updated");
       await utils.guests.getGuests.invalidate();
     },
   });
