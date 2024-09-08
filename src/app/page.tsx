@@ -36,8 +36,8 @@ export default async function Home() {
     <div className="flex h-screen">
       <HomepageNav />
 
-      <main className="h-full flex-1 overflow-x-hidden overflow-y-scroll px-8">
-        <Section id="hero" className="">
+      <main className="h-full flex-1 overflow-x-hidden overflow-y-scroll px-4">
+        <Section id="home" className="">
           <div>
             <p className="">Please join</p>
             <h1 className="flex gap-1">
@@ -50,22 +50,26 @@ export default async function Home() {
             <p>Water's Edge at Ewen, Gloucestershire GL7 6BY</p>
           </div>
 
-          <Link className="text-blue-600 underline" href={LINKS.rsvp}>
+          <Link className="text-blue-600 underline" href={LINKS.rsvp} prefetch>
             RSVP
           </Link>
         </Section>
 
-        <Section id="venue">
+        <Section id="venue" className="flex flex-col gap-4">
           <div className="flex gap-2">
             <TreesIcon />
             <h3>Getting to the venue</h3>
           </div>
 
-          <p>
-            Water's Edge is located in the leafy village of Ewen in
-            Gloucestershire, 10 minutes drive from the nearby town of
-            Cirencester.
-          </p>
+          <div>
+            <p>
+              Water's Edge is located in the leafy village of Ewen in
+              Gloucestershire.
+            </p>
+            <p>
+              It&apos;s 10 minutes drive from the nearby town of Cirencester.
+            </p>
+          </div>
 
           <div>
             <div className="flex gap-2">
@@ -91,21 +95,33 @@ export default async function Home() {
           </div>
           <p>There is plenty of parking at the venue, just rock up!</p>
 
-          <div className="flex gap-2">
-            <TrainFrontIcon />
-            <h4>Getting there by train</h4>
-          </div>
+          <div>
+            <div className="flex gap-2">
+              <TrainFrontIcon />
+              <h4>Getting there by train</h4>
+            </div>
 
-          <p>
-            The nearest train station is{" "}
-            <span className="font-bold">Kemble</span>
-            - it&apos;s 2 hours from Paddington, and a 5-minute drive from the
-            venue.
-            <br />A list of recommended taxi companies is below.
-          </p>
+            <p>
+              The nearest train station is{" "}
+              <span className="font-bold">
+                <Link
+                  href={LINKS.kemble}
+                  target="_blank"
+                  className="text-blue-500 underline"
+                >
+                  Kemble
+                </Link>
+              </span>
+              .
+              <br />
+              It&apos;s 2 hours from Paddington, and a 5-minute drive from the
+              venue.
+              <br />A list of recommended taxi companies is below.
+            </p>
+          </div>
         </Section>
 
-        <Section id="taxis">
+        <Section id="taxis" className="flex flex-col gap-4">
           <div className="flex gap-2">
             <CarTaxiFront />
             <h3>A list of local taxi companies:</h3>
@@ -119,7 +135,7 @@ export default async function Home() {
           </ul>
         </Section>
 
-        <Section id="schedule" className="h-auto">
+        <Section id="schedule" className="flex h-auto flex-col gap-4">
           <div className="flex gap-2">
             <CalendarIcon />
             <h3>Schedule</h3>
@@ -129,8 +145,7 @@ export default async function Home() {
             <h4>Friday 25 July</h4>
             <p>
               18:00-21:00 - Welcome drinks and nibbles at the Golden Cross Inn,
-              Cirencester (please let us know via the RSVP form if you can make
-              it!)
+              Cirencester
             </p>
           </div>
 
@@ -172,9 +187,27 @@ export default async function Home() {
         </Section>
 
         <Section id="accommodation">
-          <div className="flex gap-2">
+          <div className="flex flex-col gap-2">
             <HouseIcon />
             <h3>Where should I stay?</h3>
+
+            <p>
+              There are a number of lovely places to stay in the area.
+              <br />
+              Visit our{" "}
+              <Link
+                href={LINKS.accommodation}
+                className="text-blue-500 underline"
+              >
+                accommodation page
+              </Link>{" "}
+              for more information.
+            </p>
+
+            <p>
+              We definitely recommend booking early as the area can get busy in
+              the summer!
+            </p>
           </div>
         </Section>
 
@@ -184,37 +217,55 @@ export default async function Home() {
             <h3>What should I wear?</h3>
           </div>
 
-          <p>
-            The theme is "summer garden party". Colourful and fun is encouraged.
-            And don't forget your dancing shoes!
-          </p>
-
-          <p>
-            Please note that the ceremony and reception will be held outdoors,
-            so please dress appropriately.
-          </p>
-
-          <p>
-            If joining for the pub walk on Sunday, you might want to bring some
-            comfortable shoes too.
-          </p>
+          <div>
+            <p>
+              The theme is "summer garden party". Colourful and fun is
+              encouraged. And don't forget your dancing shoes!
+            </p>
+            <p>
+              Please note that the ceremony and reception will be held outdoors,
+              so please dress appropriately.
+            </p>
+            <p>
+              If joining for the pub walk on Sunday, you might want to bring
+              some comfortable shoes too.
+            </p>
+          </div>
         </Section>
 
-        <Section id="gifts">
+        <Section id="gifts" className="flex flex-col gap-4">
           <div className="flex gap-2">
             <GiftIcon />
             <h3>Gifts</h3>
           </div>
 
-          <p>
-            Your presence at our wedding is the greatest gift of all. However,
-            if you wish to honour us with a gift, please donate to our favourite
-            charities or make a contribution to our honeymoon on the link below.
-            Thank you!
-          </p>
+          <div>
+            <p>
+              Your company on our big day is the most amazing wedding present we
+              could ask for.
+            </p>
+            <p>
+              However, if you wish to honour us with a gift, please donate to
+              our favourite charities or make a contribution to our honeymoon on
+              the links below. Thank you!
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <Link
+              href={LINKS.honeymoonFund}
+              className="text-blue-500 underline"
+            >
+              Charity donation
+            </Link>
+
+            <Link href={LINKS.charityFund} className="text-blue-500 underline">
+              Honeymoon fund
+            </Link>
+          </div>
         </Section>
 
-        <Section id="faqs">
+        <Section id="faqs" className="flex flex-col gap-4">
           <div className="flex gap-2">
             <CircleHelpIcon />
             <h3>FAQs</h3>

@@ -3,22 +3,19 @@
 import {
   CalendarIcon,
   CarTaxiFront,
+  CastleIcon,
   CircleHelpIcon,
   GiftIcon,
-  HouseIcon,
-  LuggageIcon,
-  ParkingCircleIcon,
   PartyPopperIcon,
   PhoneIcon,
-  TrainFrontIcon,
   TreesIcon,
 } from "lucide-react";
-import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const homepageLinks = [
   {
-    name: "top",
-    id: "hero",
+    name: "rsvp",
+    id: "home",
     icon: PartyPopperIcon,
   },
   {
@@ -37,9 +34,9 @@ const homepageLinks = [
     icon: CalendarIcon,
   },
   {
-    name: "accommodation",
+    name: "accomm.",
     id: "accommodation",
-    icon: HouseIcon,
+    icon: CastleIcon,
   },
   {
     name: "gifts",
@@ -59,9 +56,13 @@ const homepageLinks = [
 ];
 
 export function HomepageNav() {
+  const pathname = usePathname();
+
+  console.log("pathname", pathname);
+
   return (
-    <nav className="h-screen w-[40px]">
-      <ul className="flex h-full w-full flex-col">
+    <nav className="h-screen w-[68px]">
+      <ul className="flex h-full w-full flex-col border-r-2 border-slate-100">
         {homepageLinks.map((link) => {
           const Icon = link.icon;
 
@@ -72,9 +73,10 @@ export function HomepageNav() {
                   const element = document.getElementById(link.id);
                   element?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="flex h-full w-full items-center justify-center rounded-r-lg hover:bg-slate-100"
+                className="flex h-full w-full flex-col items-center justify-center gap-1 hover:bg-slate-100"
               >
                 <Icon />
+                <span className="text-[10px] uppercase">{link.name}</span>
               </button>
             </li>
           );
