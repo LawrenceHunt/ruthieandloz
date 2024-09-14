@@ -1,7 +1,7 @@
+import { z } from "zod";
 import {
   type PageObjectResponse,
   type QueryDatabaseResponse,
-  type RichTextPropertyItemObjectResponse,
   type TextRichTextItemResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 
@@ -45,6 +45,7 @@ export type NotionGuestDBRow = PageObjectResponse & {
     Address: RichText;
     Kids: Number;
     Email: Email;
+    "Has RSVPd": Checkbox;
     RSVP: Checkbox;
     Dietary: RichText;
     "Has Plus One": Checkbox;
@@ -57,3 +58,24 @@ export type NotionGuestDBRow = PageObjectResponse & {
 export type NotionGuestDBResponse = QueryDatabaseResponse & {
   results: NotionGuestDBRow[];
 };
+
+export const getUserFormSchema = z.object({
+  firstName: z.string(),
+  lastName: z.string(),
+});
+
+export type GetUserFormData = z.infer<typeof getUserFormSchema>;
+
+export const parsedGuestSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  hasRSVPd: z.boolean(),
+  rsvp: z.boolean(),
+  dietaryRequirements: z.string(),
+  hasPlusOne: z.boolean(),
+  plusOneName: z.string().nullable(),
+  plusOneRSVP: z.boolean().nullable(),
+  plusOneDietaryRequirements: z.string().nullable(),
+});
+
+export type ParsedGuest = z.infer<typeof parsedGuestSchema>;

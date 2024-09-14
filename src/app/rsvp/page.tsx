@@ -1,14 +1,9 @@
-import { api, HydrateClient } from "~/trpc/server";
-import { RSVPForm } from "~/components/RSVPForm";
+import { RSVPPage as RSVPPageComponent } from "~/components/RSVP/RSVPPage";
 
-export default async function RSVP() {
-  void api.guests.getGuests.prefetch();
-
+export default async function RSVPPage() {
   return (
-    <HydrateClient>
-      <main className="p-8">
-        <RSVPForm />
-      </main>
-    </HydrateClient>
+    <main className="h-full w-full">
+      <RSVPPageComponent />
+    </main>
   );
 }
