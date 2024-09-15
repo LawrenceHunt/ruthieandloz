@@ -50,7 +50,7 @@ export function FlashingMarriageText() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 3, ease: "easeInOut" }}
+      transition={{ duration: 2, ease: "easeInOut" }}
       className="text-pink1 text-center"
     >
       {currentExpression}

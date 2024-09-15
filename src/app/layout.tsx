@@ -8,7 +8,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 
 export const metadata: Metadata = {
   title: "Ruthie and Loz",
-  description: "Wedding site",
+  description: "Please come to our wedding",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
