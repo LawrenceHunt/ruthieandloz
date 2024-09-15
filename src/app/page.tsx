@@ -2,6 +2,7 @@ import { ParkingCircleIcon, TrainFrontIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { HTMLAttributeAnchorTarget } from "react";
+import { FlashingMarriageText } from "~/components/FlashingMarriageText";
 import { HomepageNav } from "~/components/HomepageNav";
 import { cn } from "~/lib/cn.util";
 import { LINKS } from "~/lib/links";
@@ -151,15 +152,17 @@ export default async function Home() {
                   <span className="text-[80px] leading-[60px]">&</span>
                   <span className="ml-8 text-[100px] leading-[100px]">Loz</span>
                 </h1>
+              </div>
 
-                <p className="text-2xl">are tying the knot!</p>
+              <p className="text-2xl">
+                are <FlashingMarriageText />!
+              </p>
 
-                <div className="mt-8 text-base">
-                  <p>Please join us</p>
-                  <p className="font-semibold">2pm on 26th July 2025</p>
-                  <p>Water&apos;s Edge at Ewen</p>
-                  <p>Gloucestershire</p>
-                </div>
+              <div className="mt-8 text-base">
+                <p>Please join us</p>
+                <p className="font-semibold">2pm on 26th July 2025</p>
+                <p>Water&apos;s Edge at Ewen</p>
+                <p>Gloucestershire</p>
               </div>
 
               <div className="mb-20 mt-8 flex flex-col gap-2 text-base">
