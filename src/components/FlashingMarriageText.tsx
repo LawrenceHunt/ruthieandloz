@@ -24,7 +24,7 @@ const MARRIAGE_EXPRESSIONS = [
 function getRandomMarriageExpression() {
   return MARRIAGE_EXPRESSIONS[
     Math.floor(Math.random() * MARRIAGE_EXPRESSIONS.length)
-  ] as string;
+  ]!;
 }
 
 export function FlashingMarriageText() {
@@ -33,7 +33,7 @@ export function FlashingMarriageText() {
   // This will loop through all the expressions and then start again.
 
   const [currentExpression, setCurrentExpression] = useState<string>(
-    MARRIAGE_EXPRESSIONS[0] as string,
+    MARRIAGE_EXPRESSIONS[0]!,
   );
 
   useEffect(() => {
