@@ -1,7 +1,7 @@
+import { type HTMLAttributeAnchorTarget } from "react";
 import { ParkingCircleIcon, TrainFrontIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { HTMLAttributeAnchorTarget } from "react";
 import { FlashingMarriageText } from "~/components/FlashingMarriageText";
 import { HomepageNav } from "~/components/HomepageNav";
 import { cn } from "~/lib/cn.util";
@@ -152,7 +152,7 @@ export default async function Home() {
 
           <BodySection className="w-[200px] flex-1">
             <div className="flex justify-center">
-              <h1 className="font-reinkies inline-block">
+              <h1 className="inline-block font-reinkies">
                 <span className="text-[100px] leading-[80px]">Ruthie</span>
                 <br />
                 <span className="text-[80px] leading-[60px]">&</span>
@@ -179,7 +179,7 @@ export default async function Home() {
                   "text-2xl",
                   "flex items-center justify-center",
                   "border border-black",
-                  "hover:bg-pink1 hover:border-pink1 hover:text-white",
+                  "hover:border-pink1 hover:bg-pink1 hover:text-white",
                 )}
                 href={LINKS.rsvp}
                 prefetch
@@ -383,7 +383,7 @@ export default async function Home() {
               <h3 className="font-semibold">What should I wear?</h3>
               <p>
                 The theme is{" "}
-                <span className="text-green2 font-semibold">
+                <span className="font-semibold text-green2">
                   summer garden party
                 </span>
                 . Colourful and fun is encouraged. Don&apos;t forget your
