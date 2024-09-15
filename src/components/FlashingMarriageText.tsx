@@ -18,7 +18,7 @@ const MARRIAGE_EXPRESSIONS = [
   "becoming husband and wife",
   "walking down the aisle",
   "joining in holy matrimony",
-  "becoming even more of an item",
+  "becoming even more of a thing",
 ];
 
 function getRandomMarriageExpression() {
@@ -51,7 +51,7 @@ export function FlashingMarriageText() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 3, ease: "easeInOut" }}
-      className="text-pink1"
+      className="text-pink1 text-center"
     >
       {currentExpression}
     </motion.span>

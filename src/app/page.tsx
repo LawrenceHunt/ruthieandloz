@@ -154,7 +154,7 @@ export default async function Home() {
                 </h1>
               </div>
 
-              <p className="text-2xl">
+              <p className="text-center text-2xl">
                 are <FlashingMarriageText />
               </p>
 
