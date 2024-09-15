@@ -139,7 +139,7 @@ export default async function Home() {
     <div className="flex h-screen">
       <HomepageNav />
 
-      <main className="relative h-full flex-1 overflow-x-hidden overflow-y-scroll p-4">
+      <main className="relative h-full flex-1 overflow-x-hidden overflow-y-scroll p-4 py-0">
         <Hands />
 
         <Section id="home" className="w-full pt-0">
@@ -148,11 +148,12 @@ export default async function Home() {
             width={200}
             height={200}
             alt="disco ball"
+            className="h-[100px] w-[100px] lg:h-[200px] lg:w-[200px]"
           />
 
-          <BodySection className="w-[200px]">
+          <BodySection className="w-[200px] flex-1">
             <div className="flex justify-center">
-              <h1 className="font-reinkies mt-8 inline-block">
+              <h1 className="font-reinkies inline-block">
                 <span className="text-[100px] leading-[80px]">Ruthie</span>
                 <br />
                 <span className="text-[80px] leading-[60px]">&</span>
@@ -170,7 +171,7 @@ export default async function Home() {
               <p>Gloucestershire</p>
             </div>
 
-            <div className="mb-20 mt-4 flex w-full flex-col gap-2 text-base">
+            <div className="flex w-full flex-col gap-2 text-base">
               <p className="">Please</p>
               <Link
                 className={cn(
