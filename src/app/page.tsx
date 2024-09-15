@@ -2,7 +2,6 @@ import { ParkingCircleIcon, TrainFrontIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { HTMLAttributeAnchorTarget } from "react";
-// import { Carousel } from "~/components/Carousel";
 import { FlashingMarriageText } from "~/components/FlashingMarriageText";
 import { HomepageNav } from "~/components/HomepageNav";
 import { cn } from "~/lib/cn.util";
@@ -226,44 +225,6 @@ export default async function Home() {
             <A href={LINKS.venue} target="_blank">
               Link to venue
             </A>
-            {/* 
-            <Carousel direction="right">
-              <Image
-                src="/waters-edge/waters-edge-1.jpg"
-                width={400}
-                height={300}
-                alt="ceremony space at waters edge"
-                className="h-[300px] w-[400px] rounded-full object-cover"
-              />
-              <Image
-                src="/waters-edge/waters-edge-2.jpg"
-                width={400}
-                height={300}
-                alt="ceremony space at waters edge"
-                className="h-[300px] w-[300px] rounded-full object-cover"
-              />
-              <Image
-                src="/waters-edge/waters-edge-3.webp"
-                width={400}
-                height={300}
-                alt="ceremony space at waters edge"
-                className="h-[300px] w-[300px] rounded-full object-cover"
-              />
-              <Image
-                src="/waters-edge/waters-edge-4.webp"
-                width={400}
-                height={300}
-                alt="ceremony space at waters edge"
-                className="h-[300px] w-[300px] rounded-full object-cover"
-              />
-              <Image
-                src="/waters-edge/cirencester.jpg"
-                width={400}
-                height={300}
-                alt="ceremony space at waters edge"
-                className="h-[300px] w-[300px] rounded-full object-cover"
-              />
-            </Carousel> */}
 
             <div>
               <div className="mt-4 flex gap-2">
