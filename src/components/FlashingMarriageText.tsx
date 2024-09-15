@@ -4,16 +4,18 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const MARRIAGE_EXPRESSIONS = [
+  "getting married",
   "tying the knot",
   "getting hitched",
+  "taking the plunge",
+  "celebrating their nuptials",
   "saying “I do”",
-  "getting married",
   "becoming one",
   "becoming Mr & Mrs",
   "upgrading their home contents insurance",
   "making it official",
   "getting spliced",
-  "getting wed",
+  "sailing into the sunset",
   "joining hands in marriage",
   "becoming husband and wife",
   "walking down the aisle",
@@ -27,6 +29,7 @@ const MARRIAGE_EXPRESSIONS = [
   "sharing dessert forever",
   "going fully legal",
   "settling down",
+  "taking their vows",
 ];
 
 function getRandomMarriageExpression() {
@@ -59,7 +62,7 @@ export function FlashingMarriageText() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 2, ease: "easeInOut" }}
-      className="text-pink1 text-center"
+      className="text-center text-pink1"
     >
       {currentExpression}
     </motion.span>
