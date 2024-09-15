@@ -251,7 +251,7 @@ export default async function Home() {
 
           <Heading className="mt-8">taxis</Heading>
 
-          <div className="mt-8 text-base">
+          <div className="mt-8">
             <p>
               In the lovely rural Cotswolds, you will need to book taxis in
               advance.
@@ -283,7 +283,7 @@ export default async function Home() {
 
           <Heading className="mt-8">Schedule</Heading>
 
-          <BodySection className="text-base">
+          <BodySection>
             <div>
               <h4 className="font-semibold">Friday 25 July</h4>
               <p>
@@ -332,7 +332,7 @@ export default async function Home() {
               more information.
             </p>
             <p>
-              If you want to extend you stay beyond the weekend, here are some
+              If you want to extend your stay beyond the weekend, here are some
               suggestions of things to do.
             </p>
           </BodySection>
@@ -391,13 +391,13 @@ export default async function Home() {
               </p>
 
               <p>
-                Ladies - we recommend block heels, wedges or flats to avoid
-                sinking into the lawn!
+                Please note that the ceremony and reception will be held
+                outdoors, so please dress appropriately.
               </p>
 
               <p>
-                Please note that the ceremony and reception will be held
-                outdoors, so please dress appropriately.
+                Ladies - we recommend block heels, wedges or flats to avoid
+                sinking into the lawn!
               </p>
 
               <p>
@@ -449,10 +449,8 @@ export default async function Home() {
               <p>
                 We have two fabulous photographers so please enjoy the
                 phone-free ceremony. But we would love for you to take photos
-                any other time - and share them with us!{" "}
+                any other time - and share them with us!
               </p>
-
-              {/* <A href={LINKS.photoUpload}>Photo upload</A> */}
             </div>
 
             <div>
@@ -467,9 +465,7 @@ export default async function Home() {
                   RSVP form
                 </A>
                 . You can also email us at{" "}
-                <A href="mailto:ruthieandloz@gmail.com">
-                  ruthieandloz@gmail.com
-                </A>
+                <A href={LINKS.ruthieAndLozEmail}>ruthieandloz@gmail.com</A>
               </p>
             </div>
           </BodySection>
@@ -490,10 +486,7 @@ export default async function Home() {
               <p className="font-semibold">Questions for us?</p>
               <p>
                 Just drop an email to{" "}
-                <A href="mailto:ruthieandloz@gmail.com">
-                  ruthieandloz@gmail.com
-                </A>
-                .
+                <A href={LINKS.ruthieAndLozEmail}>ruthieandloz@gmail.com</A>.
               </p>
             </div>
 
