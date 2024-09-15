@@ -36,3 +36,14 @@ export const vintageBrush = localFont({
   ],
   variable: "--font-vintage-brush",
 });
+
+export const reinkies = localFont({
+  src: [
+    {
+      path: "./reinkies/regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-reinkies",
+});

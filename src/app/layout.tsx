@@ -1,7 +1,7 @@
 import "~/styles/globals.css";
 import "~/styles/letter.css";
 
-import { canela, vintageBrush } from "~/fonts/fonts";
+import { canela, vintageBrush, reinkies } from "~/fonts/fonts";
 import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "~/trpc/react";
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${canela.variable} ${vintageBrush.variable} h-full w-full`}
+      className={`${canela.variable} ${vintageBrush.variable} ${reinkies.variable} h-full w-full`}
     >
       <body className="h-full w-full font-canela">
         <TRPCReactProvider>{children}</TRPCReactProvider>

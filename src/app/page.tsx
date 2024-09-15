@@ -10,6 +10,7 @@ import {
   TrainFrontIcon,
   TreesIcon,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { HomepageNav } from "~/components/HomepageNav";
 import { cn } from "~/lib/cn.util";
@@ -25,7 +26,13 @@ function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={cn("pt-8", className)}>
+    <section
+      id={id}
+      className={cn(
+        "relative flex h-screen w-full flex-col items-center pt-8",
+        className,
+      )}
+    >
       {children}
     </section>
   );
@@ -36,88 +43,125 @@ export default async function Home() {
     <div className="flex h-screen">
       <HomepageNav />
 
-      <main className="h-full flex-1 overflow-x-hidden overflow-y-scroll px-4">
-        <Section id="home" className="">
-          <div>
-            <p className="">Please join</p>
-            <h1 className="flex gap-1">
-              <span>Ruth</span>
-              <span>&</span>
-              <span>Lawrence</span>
-            </h1>
-            <p>on the occasion of their wedding</p>
-            <p>at 2pm on 26th July 2025</p>
-            <p>Water&apos;s Edge at Ewen, Gloucestershire GL7 6BY</p>
-          </div>
+      <main className="h-full flex-1 overflow-x-hidden overflow-y-scroll p-4">
+        <Section id="home" className="pt-0">
+          <div className="flex flex-1 flex-col justify-between">
+            <Image
+              src="/wedding_svgs/Others/7.svg"
+              width={200}
+              height={200}
+              alt="disco ball"
+            />
 
-          <Link className="text-blue-600 underline" href={LINKS.rsvp} prefetch>
-            RSVP
-          </Link>
+            <div>
+              <h1 className="font-reinkies mt-8 inline-block">
+                <span className="text-[100px] leading-[80px]">Ruthie</span>
+                <br />
+                <span className="text-[80px] leading-[60px]">&</span>
+                <span className="ml-8 text-[100px] leading-[100px]">Loz</span>
+              </h1>
+
+              <p className="text-2xl">are getting hitched!</p>
+
+              <div className="mt-8">
+                <p>2pm on 26th July 2025</p>
+                <p>Water&apos;s Edge at Ewen</p>
+                <p>Gloucestershire</p>
+                <p>GL7 6BY</p>
+              </div>
+            </div>
+
+            <div className="mb-16 mt-8 flex flex-col gap-2">
+              <p className="">Please</p>
+              <Link
+                className={cn(
+                  "rounded-full",
+                  "px-8 py-2",
+                  "text-2xl",
+                  "flex items-center justify-center",
+                  "border border-black",
+                  "hover:bg-black hover:text-white",
+                )}
+                href={LINKS.rsvp}
+                prefetch
+              >
+                RSVP
+              </Link>
+              <p className="ml-auto mt-2">by 30th April 2025</p>
+            </div>
+          </div>
         </Section>
 
-        <Section id="venue" className="flex flex-col gap-4">
-          <div className="flex gap-2">
-            <TreesIcon />
-            <h3>Getting to the venue</h3>
-          </div>
+        <Section id="venue">
+          <Image
+            src="/wedding_svgs/Others/4.svg"
+            width={200}
+            height={200}
+            alt="swans"
+          />
+
+          <h3 className="font-reinkies mt-8 text-[60px]">the Venue</h3>
 
           <div>
-            <p>
-              Water&apos;s Edge is located in the leafy village of Ewen in
-              Gloucestershire.
-            </p>
-            <p>
-              It&apos;s 10 minutes drive from the nearby town of Cirencester.
-            </p>
-          </div>
-
-          <div>
-            <div className="flex gap-2">
-              <h4>Address:</h4>
-            </div>
-            <p>Water&apos;s Edge at Ewen</p>
-            <p>Cirencester</p>
-            <p> Gloucestershire</p>
-            <p>GL7 6BY</p>
-          </div>
-
-          <Link
-            href={LINKS.venue}
-            target="_blank"
-            className="text-blue-500 underline"
-          >
-            Link to venue
-          </Link>
-
-          <div className="flex gap-2">
-            <ParkingCircleIcon />
-            Parking
-          </div>
-          <p>There is plenty of parking at the venue, just rock up!</p>
-
-          <div>
-            <div className="flex gap-2">
-              <TrainFrontIcon />
-              <h4>Getting there by train</h4>
+            <div className="mt-2">
+              <p>
+                Water&apos;s Edge is located in the leafy village of Ewen in
+                Gloucestershire.
+              </p>
+              <p>
+                It&apos;s 10 minutes drive from the nearby town of Cirencester.
+              </p>
             </div>
 
-            <p>
-              The nearest train station is{" "}
-              <span className="font-bold">
-                <Link
-                  href={LINKS.kemble}
-                  target="_blank"
-                  className="text-blue-500 underline"
-                >
-                  Kemble
-                </Link>
-              </span>
-              .
-              <br />
-              It&apos;s 2 hours from Paddington, and a 5-minute drive from the
-              venue.
-              <br />A list of recommended taxi companies is below.
-            </p>
+            <div>
+              <div className="mt-4 flex gap-2">
+                <h4>Address:</h4>
+              </div>
+              <p>Water&apos;s Edge at Ewen</p>
+              <p>Cirencester</p>
+              <p> Gloucestershire</p>
+              <p>GL7 6BY</p>
+            </div>
+
+            <Link
+              href={LINKS.venue}
+              target="_blank"
+              className="text-blue-500 underline"
+            >
+              Link to venue
+            </Link>
+
+            <div className="mt-4 flex gap-2">
+              <ParkingCircleIcon />
+              Parking
+            </div>
+
+            <p>There is plenty of parking at the venue, just rock up!</p>
+
+            <div>
+              <div className="mt-4 flex gap-2">
+                <TrainFrontIcon />
+                <h4>Getting there by train</h4>
+              </div>
+
+              <p>
+                The nearest train station is{" "}
+                <span className="font-bold">
+                  <Link
+                    href={LINKS.kemble}
+                    target="_blank"
+                    className="text-blue-500 underline"
+                  >
+                    Kemble
+                  </Link>
+                </span>
+                .
+                <br />
+                It&apos;s 2 hours from Paddington, and a 5-minute drive from the
+                venue.
+                <br />A list of recommended taxi companies is below.
+              </p>
+            </div>
           </div>
         </Section>
 
