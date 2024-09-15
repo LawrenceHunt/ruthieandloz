@@ -2,6 +2,7 @@ import { ParkingCircleIcon, TrainFrontIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { HTMLAttributeAnchorTarget } from "react";
+// import { Carousel } from "~/components/Carousel";
 import { FlashingMarriageText } from "~/components/FlashingMarriageText";
 import { HomepageNav } from "~/components/HomepageNav";
 import { cn } from "~/lib/cn.util";
@@ -60,6 +61,56 @@ function BodySection({
   );
 }
 
+function Hands() {
+  return (
+    <div className="pointer-events-none absolute left-0 top-0 z-[-1] hidden h-screen w-full md:block">
+      <div className="relative h-full w-full">
+        <div className="absolute left-0 top-0 flex h-full flex-col justify-between">
+          <Image
+            src="/wedding_svgs/Dinner/Hands/1.svg"
+            alt="hand"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/wedding_svgs/Dinner/Hands/3.svg"
+            alt="hand"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/wedding_svgs/Dinner/Hands/4.svg"
+            alt="hand"
+            width={200}
+            height={200}
+          />
+        </div>
+
+        <div className="absolute right-0 top-0 flex h-full flex-col justify-between">
+          <Image
+            src="/wedding_svgs/Dinner/Hands/2.svg"
+            alt="hand"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/wedding_svgs/Dinner/Hands/5.svg"
+            alt="hand"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/wedding_svgs/Dinner/Hands/8.svg"
+            alt="hand"
+            width={200}
+            height={200}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Section({
   id,
   children,
@@ -73,7 +124,7 @@ function Section({
     <section
       id={id}
       className={cn(
-        "relative flex h-auto min-h-screen w-full flex-col items-center pt-16",
+        "relative flex min-h-screen w-full flex-col items-center pt-16",
         "text-lg",
         className,
       )}
@@ -88,102 +139,55 @@ export default async function Home() {
     <div className="flex h-screen">
       <HomepageNav />
 
-      <main className="h-full flex-1 overflow-x-hidden overflow-y-scroll p-4">
-        <Section id="home" className="relative w-full pt-0">
-          <div className="pointer-events-none absolute left-0 top-0 z-[-1] hidden h-full w-full md:block">
-            <div className="relative h-full w-full">
-              <div className="absolute left-0 top-0 flex h-full flex-col justify-between">
-                <Image
-                  src="/wedding_svgs/Dinner/Hands/1.svg"
-                  alt="hand"
-                  width={200}
-                  height={200}
-                />
-                <Image
-                  src="/wedding_svgs/Dinner/Hands/3.svg"
-                  alt="hand"
-                  width={200}
-                  height={200}
-                />
-                <Image
-                  src="/wedding_svgs/Dinner/Hands/4.svg"
-                  alt="hand"
-                  width={200}
-                  height={200}
-                />
-              </div>
+      <main className="relative h-full flex-1 overflow-x-hidden overflow-y-scroll p-4">
+        <Hands />
 
-              <div className="absolute right-0 top-0 flex h-full flex-col justify-between">
-                <Image
-                  src="/wedding_svgs/Dinner/Hands/2.svg"
-                  alt="hand"
-                  width={200}
-                  height={200}
-                />
-                <Image
-                  src="/wedding_svgs/Dinner/Hands/5.svg"
-                  alt="hand"
-                  width={200}
-                  height={200}
-                />
-                <Image
-                  src="/wedding_svgs/Dinner/Hands/8.svg"
-                  alt="hand"
-                  width={200}
-                  height={200}
-                />
-              </div>
+        <Section id="home" className="w-full pt-0">
+          <Image
+            src="/wedding_svgs/Others/7.svg"
+            width={200}
+            height={200}
+            alt="disco ball"
+          />
+
+          <BodySection className="w-[200px]">
+            <div className="flex justify-center">
+              <h1 className="font-reinkies mt-8 inline-block">
+                <span className="text-[100px] leading-[80px]">Ruthie</span>
+                <br />
+                <span className="text-[80px] leading-[60px]">&</span>
+                <span className="ml-8 text-[100px] leading-[100px]">Loz</span>
+              </h1>
             </div>
-          </div>
 
-          <div className="absolute left-0 top-0 z-[1] flex h-full w-full flex-1 flex-col justify-between">
-            <Section className="pt-0">
-              <Image
-                src="/wedding_svgs/Others/7.svg"
-                width={200}
-                height={200}
-                alt="disco ball"
-              />
-
-              <div>
-                <h1 className="font-reinkies mt-8 inline-block">
-                  <span className="text-[100px] leading-[80px]">Ruthie</span>
-                  <br />
-                  <span className="text-[80px] leading-[60px]">&</span>
-                  <span className="ml-8 text-[100px] leading-[100px]">Loz</span>
-                </h1>
-              </div>
-
-              <p className="text-center text-2xl">
-                are <FlashingMarriageText />
-              </p>
-
+            <p className="mx-auto w-full text-left text-2xl">
+              are <FlashingMarriageText />
               <div className="mt-8 text-base">
                 <p className="font-semibold">2pm, 26th July 2025</p>
                 <p>Water&apos;s Edge at Ewen</p>
                 <p>Gloucestershire</p>
               </div>
+            </p>
 
-              <div className="mb-20 mt-8 flex flex-col gap-2 text-base">
-                <p className="">Please</p>
-                <Link
-                  className={cn(
-                    "rounded-full",
-                    "px-8 py-2",
-                    "text-2xl",
-                    "flex items-center justify-center",
-                    "border border-black",
-                    "hover:bg-pink1 hover:border-pink1 hover:text-white",
-                  )}
-                  href={LINKS.rsvp}
-                  prefetch
-                >
-                  RSVP
-                </Link>
-                <p className="ml-auto mt-2">by 30th April 2025</p>
-              </div>
-            </Section>
-          </div>
+            <div className="mb-20 mt-8 flex w-full flex-col gap-2 text-base">
+              <p className="">Please</p>
+              <Link
+                className={cn(
+                  "rounded-full",
+                  "px-8 py-2",
+                  "text-2xl",
+                  "flex items-center justify-center",
+                  "border border-black",
+                  "hover:bg-pink1 hover:border-pink1 hover:text-white",
+                )}
+                href={LINKS.rsvp}
+                prefetch
+              >
+                RSVP
+              </Link>
+              <p className="ml-auto mt-2">by 30th April 2025</p>
+            </div>
+          </BodySection>
         </Section>
 
         <Section id="venue">
@@ -220,6 +224,44 @@ export default async function Home() {
             <A href={LINKS.venue} target="_blank">
               Link to venue
             </A>
+            {/* 
+            <Carousel direction="right">
+              <Image
+                src="/waters-edge/waters-edge-1.jpg"
+                width={400}
+                height={300}
+                alt="ceremony space at waters edge"
+                className="h-[300px] w-[400px] rounded-full object-cover"
+              />
+              <Image
+                src="/waters-edge/waters-edge-2.jpg"
+                width={400}
+                height={300}
+                alt="ceremony space at waters edge"
+                className="h-[300px] w-[300px] rounded-full object-cover"
+              />
+              <Image
+                src="/waters-edge/waters-edge-3.webp"
+                width={400}
+                height={300}
+                alt="ceremony space at waters edge"
+                className="h-[300px] w-[300px] rounded-full object-cover"
+              />
+              <Image
+                src="/waters-edge/waters-edge-4.webp"
+                width={400}
+                height={300}
+                alt="ceremony space at waters edge"
+                className="h-[300px] w-[300px] rounded-full object-cover"
+              />
+              <Image
+                src="/waters-edge/cirencester.jpg"
+                width={400}
+                height={300}
+                alt="ceremony space at waters edge"
+                className="h-[300px] w-[300px] rounded-full object-cover"
+              />
+            </Carousel> */}
 
             <div>
               <div className="mt-4 flex gap-2">

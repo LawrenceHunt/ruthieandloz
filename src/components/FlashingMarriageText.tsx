@@ -12,7 +12,7 @@ const MARRIAGE_EXPRESSIONS = [
   "becoming Mr & Mrs",
   "upgrading their home contents insurance",
   "making it official",
-  "getting spliced",
+  // "getting spliced",
   "getting wed",
   "joining hands in marriage",
   "becoming husband and wife",
