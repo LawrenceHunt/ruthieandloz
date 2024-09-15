@@ -64,7 +64,7 @@ function Section({
   children,
   className,
 }: {
-  id: string;
+  id?: string;
   children: React.ReactNode;
   className?: string;
 }) {
@@ -88,51 +88,98 @@ export default async function Home() {
       <HomepageNav />
 
       <main className="h-full flex-1 overflow-x-hidden overflow-y-scroll p-4">
-        <Section id="home" className="pt-0">
-          <Image
-            src="/wedding_svgs/Others/7.svg"
-            width={200}
-            height={200}
-            alt="disco ball"
-          />
+        <Section id="home" className="relative w-full pt-0">
+          <div className="pointer-events-none absolute left-0 top-0 z-[-1] hidden h-full w-full md:block">
+            <div className="relative h-full w-full">
+              <div className="absolute left-0 top-0 flex h-full flex-col justify-between">
+                <Image
+                  src="/wedding_svgs/Dinner/Hands/1.svg"
+                  alt="hand"
+                  width={200}
+                  height={200}
+                />
+                <Image
+                  src="/wedding_svgs/Dinner/Hands/3.svg"
+                  alt="hand"
+                  width={200}
+                  height={200}
+                />
+                <Image
+                  src="/wedding_svgs/Dinner/Hands/4.svg"
+                  alt="hand"
+                  width={200}
+                  height={200}
+                />
+              </div>
 
-          <div className="flex flex-1 flex-col justify-between">
-            <div>
-              <h1 className="font-reinkies text-pink1 mt-8 inline-block">
-                <span className="text-[100px] leading-[80px]">Ruthie</span>
-                <br />
-                <span className="text-[80px] leading-[60px]">&</span>
-                <span className="ml-8 text-[100px] leading-[100px]">Loz</span>
-              </h1>
-
-              <p className="text-2xl">are tying the knot!</p>
-
-              <div className="mt-8 text-base">
-                <p>2pm on 26th July 2025</p>
-                <p>Water&apos;s Edge at Ewen</p>
-                <p>Gloucestershire</p>
-                <p>GL7 6BY</p>
+              <div className="absolute right-0 top-0 flex h-full flex-col justify-between">
+                <Image
+                  src="/wedding_svgs/Dinner/Hands/2.svg"
+                  alt="hand"
+                  width={200}
+                  height={200}
+                />
+                <Image
+                  src="/wedding_svgs/Dinner/Hands/5.svg"
+                  alt="hand"
+                  width={200}
+                  height={200}
+                />
+                <Image
+                  src="/wedding_svgs/Dinner/Hands/8.svg"
+                  alt="hand"
+                  width={200}
+                  height={200}
+                />
               </div>
             </div>
+          </div>
 
-            <div className="mb-20 mt-8 flex flex-col gap-2 text-base">
-              <p className="">Please</p>
-              <Link
-                className={cn(
-                  "rounded-full",
-                  "px-8 py-2",
-                  "text-2xl",
-                  "flex items-center justify-center",
-                  "border border-black",
-                  "hover:bg-pink1 hover:border-pink1 hover:text-white",
-                )}
-                href={LINKS.rsvp}
-                prefetch
-              >
-                RSVP
-              </Link>
-              <p className="ml-auto mt-2">by 30th April 2025</p>
-            </div>
+          <div className="absolute left-0 top-0 z-[1] flex h-full w-full flex-1 flex-col justify-between">
+            <Section>
+              <Image
+                src="/wedding_svgs/Others/7.svg"
+                width={200}
+                height={200}
+                alt="disco ball"
+              />
+
+              <div>
+                <h1 className="font-reinkies text-pink1 mt-8 inline-block">
+                  <span className="text-[100px] leading-[80px]">Ruthie</span>
+                  <br />
+                  <span className="text-[80px] leading-[60px]">&</span>
+                  <span className="ml-8 text-[100px] leading-[100px]">Loz</span>
+                </h1>
+
+                <p className="text-2xl">are tying the knot!</p>
+
+                <div className="mt-8 text-base">
+                  <p>2pm on 26th July 2025</p>
+                  <p>Water&apos;s Edge at Ewen</p>
+                  <p>Gloucestershire</p>
+                </div>
+              </div>
+
+              <div className="mb-20 mt-8 flex flex-col gap-2 text-base">
+                <p className="">Please</p>
+                <Link
+                  className={cn(
+                    "rounded-full",
+                    "px-8 py-2",
+                    "text-2xl",
+                    "flex items-center justify-center",
+                    "border border-black",
+                    "hover:bg-pink1 hover:border-pink1 hover:text-white",
+                  )}
+                  href={LINKS.rsvp}
+                  prefetch
+                >
+                  RSVP
+                </Link>
+                <p className="ml-auto mt-2">by 30th April 2025</p>
+              </div>
+            </Section>
           </div>
         </Section>
 
@@ -147,13 +194,15 @@ export default async function Home() {
           <Heading className="mt-8">the Venue</Heading>
 
           <BodySection className="mt-8">
-            <p>
-              Water&apos;s Edge is located in the leafy village of Ewen in
-              Gloucestershire.
-            </p>
-            <p>
-              It&apos;s 10 minutes drive from the nearby town of Cirencester.
-            </p>
+            <div>
+              <p>
+                Water&apos;s Edge is located in the leafy village of Ewen in
+                Gloucestershire.
+              </p>
+              <p>
+                It&apos;s 10 minutes drive from the nearby town of Cirencester.
+              </p>
+            </div>
 
             <div>
               <div className="mt-4 flex gap-2">
@@ -169,12 +218,14 @@ export default async function Home() {
               Link to venue
             </A>
 
-            <div className="mt-4 flex gap-2">
-              <ParkingCircleIcon />
-              Parking
-            </div>
+            <div>
+              <div className="mt-4 flex gap-2">
+                <ParkingCircleIcon />
+                Parking
+              </div>
 
-            <p>There is plenty of parking at the venue, just rock up!</p>
+              <p>There is plenty of parking at the venue, just rock up!</p>
+            </div>
 
             <div>
               <div className="mt-4 flex gap-2">
@@ -198,13 +249,13 @@ export default async function Home() {
           <Image
             src="/wedding_svgs/Others/8.svg"
             alt="wedding car"
-            width={300}
-            height={300}
+            width={200}
+            height={200}
           />
 
-          <Heading className="mt-4">taxis</Heading>
+          <Heading className="mt-8">taxis</Heading>
 
-          <div className="mt-4">
+          <div className="mt-8 text-base">
             <p>Here&apos;s a list of local taxi companies:</p>
 
             <ul className="mt-4">
@@ -350,10 +401,10 @@ export default async function Home() {
 
               <p>
                 If you&apos;re the sort of person who likes to know the colour
-                scheme, we&apos;re going for...
+                scheme, here it is...
               </p>
 
-              <div className="grid grid-cols-3 gap-2 py-8">
+              <div className="grid grid-cols-3 items-center gap-2 py-8 pl-2">
                 <span>pink</span>
                 <span>purple</span>
                 <span>green</span>
