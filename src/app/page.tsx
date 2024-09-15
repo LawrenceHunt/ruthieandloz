@@ -159,8 +159,7 @@ export default async function Home() {
               </p>
 
               <div className="mt-8 text-base">
-                <p>Please join us</p>
-                <p className="font-semibold">2pm on 26th July 2025</p>
+                <p className="font-semibold">2pm, 26th July 2025</p>
                 <p>Water&apos;s Edge at Ewen</p>
                 <p>Gloucestershire</p>
               </div>
