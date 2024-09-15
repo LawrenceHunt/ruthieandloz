@@ -137,7 +137,7 @@ export default async function Home() {
           </div>
 
           <div className="absolute left-0 top-0 z-[1] flex h-full w-full flex-1 flex-col justify-between">
-            <Section>
+            <Section className="pt-0">
               <Image
                 src="/wedding_svgs/Others/7.svg"
                 width={200}
@@ -224,25 +224,22 @@ export default async function Home() {
             <div>
               <div className="mt-4 flex gap-2">
                 <ParkingCircleIcon />
-                Parking
+                <h4>There is plenty of parking at the venue. Just rock up!</h4>
               </div>
-
-              <p>There is plenty of parking at the venue, just rock up!</p>
             </div>
 
             <div>
               <div className="mt-4 flex gap-2">
                 <TrainFrontIcon />
-                <h4>Getting there by train</h4>
+                <h4>
+                  The nearest train station is <A href={LINKS.kemble}>Kemble</A>
+                  .
+                </h4>
               </div>
 
               <p>
-                The nearest train station is <A href={LINKS.kemble}>Kemble</A>
-                .
-                <br />
                 It&apos;s 2 hours from Paddington, and a 5-minute drive from the
                 venue.
-                <br />A list of recommended taxi companies is below.
               </p>
             </div>
           </BodySection>
@@ -307,7 +304,7 @@ export default async function Home() {
                 <br />
                 19:00 - Cake/Tea & Coffee
                 <br />
-                19:30 - Evening entertainment starts (Band/DJ)
+                19:30 - Evening entertainment starts
                 <br />
                 21:30 - Evening food served
                 <br />
