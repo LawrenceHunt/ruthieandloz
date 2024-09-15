@@ -14,7 +14,7 @@ export function useRSVP(
 
   const { mutate, data, isPending, error, isSuccess } =
     api.guests.updateRSVP.useMutation({
-      onSuccess: (data) => {
+      onSuccess: () => {
         onSuccess(true);
       },
     });

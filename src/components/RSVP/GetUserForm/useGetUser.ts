@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
-import { GetUserFormData, getUserFormSchema } from "./GetUserForm";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { type GetUserFormData, getUserFormSchema } from "./GetUserForm";
 import { api } from "~/trpc/react";
 
 export function useGetUser() {
