@@ -5,7 +5,7 @@ import { Button } from "~/components/Button";
 import { FormField, FormItem } from "~/components/Form";
 import { type ParsedGuest } from "~/types/guests.types";
 
-function getGuestFirstName(name: string) {
+export function getGuestFirstName(name: string) {
   return name.split(" ")[0];
 }
 

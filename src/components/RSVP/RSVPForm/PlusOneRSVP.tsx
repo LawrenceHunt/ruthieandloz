@@ -5,6 +5,7 @@ import { FormField, FormItem } from "../../Form";
 import { Button } from "~/components/Button";
 import { Input } from "~/components/Input";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { getGuestFirstName } from "./RSVP";
 
 export function PlusOneRSVP({
   form,
@@ -15,9 +16,13 @@ export function PlusOneRSVP({
   onSubmit: () => void;
   onClickBack: () => void;
 }) {
-  const { control, getValues } = form;
+  const { control, watch } = form;
 
-  const plusOneName = getValues("plusOneName");
+  const plusOneName = watch("plusOneName");
+
+  const plusOneFirstName = plusOneName
+    ? getGuestFirstName(plusOneName ?? "")
+    : null;
 
   return (
     <div className="flex h-full flex-col items-center justify-between">
@@ -32,7 +37,7 @@ export function PlusOneRSVP({
         <h2 className="mt-4">
           Can{" "}
           <span className="font-semibold">
-            {form.getValues("plusOneName") ?? "your plus one"}
+            {plusOneFirstName ?? "your plus one"}
           </span>{" "}
           come?
         </h2>
