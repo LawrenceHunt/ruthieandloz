@@ -14,12 +14,10 @@ export type GetUserFormData = z.infer<typeof getUserFormSchema>;
 export function GetUserForm({
   onSubmitForm,
   form,
-  error,
   className,
 }: {
   onSubmitForm: ReturnType<typeof useGetUser>["onSubmitForm"];
   form: ReturnType<typeof useGetUser>["form"];
-  error: ReturnType<typeof useGetUser>["error"];
   className?: string;
 }) {
   const { control } = form;
@@ -72,12 +70,6 @@ export function GetUserForm({
 
         <div className="mt-6 flex w-full justify-end">
           <Button role="submit">Confirm</Button>
-        </div>
-
-        <div>
-          {error ? (
-            <div className="mt-4 text-lg text-red-500">{error}</div>
-          ) : null}
         </div>
       </form>
     </Form>
