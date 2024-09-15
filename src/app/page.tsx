@@ -155,7 +155,7 @@ export default async function Home() {
               </div>
 
               <p className="text-2xl">
-                are <FlashingMarriageText />!
+                are <FlashingMarriageText />
               </p>
 
               <div className="mt-8 text-base">
