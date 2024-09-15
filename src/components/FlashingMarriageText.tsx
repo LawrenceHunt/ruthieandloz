@@ -12,7 +12,7 @@ const MARRIAGE_EXPRESSIONS = [
   "becoming Mr & Mrs",
   "upgrading their home contents insurance",
   "making it official",
-  // "getting spliced",
+  "getting spliced",
   "getting wed",
   "joining hands in marriage",
   "becoming husband and wife",
@@ -25,7 +25,8 @@ const MARRIAGE_EXPRESSIONS = [
   "becoming a unit",
   "deleting the apps",
   "sharing dessert forever",
-  "going legally steady",
+  "going fully legal",
+  "settling down",
 ];
 
 function getRandomMarriageExpression() {

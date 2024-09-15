@@ -57,7 +57,7 @@ export function HomepageNav() {
                   const element = document.getElementById(link.id);
                   element?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="flex h-full w-full flex-col items-center justify-center gap-1 hover:bg-slate-100"
+                className="hover:bg-pink1/10 flex h-full w-full flex-col items-center justify-center gap-1"
               >
                 <Image width={40} height={40} src={link.imageSrc} alt="image" />
                 <span className="text-[10px] uppercase">{link.name}</span>

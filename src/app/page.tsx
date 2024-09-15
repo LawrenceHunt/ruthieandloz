@@ -123,7 +123,7 @@ function Section({
     <section
       id={id}
       className={cn(
-        "relative flex min-h-screen w-full flex-col items-center pt-16",
+        "relative flex min-h-screen w-full flex-col items-center pt-8",
         "text-lg",
         className,
       )}
@@ -165,7 +165,7 @@ export default async function Home() {
             </p>
 
             <div className="text-base">
-              <p className="font-semibold">2pm, 26th July 2025</p>
+              <p className="font-semibold">2pm, 26 July 2025</p>
               <p>Water&apos;s Edge at Ewen</p>
               <p>Gloucestershire</p>
             </div>
@@ -204,8 +204,8 @@ export default async function Home() {
           <BodySection className="mt-8">
             <div>
               <p>
-                Water&apos;s Edge is located in the leafy village of Ewen in
-                Gloucestershire.
+                <A href={LINKS.venue}>Water&apos;s Edge</A> is located in the
+                leafy village of Ewen in the Cotswolds.
               </p>
               <p>
                 It&apos;s 10 minutes drive from the nearby town of Cirencester.
@@ -222,30 +222,21 @@ export default async function Home() {
               <p>GL7 6BY</p>
             </div>
 
-            <A href={LINKS.venue} target="_blank">
-              Link to venue
-            </A>
-
-            <div>
-              <div className="mt-4 flex gap-2">
-                <ParkingCircleIcon />
-                <h4>There is plenty of parking at the venue. Just rock up!</h4>
-              </div>
+            <div className="mt-4">
+              <ParkingCircleIcon className="mr-2 inline" />
+              <span>
+                If you&apos;re driving, there&apos;s plenty of parking at the
+                venue. Just rock up!
+              </span>
             </div>
 
-            <div>
-              <div className="mt-4 flex gap-2">
-                <TrainFrontIcon />
-                <h4>
-                  The nearest train station is <A href={LINKS.kemble}>Kemble</A>
-                  .
-                </h4>
-              </div>
-
-              <p>
+            <div className="mt-4">
+              <TrainFrontIcon className="mr-2 inline" />
+              <span>
+                The nearest train station is <A href={LINKS.kemble}>Kemble</A>.
                 It&apos;s 2 hours from Paddington, and a 5-minute drive from the
                 venue.
-              </p>
+              </span>
             </div>
           </BodySection>
         </Section>
@@ -261,14 +252,23 @@ export default async function Home() {
           <Heading className="mt-8">taxis</Heading>
 
           <div className="mt-8 text-base">
+            <p>
+              In the lovely rural Cotswolds, you will need to book taxis in
+              advance.
+            </p>
             <p>Here&apos;s a list of local taxi companies:</p>
 
             <ul className="mt-4">
-              <li>Reliance Taxis, Cirencester - 01285-640950</li>
-              <li>Cirencester Taxis 247 - 07735-602648</li>
-              <li>Forum Taxi, Cirencester - 01285-402270</li>
-              <li>First Taxi, Cirencester - 01285-407407</li>
-              <li>Smart Taxi, Cirencester - 01285-270270</li>
+              <li>Siren Cars - 01285652388</li>
+              <li>Cirencester Taxis 247 - 07735602648</li>
+              <li>Forum Taxi, Cirencester - 01285402270</li>
+              <li>First Taxi, Cirencester - 01285407407</li>
+              <li>Smart Taxi, Cirencester - 01285270270</li>
+              <li>Cirencester taxi - 01285408407</li>
+              <li>Radio cars - 01285650850</li>
+              <li>Home James - 01285641339</li>
+              <li>A2B - 01285655651</li>
+              <li>Reliance - 01285640950</li>
             </ul>
           </div>
         </Section>
@@ -287,8 +287,8 @@ export default async function Home() {
             <div>
               <h4 className="font-semibold">Friday 25 July</h4>
               <p>
-                18:00 - Welcome drinks and nibbles at the Golden Cross Inn,
-                Cirencester
+                18:00 - Welcome drinks [location TBC] Join us for a pre-marital
+                mingle.
               </p>
             </div>
 
@@ -299,21 +299,7 @@ export default async function Home() {
                 <br />
                 14:00 - Ceremony
                 <br />
-                14:30 - Drinks reception
-                <br />
-                16:30 - Call for Dinner
-                <br />
-                16:45 - Speeches
-                <br />
-                17:00 - Wedding breakfast served
-                <br />
-                19:00 - Cake/Tea & Coffee
-                <br />
-                19:30 - Evening entertainment starts
-                <br />
-                21:30 - Evening food served
-                <br />
-                11:30 - Last orders
+                14:30 - Celebration time
                 <br />
                 00:00 - Carriages
               </p>
@@ -321,11 +307,7 @@ export default async function Home() {
 
             <div>
               <h4 className="font-semibold">Sunday 27 July</h4>
-              <p>
-                10:00-14:00 - Pub walk and lunch at the Tunnel House Inn, Coates
-                (please let us know via the <A href="/rsvp">RSVP form</A> if
-                you&apos;ll be joining!)
-              </p>
+              <p>11:00 - Happily ever afterparty! [location TBC]</p>
             </div>
           </BodySection>
         </Section>
@@ -342,15 +324,16 @@ export default async function Home() {
 
           <BodySection>
             <p>
-              There are a number of lovely places to stay in the area.
-              <br />
+              There are a number of lovely places to stay in the area. We would
+              love to make a weekend of it with you!
+            </p>
+            <p>
               Visit our <A href={LINKS.accommodation}>accommodation page</A> for
               more information.
             </p>
-
             <p>
-              We definitely recommend booking early as the area can get busy in
-              the summer!
+              If you want to extend you stay beyond the weekend, here are some
+              suggestions of things to do.
             </p>
           </BodySection>
         </Section>
@@ -367,9 +350,10 @@ export default async function Home() {
 
           <BodySection className="mt-8">
             <p>
-              Your company on our big day is the most amazing wedding present we
-              could ask for.
+              Spending our big day with you is the most amazing wedding present
+              we could ask for.
             </p>
+
             <p className="mt-4">
               However, if you wish to honour us with a gift, please donate to
               our favourite charities or make a contribution to our honeymoon on
@@ -399,32 +383,27 @@ export default async function Home() {
               <h3 className="font-semibold">What should I wear?</h3>
               <p>
                 The theme is{" "}
-                <span className="font-semibold">summer garden party</span>.
-                Colourful and fun is encouraged. And don&apos;t forget your
+                <span className="text-green2 font-semibold">
+                  summer garden party
+                </span>
+                . Colourful and fun is encouraged. Don&apos;t forget your
                 dancing shoes!
+              </p>
+
+              <p>
+                Ladies - we recommend block heels, wedges or flats to avoid
+                sinking into the lawn!
               </p>
 
               <p>
                 Please note that the ceremony and reception will be held
                 outdoors, so please dress appropriately.
               </p>
+
               <p>
                 If joining for the pub walk on Sunday, you might want to bring
                 some comfortable shoes too.
               </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold">
-                Is it okay to take pictures during the wedding?
-              </h3>
-              <p>
-                We have two fabulous photographers so please enjoy the
-                phone-free ceremony. But we would love for you to take photos
-                any other time - and share them with us!{" "}
-              </p>
-
-              {/* <A href={LINKS.photoUpload}>Photo upload</A> */}
             </div>
 
             <div>
@@ -439,11 +418,41 @@ export default async function Home() {
               </p>
 
               <p>
-                The venue recommends the following local babysitting services
-                […]
+                The venue recommends the following local babysitting services:
               </p>
 
+              <ul className="ml-4 list-disc">
+                <li>
+                  <A href="http://www.elfsitters.co.uk">Elf Sitters</A> |{" "}
+                  <A href="mailto:emma@elfsitters.co.uk">
+                    emma@elfsitters.co.uk
+                  </A>
+                </li>
+                <li>
+                  <A href="https://www.pitchupandplay.co.uk/weddingchildcare">
+                    Pitch Up and Play
+                  </A>{" "}
+                  |{" "}
+                  <A href="mailto:hello@pitchupandplay.co.uk">
+                    hello@pitchupandplay.co.uk
+                  </A>
+                </li>
+              </ul>
+
               <p>Please reach out if you have questions!</p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold">
+                Is it okay to take pictures during the wedding?
+              </h3>
+              <p>
+                We have two fabulous photographers so please enjoy the
+                phone-free ceremony. But we would love for you to take photos
+                any other time - and share them with us!{" "}
+              </p>
+
+              {/* <A href={LINKS.photoUpload}>Photo upload</A> */}
             </div>
 
             <div>
