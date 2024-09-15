@@ -1,13 +1,4 @@
-import {
-  CalendarIcon,
-  CarTaxiFront,
-  CircleHelpIcon,
-  GiftIcon,
-  LuggageIcon,
-  ParkingCircleIcon,
-  PhoneIcon,
-  TrainFrontIcon,
-} from "lucide-react";
+import { ParkingCircleIcon, TrainFrontIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { HomepageNav } from "~/components/HomepageNav";
@@ -58,7 +49,7 @@ function Section({
     <section
       id={id}
       className={cn(
-        "relative flex h-screen w-full flex-col items-center pt-8",
+        "relative flex h-screen w-full flex-col items-center pt-16",
         "text-lg",
         className,
       )}
@@ -91,7 +82,7 @@ export default async function Home() {
                 <span className="ml-8 text-[100px] leading-[100px]">Loz</span>
               </h1>
 
-              <p className="text-2xl">are getting hitched!</p>
+              <p className="text-2xl">are tying the knot!</p>
 
               <div className="mt-8">
                 <p>2pm on 26th July 2025</p>
@@ -122,7 +113,7 @@ export default async function Home() {
           </div>
         </Section>
 
-        <Section id="venue">
+        <Section id="venue" className="h-auto">
           <Image
             src="/wedding_svgs/Others/4.svg"
             width={300}
@@ -132,16 +123,14 @@ export default async function Home() {
 
           <Heading className="mt-8">the Venue</Heading>
 
-          <div className="mt-8">
-            <div>
-              <p>
-                Water&apos;s Edge is located in the leafy village of Ewen in
-                Gloucestershire.
-              </p>
-              <p>
-                It&apos;s 10 minutes drive from the nearby town of Cirencester.
-              </p>
-            </div>
+          <BodySection className="mt-8">
+            <p>
+              Water&apos;s Edge is located in the leafy village of Ewen in
+              Gloucestershire.
+            </p>
+            <p>
+              It&apos;s 10 minutes drive from the nearby town of Cirencester.
+            </p>
 
             <div>
               <div className="mt-4 flex gap-2">
@@ -192,10 +181,10 @@ export default async function Home() {
                 <br />A list of recommended taxi companies is below.
               </p>
             </div>
-          </div>
+          </BodySection>
         </Section>
 
-        <Section id="taxis" className="flex flex-col gap-4">
+        <Section id="taxis" className="pt-24">
           <Image
             src="/wedding_svgs/Others/8.svg"
             alt="wedding car"
@@ -218,7 +207,7 @@ export default async function Home() {
           </div>
         </Section>
 
-        <Section id="schedule" className="flex h-auto flex-col gap-4">
+        <Section id="schedule" className="flex flex-col gap-4">
           <Image
             src="/wedding_svgs/Dinner/Drinks/3.svg"
             alt="drink"
@@ -290,7 +279,10 @@ export default async function Home() {
               There are a number of lovely places to stay in the area.
               <br />
               Visit our{" "}
-              <Link href={LINKS.accommodation} className="hover:underline">
+              <Link
+                href={LINKS.accommodation}
+                className="font-semibold hover:underline"
+              >
                 accommodation page
               </Link>{" "}
               for more information.
@@ -372,7 +364,9 @@ export default async function Home() {
             </div>
 
             <div>
-              <h3>Is it okay to take pictures during the wedding?</h3>
+              <h3 className="font-semibold">
+                Is it okay to take pictures during the wedding?
+              </h3>
               <p>
                 We have two fabulous photographers so please enjoy the
                 phone-free ceremony. But we would love for you to take photos
@@ -440,19 +434,24 @@ export default async function Home() {
           <Heading className="mt-8">Contact us</Heading>
 
           <BodySection>
-            <p className="mt-4">
-              <span className="font-semibold">Questions for us?</span> Just drop
-              an email to{" "}
-              <Link href="mailto:ruthieandloz@gmail.com">
-                ruthieandloz@gmail.com
-              </Link>
-              .
-            </p>
-            <p>
-              <span className="font-semibold">Questions on the day?</span> Call
-              or Whatsapp our Maid of Honour Ness on [Ness phone number], or
-              Best Man Adam on [Adam phone number].
-            </p>
+            <div>
+              <p className="font-semibold">Questions for us?</p>
+              <p>
+                Just drop an email to{" "}
+                <Link href="mailto:ruthieandloz@gmail.com">
+                  ruthieandloz@gmail.com
+                </Link>
+                .
+              </p>
+            </div>
+
+            <div>
+              <p className="font-semibold">Questions on the day?</p>
+              <p>
+                Call or Whatsapp our Maid of Honour Ness on [Ness phone number],
+                or Best Man Adam on [Adam phone number].
+              </p>
+            </div>
           </BodySection>
         </Section>
 

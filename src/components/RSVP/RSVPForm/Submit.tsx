@@ -33,42 +33,44 @@ export function Submit({
         height={140}
       />
 
-      <h2 className="text-center">Confirm RSVP?</h2>
+      <div>
+        <h2 className="text-center">Confirm RSVP?</h2>
 
-      <div className="text-base">
-        <div className="mt-4">
-          Coming:{" "}
-          <span className="font-semibold">{isComing ? "Yes" : "No"}</span>
-        </div>
-
-        {isComing ? (
+        <div className="mt-4 text-base">
           <div>
-            Your dietary Requirements:{" "}
-            <span className="font-semibold">
-              {getDietaryRequirementsText(dietaryRequirements)}
-            </span>
+            Coming:{" "}
+            <span className="font-semibold">{isComing ? "Yes" : "No"}</span>
           </div>
-        ) : null}
 
-        {plusOneRSVP ? (
-          <>
+          {isComing ? (
             <div>
-              {plusOneName ?? "Your plus one"} is coming:{" "}
+              Your dietary Requirements:{" "}
               <span className="font-semibold">
-                {plusOneRSVP ? "Yes" : "No"}
+                {getDietaryRequirementsText(dietaryRequirements)}
               </span>
             </div>
+          ) : null}
 
-            {plusOneDietaryRequirements ? (
+          {plusOneRSVP ? (
+            <>
               <div>
-                {plusOneName ?? "Your plus one"}&apos;s dietary requirements:{" "}
+                {plusOneName ?? "Your plus one"} is coming:{" "}
                 <span className="font-semibold">
-                  {getDietaryRequirementsText(plusOneDietaryRequirements)}
+                  {plusOneRSVP ? "Yes" : "No"}
                 </span>
               </div>
-            ) : null}
-          </>
-        ) : null}
+
+              {plusOneDietaryRequirements ? (
+                <div>
+                  {plusOneName ?? "Your plus one"}&apos;s dietary requirements:{" "}
+                  <span className="font-semibold">
+                    {getDietaryRequirementsText(plusOneDietaryRequirements)}
+                  </span>
+                </div>
+              ) : null}
+            </>
+          ) : null}
+        </div>
       </div>
 
       {errorMessage ? <div className="text-red-600">{errorMessage}</div> : null}

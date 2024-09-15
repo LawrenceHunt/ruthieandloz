@@ -2,6 +2,7 @@ import { z } from "zod";
 import { Form, FormField, FormItem } from "../../Form";
 import { type useGetUser } from "./useGetUser";
 import { Button } from "~/components/Button";
+import { Input } from "~/components/Input";
 
 export const getUserFormSchema = z.object({
   firstName: z.string(),
@@ -44,11 +45,7 @@ export function GetUserForm({
                     First name
                   </label>
 
-                  <input
-                    id="first-name"
-                    className="w-full rounded-lg border-2 border-slate-200 px-2 py-1 text-xl outline-none"
-                    {...field}
-                  />
+                  <Input id="first-name" {...field} />
                 </div>
               </FormItem>
             );
@@ -66,11 +63,7 @@ export function GetUserForm({
                     Last name
                   </label>
 
-                  <input
-                    id="last-name"
-                    className="w-full rounded-lg border-2 border-slate-200 px-2 py-1 text-xl outline-none"
-                    {...field}
-                  />
+                  <Input id="last-name" {...field} />
                 </div>
               </FormItem>
             );
