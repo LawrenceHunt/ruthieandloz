@@ -18,7 +18,7 @@ const MARRIAGE_EXPRESSIONS = [
   "becoming husband and wife",
   "walking down the aisle",
   "joining in holy matrimony",
-  "becoming even more of a thing",
+  "becoming a thing",
   "plighting one's troth",
   "dropping anchor",
   "conjugating",
