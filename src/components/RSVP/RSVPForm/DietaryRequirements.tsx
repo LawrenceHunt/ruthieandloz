@@ -45,8 +45,8 @@ export function DietaryRequirements({
         return (
           <>
             <h2 className="text-center">
-              We're so glad! And do you have any dietary requirements we should
-              know about?
+              We&apos;re so glad! And do you have any dietary requirements we
+              should know about?
             </h2>
 
             <FormItem>

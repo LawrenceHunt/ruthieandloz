@@ -59,7 +59,11 @@ export function RSVPPage() {
 
   return (
     <div className="mx-auto flex h-full max-w-[600px] flex-col items-center justify-center gap-4">
-      <div>
+      <div className="flex w-full items-center justify-between">
+        <Link href="/" className="underline">
+          Home
+        </Link>
+
         <button
           disabled={!guestForm.formState.isDirty}
           onClick={() => {
@@ -99,13 +103,13 @@ export function RSVPPage() {
           <p className="py-8 text-xl text-slate-500">
             {Boolean(guest.rsvp) ? (
               <>
-                Thank you for RSVP'ing!
-                <br /> We can't wait to see you there.
+                Thank you for RSVP&apos;ing!
+                <br /> We can&apos;t wait to see you there.
               </>
             ) : (
               <>
-                We're sorry to hear that you can't make it. <br />
-                We'll miss you!
+                We&apos;re sorry to hear that you can&apos;t make it. <br />
+                We&apos;ll miss you!
               </>
             )}
           </p>
@@ -134,10 +138,7 @@ export function RSVPPage() {
           {guest && !guest?.hasRSVPd ? (
             <RSVPForm
               guest={guest}
-              onSuccess={() => {
-                // refetch the user
-                refetchUser();
-              }}
+              onSuccess={refetchUser}
               onClickBack={onClickBack}
             />
           ) : null}

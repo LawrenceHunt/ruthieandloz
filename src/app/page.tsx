@@ -47,7 +47,7 @@ export default async function Home() {
             </h1>
             <p>on the occasion of their wedding</p>
             <p>at 2pm on 26th July 2025</p>
-            <p>Water's Edge at Ewen, Gloucestershire GL7 6BY</p>
+            <p>Water&apos;s Edge at Ewen, Gloucestershire GL7 6BY</p>
           </div>
 
           <Link className="text-blue-600 underline" href={LINKS.rsvp} prefetch>
@@ -63,7 +63,7 @@ export default async function Home() {
 
           <div>
             <p>
-              Water's Edge is located in the leafy village of Ewen in
+              Water&apos;s Edge is located in the leafy village of Ewen in
               Gloucestershire.
             </p>
             <p>
@@ -75,7 +75,7 @@ export default async function Home() {
             <div className="flex gap-2">
               <h4>Address:</h4>
             </div>
-            <p>Water's Edge at Ewen</p>
+            <p>Water&apos;s Edge at Ewen</p>
             <p>Cirencester</p>
             <p> Gloucestershire</p>
             <p>GL7 6BY</p>
@@ -152,7 +152,7 @@ export default async function Home() {
           <div>
             <h4>Saturday 26 July</h4>
             <p>
-              1:30 - Guests arrive at Water's Edge, Ewen
+              1:30 - Guests arrive at Water&apos;s Edge, Ewen
               <br />
               14:00 - Ceremony
               <br />
@@ -164,7 +164,7 @@ export default async function Home() {
               <br />
               17:00 - Wedding breakfast served
               <br />
-              19:00 - Cake/Tea & Coffee's
+              19:00 - Cake/Tea & Coffee
               <br />
               19:30 - Evening entertainment starts (Band/DJ)
               <br />
@@ -219,8 +219,10 @@ export default async function Home() {
 
           <div>
             <p>
-              The theme is "summer garden party". Colourful and fun is
-              encouraged. And don't forget your dancing shoes!
+              The theme is{" "}
+              <span className="font-semibold">summer garden party</span>.
+              Colourful and fun is encouraged. And don&apos;t forget your
+              dancing shoes!
             </p>
             <p>
               Please note that the ceremony and reception will be held outdoors,
@@ -285,14 +287,20 @@ export default async function Home() {
 
           <div>
             <h3>Can I bring my kids?</h3>
+
             <p>
-              As much as we love your little ones, sadly we're not able to
+              As much as we love your little ones, sadly we&apos;re not able to
               accommodate babies or children outside of those in the wedding
               party. However, we recognize that some of you will be traveling
               with your kids, so please know they are welcome at the Friday
-              drinks and Sunday brunch! The venue recommends the following local
-              babysitting services […] Please reach out if you have questions!
+              drinks and Sunday brunch!
             </p>
+
+            <p>
+              The venue recommends the following local babysitting services […]
+            </p>
+
+            <p>Please reach out if you have questions!</p>
           </div>
 
           <div>
@@ -330,8 +338,8 @@ export default async function Home() {
             .
           </p>
           <h3>
-            Questions on the day? Call our Maid of Honour Ness on [Ness phone
-            number], or Best Man Adam on [Adam phone number].
+            Questions on the day? Call or Whatsapp our Maid of Honour Ness on
+            [Ness phone number], or Best Man Adam on [Adam phone number].
           </h3>
         </Section>
 

@@ -10,7 +10,6 @@ import {
   PhoneIcon,
   TreesIcon,
 } from "lucide-react";
-import { usePathname } from "next/navigation";
 
 const homepageLinks = [
   {
@@ -56,8 +55,6 @@ const homepageLinks = [
 ];
 
 export function HomepageNav() {
-  const pathname = usePathname();
-
   return (
     <nav className="h-screen w-[68px]">
       <ul className="flex h-full w-full flex-col border-r-2 border-slate-100">

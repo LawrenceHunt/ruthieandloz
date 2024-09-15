@@ -1,7 +1,7 @@
 import { ArrowLeft, CheckIcon } from "lucide-react";
-import { UseFormReturn } from "react-hook-form";
+import { type UseFormReturn } from "react-hook-form";
 import { Button } from "~/components/Button";
-import { ParsedGuest } from "~/types/guests.types";
+import { type ParsedGuest } from "~/types/guests.types";
 import { getDietaryRequirementsText } from "./DietaryRequirements";
 
 export function Submit({
@@ -17,13 +17,11 @@ export function Submit({
   errorMessage: string | null;
   onClickBack: () => void;
 }) {
-  const isComing = form.getValues("rsvp");
-  const dietaryRequirements = form.getValues("dietaryRequirements");
-  const plusOneRSVP = form.getValues("plusOneRSVP");
-  const plusOneName = form.getValues("plusOneName");
-  const plusOneDietaryRequirements = form.getValues(
-    "plusOneDietaryRequirements",
-  );
+  const isComing = form.watch("rsvp");
+  const dietaryRequirements = form.watch("dietaryRequirements");
+  const plusOneRSVP = form.watch("plusOneRSVP");
+  const plusOneName = form.watch("plusOneName");
+  const plusOneDietaryRequirements = form.watch("plusOneDietaryRequirements");
 
   return (
     <>
@@ -35,7 +33,7 @@ export function Submit({
 
       {isComing ? (
         <div>
-          Dietary Requirements:{" "}
+          Your dietary Requirements:{" "}
           <span className="font-semibold">
             {getDietaryRequirementsText(dietaryRequirements)}
           </span>
@@ -43,19 +41,21 @@ export function Submit({
       ) : null}
 
       {plusOneRSVP ? (
-        <div>
-          {plusOneName ?? "Your plus one"} is coming:{" "}
-          <span className="font-semibold">{plusOneRSVP ? "Yes" : "No"}</span>
-        </div>
-      ) : null}
+        <>
+          <div>
+            {plusOneName ?? "Your plus one"} is coming:{" "}
+            <span className="font-semibold">{plusOneRSVP ? "Yes" : "No"}</span>
+          </div>
 
-      {plusOneDietaryRequirements ? (
-        <div>
-          {plusOneName ?? "Your plus one"}'s dietary requirements:{" "}
-          <span className="font-semibold">
-            {getDietaryRequirementsText(plusOneDietaryRequirements)}
-          </span>
-        </div>
+          {plusOneDietaryRequirements ? (
+            <div>
+              {plusOneName ?? "Your plus one"}&apos;s dietary requirements:{" "}
+              <span className="font-semibold">
+                {getDietaryRequirementsText(plusOneDietaryRequirements)}
+              </span>
+            </div>
+          ) : null}
+        </>
       ) : null}
 
       <div className="mt-8 flex justify-between gap-4">

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { Form, FormField, FormItem } from "../../Form";
-import { useGetUser } from "./useGetUser";
+import { type useGetUser } from "./useGetUser";
 import { Button } from "~/components/Button";
 
 export const getUserFormSchema = z.object({

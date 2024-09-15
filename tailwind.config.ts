@@ -9,6 +9,7 @@ export default {
         canela: ["var(--font-canela)", ...fontFamily.sans],
         "vintage-brush": ["var(--font-vintage-brush)", ...fontFamily.sans],
       },
+      colors: {},
     },
   },
   plugins: [],

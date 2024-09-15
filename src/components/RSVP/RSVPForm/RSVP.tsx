@@ -26,8 +26,6 @@ export function RSVP({
         control={form.control}
         name="rsvp"
         render={({ fieldState: { error, isTouched }, field: { value } }) => {
-          console.log("value", value);
-
           return (
             <>
               <FormItem>

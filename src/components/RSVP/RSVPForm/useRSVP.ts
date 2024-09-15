@@ -22,6 +22,11 @@ export function useRSVP(
   const onSubmit = (data: ParsedGuest) => {
     data.hasRSVPd = true;
 
+    // If the user has RSVP'd no, the plus one RSVP should also be false
+    if (data.rsvp === false) {
+      data.plusOneRSVP = false;
+    }
+
     mutate(data);
   };
 
