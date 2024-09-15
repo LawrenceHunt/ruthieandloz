@@ -2,12 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { cn } from "~/lib/cn.util";
 
 const MARRIAGE_EXPRESSIONS = [
   "tying the knot",
   "getting hitched",
-  "saying 'I do'",
+  "saying “I do”",
   "getting married",
   "becoming one",
   "becoming Mr & Mrs",
@@ -19,7 +18,7 @@ const MARRIAGE_EXPRESSIONS = [
   "becoming husband and wife",
   "walking down the aisle",
   "joining in holy matrimony",
-  "becoming an item",
+  "becoming even more of an item",
 ];
 
 function getRandomMarriageExpression() {
@@ -40,7 +39,7 @@ export function FlashingMarriageText() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentExpression(getRandomMarriageExpression());
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
@@ -51,8 +50,8 @@ export function FlashingMarriageText() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 3 }}
-      //   className={cn("animate-pulse")}
+      transition={{ duration: 3, ease: "easeInOut" }}
+      className="text-pink1"
     >
       {currentExpression}
     </motion.span>

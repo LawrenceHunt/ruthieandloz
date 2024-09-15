@@ -146,7 +146,7 @@ export default async function Home() {
               />
 
               <div>
-                <h1 className="font-reinkies text-pink1 mt-8 inline-block">
+                <h1 className="font-reinkies mt-8 inline-block">
                   <span className="text-[100px] leading-[80px]">Ruthie</span>
                   <br />
                   <span className="text-[80px] leading-[60px]">&</span>
