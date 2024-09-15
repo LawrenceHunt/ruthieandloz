@@ -1,6 +1,7 @@
 import { ParkingCircleIcon, TrainFrontIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { HTMLAttributeAnchorTarget } from "react";
 import { HomepageNav } from "~/components/HomepageNav";
 import { cn } from "~/lib/cn.util";
 import { LINKS } from "~/lib/links";
@@ -14,6 +15,28 @@ function Heading({
 }) {
   return (
     <h2 className={cn("font-reinkies text-[60px]", className)}>{children}</h2>
+  );
+}
+
+function A({
+  children,
+  href,
+  className,
+  target = "_blank",
+}: {
+  children: React.ReactNode;
+  href: string;
+  className?: string;
+  target?: HTMLAttributeAnchorTarget;
+}) {
+  return (
+    <Link
+      href={href}
+      target={target}
+      className={cn("text-pink1 hover:underline", className)}
+    >
+      {children}
+    </Link>
   );
 }
 
@@ -49,7 +72,7 @@ function Section({
     <section
       id={id}
       className={cn(
-        "relative flex h-screen w-full flex-col items-center pt-16",
+        "relative flex h-auto min-h-screen w-full flex-col items-center pt-16",
         "text-lg",
         className,
       )}
@@ -66,16 +89,16 @@ export default async function Home() {
 
       <main className="h-full flex-1 overflow-x-hidden overflow-y-scroll p-4">
         <Section id="home" className="pt-0">
-          <div className="flex flex-1 flex-col justify-between">
-            <Image
-              src="/wedding_svgs/Others/7.svg"
-              width={200}
-              height={200}
-              alt="disco ball"
-            />
+          <Image
+            src="/wedding_svgs/Others/7.svg"
+            width={200}
+            height={200}
+            alt="disco ball"
+          />
 
+          <div className="flex flex-1 flex-col justify-between">
             <div>
-              <h1 className="font-reinkies mt-8 inline-block">
+              <h1 className="font-reinkies text-pink1 mt-8 inline-block">
                 <span className="text-[100px] leading-[80px]">Ruthie</span>
                 <br />
                 <span className="text-[80px] leading-[60px]">&</span>
@@ -84,7 +107,7 @@ export default async function Home() {
 
               <p className="text-2xl">are tying the knot!</p>
 
-              <div className="mt-8">
+              <div className="mt-8 text-base">
                 <p>2pm on 26th July 2025</p>
                 <p>Water&apos;s Edge at Ewen</p>
                 <p>Gloucestershire</p>
@@ -92,7 +115,7 @@ export default async function Home() {
               </div>
             </div>
 
-            <div className="mb-16 mt-8 flex flex-col gap-2">
+            <div className="mb-20 mt-8 flex flex-col gap-2 text-base">
               <p className="">Please</p>
               <Link
                 className={cn(
@@ -101,7 +124,7 @@ export default async function Home() {
                   "text-2xl",
                   "flex items-center justify-center",
                   "border border-black",
-                  "hover:bg-black hover:text-white",
+                  "hover:bg-pink1 hover:border-pink1 hover:text-white",
                 )}
                 href={LINKS.rsvp}
                 prefetch
@@ -113,7 +136,7 @@ export default async function Home() {
           </div>
         </Section>
 
-        <Section id="venue" className="h-auto">
+        <Section id="venue">
           <Image
             src="/wedding_svgs/Others/4.svg"
             width={300}
@@ -142,13 +165,9 @@ export default async function Home() {
               <p>GL7 6BY</p>
             </div>
 
-            <Link
-              href={LINKS.venue}
-              target="_blank"
-              className="text-blue-500 underline"
-            >
+            <A href={LINKS.venue} target="_blank">
               Link to venue
-            </Link>
+            </A>
 
             <div className="mt-4 flex gap-2">
               <ParkingCircleIcon />
@@ -164,16 +183,7 @@ export default async function Home() {
               </div>
 
               <p>
-                The nearest train station is{" "}
-                <span>
-                  <Link
-                    href={LINKS.kemble}
-                    target="_blank"
-                    className="text-blue-500 underline"
-                  >
-                    Kemble
-                  </Link>
-                </span>
+                The nearest train station is <A href={LINKS.kemble}>Kemble</A>
                 .
                 <br />
                 It&apos;s 2 hours from Paddington, and a 5-minute drive from the
@@ -257,8 +267,8 @@ export default async function Home() {
               <h4 className="font-semibold">Sunday 27 July</h4>
               <p>
                 10:00-14:00 - Pub walk and lunch at the Tunnel House Inn, Coates
-                (please let us know via the RSVP form if you&apos;ll be
-                joining!)
+                (please let us know via the <A href="/rsvp">RSVP form</A> if
+                you&apos;ll be joining!)
               </p>
             </div>
           </BodySection>
@@ -278,14 +288,8 @@ export default async function Home() {
             <p>
               There are a number of lovely places to stay in the area.
               <br />
-              Visit our{" "}
-              <Link
-                href={LINKS.accommodation}
-                className="font-semibold hover:underline"
-              >
-                accommodation page
-              </Link>{" "}
-              for more information.
+              Visit our <A href={LINKS.accommodation}>accommodation page</A> for
+              more information.
             </p>
 
             <p>
@@ -318,23 +322,13 @@ export default async function Home() {
           </div>
 
           <div className="mt-4 flex gap-12">
-            <Link
-              href={LINKS.honeymoonFund}
-              className="font-semibold hover:underline"
-            >
-              Charity fund
-            </Link>
+            <A href={LINKS.honeymoonFund}>Charity fund</A>
 
-            <Link
-              href={LINKS.charityFund}
-              className="font-semibold hover:underline"
-            >
-              Honeymoon fund
-            </Link>
+            <A href={LINKS.charityFund}>Honeymoon fund</A>
           </div>
         </Section>
 
-        <Section id="faqs" className="flex h-auto flex-col gap-4">
+        <Section id="faqs">
           <Image
             src="/wedding_svgs/Dinner/Cakes/2.svg"
             alt="cake"
@@ -353,6 +347,30 @@ export default async function Home() {
                 Colourful and fun is encouraged. And don&apos;t forget your
                 dancing shoes!
               </p>
+
+              <p>
+                If you&apos;re the sort of person who likes to know the colour
+                scheme, we&apos;re going for...
+              </p>
+
+              <div className="grid grid-cols-3 gap-2 py-8">
+                <span>pink</span>
+                <span>purple</span>
+                <span>green</span>
+
+                <div className="bg-pink1 h-8 w-8 rounded-full" />
+                <div className="bg-purple1 h-8 w-8 rounded-full"></div>
+                <div className="bg-green1 h-8 w-8 rounded-full"></div>
+
+                <div className="bg-pink2 h-8 w-8 rounded-full" />
+                <div className="bg-purple2 h-8 w-8 rounded-full"></div>
+                <div className="bg-green2 h-8 w-8 rounded-full"></div>
+
+                <div className="bg-pink3 h-8 w-8 rounded-full" />
+                <div className="bg-purple3 h-8 w-8 rounded-full"></div>
+                <div className="bg-green3 h-8 w-8 rounded-full"></div>
+              </div>
+
               <p>
                 Please note that the ceremony and reception will be held
                 outdoors, so please dress appropriately.
@@ -370,15 +388,10 @@ export default async function Home() {
               <p>
                 We have two fabulous photographers so please enjoy the
                 phone-free ceremony. But we would love for you to take photos
-                any other time and share them with us on the link below.
+                any other time - and share them with us!{" "}
               </p>
 
-              <Link
-                href={LINKS.photoUpload}
-                className="text-blue-500 underline"
-              >
-                Photo upload
-              </Link>
+              {/* <A href={LINKS.photoUpload}>Photo upload</A> */}
             </div>
 
             <div>
@@ -408,16 +421,13 @@ export default async function Home() {
               <p>
                 Please RSVP by 30 April 2025. You can let us know about any
                 dietary requirements on the{" "}
-                <Link href={LINKS.rsvp} className="text-blue-500 underline">
+                <A href={LINKS.rsvp} target="_self">
                   RSVP form
-                </Link>
+                </A>
                 . You can also email us at{" "}
-                <Link
-                  href="mailto:ruthieandloz@gmail.com"
-                  className="text-blue-500 underline"
-                >
+                <A href="mailto:ruthieandloz@gmail.com">
                   ruthieandloz@gmail.com
-                </Link>
+                </A>
               </p>
             </div>
           </BodySection>
@@ -438,9 +448,9 @@ export default async function Home() {
               <p className="font-semibold">Questions for us?</p>
               <p>
                 Just drop an email to{" "}
-                <Link href="mailto:ruthieandloz@gmail.com">
+                <A href="mailto:ruthieandloz@gmail.com">
                   ruthieandloz@gmail.com
-                </Link>
+                </A>
                 .
               </p>
             </div>
