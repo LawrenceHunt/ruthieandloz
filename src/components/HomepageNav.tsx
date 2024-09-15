@@ -1,56 +1,47 @@
 "use client";
 
-import {
-  CalendarIcon,
-  CarTaxiFront,
-  CastleIcon,
-  CircleHelpIcon,
-  GiftIcon,
-  PartyPopperIcon,
-  PhoneIcon,
-  TreesIcon,
-} from "lucide-react";
+import Image from "next/image";
 
 const homepageLinks = [
   {
     name: "rsvp",
     id: "home",
-    icon: PartyPopperIcon,
+    imageSrc: "/wedding_svgs/Others/7.svg",
   },
   {
     name: "venue",
     id: "venue",
-    icon: TreesIcon,
+    imageSrc: "/wedding_svgs/Others/4.svg",
   },
   {
     name: "taxis",
     id: "taxis",
-    icon: CarTaxiFront,
+    imageSrc: "/wedding_svgs/Cupids/5.svg",
   },
   {
     name: "schedule",
     id: "schedule",
-    icon: CalendarIcon,
+    imageSrc: "/wedding_svgs/Dinner/Drinks/3.svg",
   },
   {
     name: "accomm.",
     id: "accommodation",
-    icon: CastleIcon,
+    imageSrc: "/wedding_svgs/Candles/9.svg",
   },
   {
     name: "gifts",
     id: "gifts",
-    icon: GiftIcon,
+    imageSrc: "/wedding_svgs/Others/9.svg",
   },
   {
     name: "faq",
     id: "faqs",
-    icon: CircleHelpIcon,
+    imageSrc: "/wedding_svgs/Dinner/Cakes/2.svg",
   },
   {
     name: "contact",
     id: "contact",
-    icon: PhoneIcon,
+    imageSrc: "/wedding_svgs/Others/5.svg",
   },
 ];
 
@@ -59,8 +50,6 @@ export function HomepageNav() {
     <nav className="h-screen w-[68px]">
       <ul className="flex h-full w-full flex-col border-r-2 border-slate-100">
         {homepageLinks.map((link) => {
-          const Icon = link.icon;
-
           return (
             <li key={link.name} className="w-full flex-1">
               <button
@@ -70,7 +59,7 @@ export function HomepageNav() {
                 }}
                 className="flex h-full w-full flex-col items-center justify-center gap-1 hover:bg-slate-100"
               >
-                <Icon />
+                <Image width={40} height={40} src={link.imageSrc} alt="image" />
                 <span className="text-[10px] uppercase">{link.name}</span>
               </button>
             </li>

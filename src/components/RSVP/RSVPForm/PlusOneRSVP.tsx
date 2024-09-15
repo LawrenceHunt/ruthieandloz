@@ -1,4 +1,5 @@
 import { type UseFormReturn } from "react-hook-form";
+import Image from "next/image";
 import { type ParsedGuest } from "~/types/guests.types";
 import { FormField, FormItem } from "../../Form";
 import { Button } from "~/components/Button";
@@ -19,26 +20,33 @@ export function PlusOneRSVP({
   const plusOneName = getValues("plusOneName");
 
   return (
-    <>
-      <FormField
-        control={control}
-        name="plusOneRSVP"
-        render={({ fieldState: { error, isTouched }, field: { value } }) => {
-          return (
-            <FormItem>
-              <div>
-                {plusOneName ? (
-                  <h2>
-                    Can{" "}
-                    <span className="font-semibold">
-                      {form.getValues("plusOneName") ?? "your plus one"}
-                    </span>{" "}
-                    come?
-                  </h2>
-                ) : (
-                  <h2>Are you bringing a plus one?</h2>
-                )}
+    <div className="flex h-full flex-col items-center justify-between">
+      <Image
+        src="/wedding_svgs/Others/7.svg"
+        alt="dove"
+        width={80}
+        height={80}
+      />
 
+      {plusOneName ? (
+        <h2 className="mt-4">
+          Can{" "}
+          <span className="font-semibold">
+            {form.getValues("plusOneName") ?? "your plus one"}
+          </span>{" "}
+          come?
+        </h2>
+      ) : (
+        <h2>Are you bringing a plus one?</h2>
+      )}
+
+      <div className="text-base">
+        <FormField
+          control={control}
+          name="plusOneRSVP"
+          render={({ fieldState: { error, isTouched }, field: { value } }) => {
+            return (
+              <FormItem>
                 <div className="flex gap-2">
                   <input
                     type="radio"
@@ -49,9 +57,7 @@ export function PlusOneRSVP({
                     }}
                   />
                   <label htmlFor="yes">Yes</label>
-                </div>
 
-                <div className="flex gap-2">
                   <input
                     type="radio"
                     id="no"
@@ -68,103 +74,107 @@ export function PlusOneRSVP({
                 </div>
 
                 <div>{error?.message ?? ""}</div>
-              </div>
-            </FormItem>
-          );
-        }}
-      />
-
-      {plusOneName ? null : (
-        <FormField
-          control={control}
-          name="plusOneName"
-          render={({
-            fieldState: { error },
-            field: { onChange, value, onBlur },
-          }) => {
-            return (
-              <FormItem>
-                <div>
-                  <h2>What&apos;s your plus one&apos;s name?</h2>
-
-                  <Input
-                    type="text"
-                    value={value ?? ""}
-                    onChange={(e) => onChange(e.target.value)}
-                    onBlur={onBlur}
-                  />
-
-                  <div>{error?.message ?? ""}</div>
-                </div>
               </FormItem>
             );
           }}
         />
-      )}
 
-      <FormField
-        control={control}
-        name="plusOneDietaryRequirements"
-        render={({ fieldState: { error }, field: { value, onChange } }) => {
-          return (
-            <FormItem>
-              <h2>And do they have any dietary requirements?</h2>
+        {plusOneName ? null : (
+          <FormField
+            control={control}
+            name="plusOneName"
+            render={({
+              fieldState: { error },
+              field: { onChange, value, onBlur },
+            }) => {
+              return (
+                <FormItem>
+                  <div className="mt-2">
+                    <h2>What&apos;s your plus one&apos;s name?</h2>
 
-              <div className="flex gap-2">
-                <input
-                  type="radio"
-                  id="none"
-                  checked={value === "none"}
-                  onChange={() => {
-                    onChange("none");
-                  }}
-                />
-                <label htmlFor="none">None</label>
-              </div>
+                    <Input
+                      type="text"
+                      value={value ?? ""}
+                      onChange={(e) => onChange(e.target.value)}
+                      onBlur={onBlur}
+                    />
 
-              <div className="flex gap-2">
-                <input
-                  type="radio"
-                  id="vegetarian"
-                  checked={value === "vegetarian"}
-                  onChange={() => {
-                    onChange("vegetarian");
-                  }}
-                />
-                <label htmlFor="vegetarian">Vegetarian</label>
-              </div>
+                    <div>{error?.message ?? ""}</div>
+                  </div>
+                </FormItem>
+              );
+            }}
+          />
+        )}
 
-              <div className="flex flex-col gap-2">
+        <FormField
+          control={control}
+          name="plusOneDietaryRequirements"
+          render={({ fieldState: { error }, field: { value, onChange } }) => {
+            return (
+              <FormItem>
+                <h2 className="mt-4 text-lg">
+                  And do they have any dietary requirements?
+                </h2>
+
                 <div className="flex gap-2">
                   <input
                     type="radio"
-                    id="other"
-                    checked={value?.startsWith("other:")}
+                    id="none"
+                    checked={value === "none"}
                     onChange={() => {
-                      onChange("other:");
+                      onChange("none");
                     }}
                   />
-                  <label htmlFor="other">Other</label>
+                  <label htmlFor="none">None</label>
+
+                  <input
+                    type="radio"
+                    id="vegetarian"
+                    checked={value === "vegetarian"}
+                    onChange={() => {
+                      onChange("vegetarian");
+                    }}
+                  />
+                  <label htmlFor="vegetarian">Vegetarian</label>
                 </div>
 
-                <input
-                  type="text"
-                  disabled={!value?.startsWith("other")}
-                  value={value?.startsWith("other") ? value.split(":")[1] : ""}
-                  className="w-full rounded-lg border-2 border-slate-200 px-2 py-1 text-xl outline-none"
-                  onChange={(e) => {
-                    onChange(`other:${e.target.value}`);
-                  }}
-                />
-              </div>
+                <div className="flex gap-2"></div>
 
-              <div>{error?.message ?? ""}</div>
-            </FormItem>
-          );
-        }}
-      />
+                <div className="flex flex-col gap-2">
+                  <div className="flex gap-2">
+                    <input
+                      type="radio"
+                      id="other"
+                      checked={value?.startsWith("other:")}
+                      onChange={() => {
+                        onChange("other:");
+                      }}
+                    />
+                    <label htmlFor="other">Other</label>
+                  </div>
 
-      <div className="mt-8 flex justify-between gap-4">
+                  <input
+                    type="text"
+                    disabled={!value?.startsWith("other")}
+                    value={
+                      value?.startsWith("other") ? value.split(":")[1] : ""
+                    }
+                    className="w-full rounded-lg border-2 border-slate-200 px-2 py-1 text-xl outline-none"
+                    onChange={(e) => {
+                      onChange(`other:${e.target.value}`);
+                    }}
+                  />
+                </div>
+
+                <div>{error?.message ?? ""}</div>
+              </FormItem>
+            );
+          }}
+        />
+      </div>
+
+      <div className="flex w-full justify-between gap-4">
         <Button onClick={onClickBack} className="gap-1">
           <ArrowLeft className="h-4 w-4" />
           Back
@@ -175,6 +185,6 @@ export function PlusOneRSVP({
           <ArrowRight className="h-4 w-4" />
         </Button>
       </div>
-    </>
+    </div>
   );
 }

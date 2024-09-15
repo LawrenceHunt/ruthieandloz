@@ -7,6 +7,7 @@ import { Button } from "~/components/Button";
 import { useRef } from "react";
 import { Input } from "~/components/Input";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export function getDietaryRequirementsText(requirements: string) {
   if (requirements === "none") {
@@ -43,14 +44,21 @@ export function DietaryRequirements({
       name="dietaryRequirements"
       render={({ fieldState: { error }, field: { value } }) => {
         return (
-          <>
-            <h2 className="text-center">
+          <div className="flex h-full flex-col items-center justify-between">
+            <Image
+              src="/wedding_svgs/Dinner/Food/7.svg"
+              alt="dinner"
+              width={140}
+              height={140}
+            />
+
+            <h2 className="mt-4 text-center">
               We&apos;re so glad! And do you have any dietary requirements we
               should know about?
             </h2>
 
-            <FormItem>
-              <div className="flex gap-2">
+            <FormItem className="mt-4 w-full text-base">
+              <div className="flex w-full gap-2">
                 <input
                   type="radio"
                   id="none"
@@ -62,9 +70,7 @@ export function DietaryRequirements({
                   }}
                 />
                 <label htmlFor="none">None</label>
-              </div>
 
-              <div className="flex gap-2">
                 <input
                   type="radio"
                   id="vegetarian"
@@ -78,7 +84,7 @@ export function DietaryRequirements({
                 <label htmlFor="vegetarian">Vegetarian</label>
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex w-full flex-col gap-2">
                 <div className="flex gap-2">
                   <input
                     type="radio"
@@ -117,7 +123,7 @@ export function DietaryRequirements({
               <div>{error?.message ?? ""}</div>
             </FormItem>
 
-            <div className="mt-8 flex justify-between gap-4">
+            <div className="mt-4 flex w-full gap-4">
               <Button onClick={onClickBack} className="gap-1">
                 <ArrowLeft className="h-4 w-4" />
                 Back
@@ -128,7 +134,7 @@ export function DietaryRequirements({
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
-          </>
+          </div>
         );
       }}
     />

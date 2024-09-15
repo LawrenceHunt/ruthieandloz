@@ -6,7 +6,7 @@ import { LoadSpinner } from "./LoadSpinner";
 
 const buttonVariants = cva(
   cn(
-    "inline-flex items-center justify-center w-full relative",
+    "inline-flex items-center justify-center w-full relative text-nowrap",
     "rounded-md",
     "text-sm font-medium",
     "transition-colors",
@@ -59,7 +59,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {props.children}
 
-        {isLoading ? <LoadSpinner className="absolute right-2 top-2" /> : null}
+        {isLoading ? <LoadSpinner className="absolute right-2" /> : null}
       </Comp>
     );
   },

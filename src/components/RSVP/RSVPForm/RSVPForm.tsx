@@ -36,7 +36,7 @@ export function RSVPForm({
   const currentDisplay = (() => {
     if (stage === "rsvp") {
       return (
-        <AnimateIn duration={4}>
+        <AnimateIn duration={0.5} delay={0.5} key={"rsvp"}>
           <RSVP
             form={form}
             onSubmit={() => {
@@ -54,68 +54,74 @@ export function RSVPForm({
 
     if (stage === "dietaryRequirements") {
       return (
-        <DietaryRequirements
-          form={form}
-          onSubmit={() => {
-            if (guest.hasPlusOne) {
-              setStage("plusOneRSVP");
-              return;
-            }
+        <AnimateIn duration={0.5} delay={0} key="dietaryRequirements">
+          <DietaryRequirements
+            form={form}
+            onSubmit={() => {
+              if (guest.hasPlusOne) {
+                setStage("plusOneRSVP");
+                return;
+              }
 
-            setStage("submit");
-          }}
-          onClickBack={() => {
-            setStage("rsvp");
-          }}
-        />
+              setStage("submit");
+            }}
+            onClickBack={() => {
+              setStage("rsvp");
+            }}
+          />
+        </AnimateIn>
       );
     }
 
     if (stage === "plusOneRSVP") {
       return (
-        <PlusOneRSVP
-          form={form}
-          onSubmit={() => {
-            setStage("submit");
-          }}
-          onClickBack={() => {
-            setStage("dietaryRequirements");
-          }}
-        />
+        <AnimateIn duration={0.5} delay={0} key="plusOneRSVP">
+          <PlusOneRSVP
+            form={form}
+            onSubmit={() => {
+              setStage("submit");
+            }}
+            onClickBack={() => {
+              setStage("dietaryRequirements");
+            }}
+          />
+        </AnimateIn>
       );
     }
 
     if (stage === "submit") {
       return (
-        <Submit
-          form={form}
-          isLoading={isPending}
-          errorMessage={error?.message ?? null}
-          onSubmit={() => {
-            const formData = form.getValues();
-            onSubmit(formData);
-          }}
-          onClickBack={() => {
-            if (!guest.rsvp) {
-              setStage("rsvp");
-              return;
-            }
+        <AnimateIn duration={0.5} delay={0} key="submit">
+          <Submit
+            form={form}
+            isLoading={isPending}
+            errorMessage={error?.message ?? null}
+            onSubmit={() => {
+              const formData = form.getValues();
+              onSubmit(formData);
+            }}
+            onClickBack={() => {
+              if (!guest.rsvp) {
+                setStage("rsvp");
+                return;
+              }
 
-            if (guest.hasPlusOne) {
-              setStage("plusOneRSVP");
-              return;
-            }
+              if (guest.hasPlusOne) {
+                setStage("plusOneRSVP");
+                return;
+              }
 
-            setStage("dietaryRequirements");
-          }}
-        />
+              setStage("dietaryRequirements");
+            }}
+          />
+        </AnimateIn>
       );
     }
   })();
 
   return (
     <Form {...form}>
-      <div className="mx-auto flex h-full w-full flex-col justify-center gap-4 p-16 text-xl">
+      <div className="h-full w-full gap-4 px-4 py-4 text-xl lg:px-16 lg:py-8">
         {currentDisplay}
       </div>
     </Form>

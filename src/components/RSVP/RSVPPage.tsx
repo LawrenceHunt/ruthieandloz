@@ -9,6 +9,7 @@ import { useGetUser } from "./GetUserForm/useGetUser";
 import { api } from "~/trpc/react";
 import { LoadSpinner } from "../LoadSpinner";
 import Link from "next/link";
+import { AnimateIn } from "../AnimateIn";
 
 function AnimatedLetter({
   children,
@@ -58,7 +59,7 @@ export function RSVPPage() {
   };
 
   return (
-    <div className="mx-auto flex h-full max-w-[600px] flex-col items-center justify-center gap-4">
+    <div className="mx-auto flex h-full max-w-[300px] flex-col items-center justify-center gap-4">
       <div className="flex w-full items-center justify-between">
         <Link href="/" className="underline">
           Home
@@ -79,13 +80,9 @@ export function RSVPPage() {
 
       <h1 className="self-center text-3xl text-slate-500">- RSVP -</h1>
 
-      <div
-        className={cn(
-          "mx-auto flex h-[300px] w-[300px] flex-col items-center gap-4",
-        )}
-      >
+      <div className={cn("flex h-[300px] w-full flex-col items-center gap-4")}>
         {guestIsLoading ? (
-          <div className="flex w-full items-center justify-center">
+          <div className="flex h-full w-full items-center justify-center">
             <LoadSpinner className="" />
           </div>
         ) : null}
@@ -102,21 +99,21 @@ export function RSVPPage() {
         {guest?.hasRSVPd ? (
           <p className="py-8 text-xl text-slate-500">
             {Boolean(guest.rsvp) ? (
-              <>
+              <AnimateIn>
                 Thank you for RSVP&apos;ing!
                 <br /> We can&apos;t wait to see you there.
-              </>
+              </AnimateIn>
             ) : (
-              <>
+              <AnimateIn>
                 We&apos;re sorry to hear that you can&apos;t make it. <br />
                 We&apos;ll miss you!
-              </>
+              </AnimateIn>
             )}
           </p>
         ) : null}
 
         {guest?.hasRSVPd ? (
-          <>
+          <AnimateIn>
             <Link
               href="/"
               className="hover: flex w-full items-center justify-center rounded-full border border-slate-500 py-2 text-sm font-medium hover:bg-slate-500 hover:text-white"
@@ -124,10 +121,14 @@ export function RSVPPage() {
               Back home
             </Link>
 
-            <Button onClick={unsetHasRSVPd} isLoading={isLoadingUnsetHasRSVPd}>
+            <Button
+              onClick={unsetHasRSVPd}
+              isLoading={isLoadingUnsetHasRSVPd}
+              className="mt-4"
+            >
               RSVP Again
             </Button>
-          </>
+          </AnimateIn>
         ) : null}
       </div>
 
