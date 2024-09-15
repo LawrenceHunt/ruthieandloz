@@ -19,6 +19,14 @@ const MARRIAGE_EXPRESSIONS = [
   "walking down the aisle",
   "joining in holy matrimony",
   "becoming even more of a thing",
+  "plighting one's troth",
+  "dropping anchor",
+  "conjugating",
+  "becoming a family",
+  "becoming a unit",
+  "deleting the apps",
+  "sharing dessert forever",
+  "going legally steady",
 ];
 
 function getRandomMarriageExpression() {
