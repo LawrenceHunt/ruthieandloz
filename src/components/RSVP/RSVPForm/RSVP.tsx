@@ -26,7 +26,7 @@ export function RSVP({
         return (
           <div className="flex h-full w-full flex-col items-center justify-between">
             <Image
-              src="/wedding_svgs/flowers/1.svg"
+              src="/wedding_svgs/Flowers/1.svg"
               alt="flowers"
               width={140}
               height={140}
