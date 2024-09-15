@@ -3,18 +3,47 @@ import {
   CarTaxiFront,
   CircleHelpIcon,
   GiftIcon,
-  HouseIcon,
   LuggageIcon,
   ParkingCircleIcon,
   PhoneIcon,
   TrainFrontIcon,
-  TreesIcon,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { HomepageNav } from "~/components/HomepageNav";
 import { cn } from "~/lib/cn.util";
 import { LINKS } from "~/lib/links";
+
+function Heading({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <h2 className={cn("font-reinkies text-[60px]", className)}>{children}</h2>
+  );
+}
+
+function BodySection({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "mx-auto mt-8 flex w-[400px] max-w-full flex-col gap-4",
+        className,
+      )}
+    >
+      {children}
+    </div>
+  );
+}
 
 function Section({
   id,
@@ -30,6 +59,7 @@ function Section({
       id={id}
       className={cn(
         "relative flex h-screen w-full flex-col items-center pt-8",
+        "text-lg",
         className,
       )}
     >
@@ -95,15 +125,15 @@ export default async function Home() {
         <Section id="venue">
           <Image
             src="/wedding_svgs/Others/4.svg"
-            width={200}
-            height={200}
+            width={300}
+            height={300}
             alt="swans"
           />
 
-          <h3 className="font-reinkies mt-8 text-[60px]">the Venue</h3>
+          <Heading className="mt-8">the Venue</Heading>
 
-          <div>
-            <div className="mt-2">
+          <div className="mt-8">
+            <div>
               <p>
                 Water&apos;s Edge is located in the leafy village of Ewen in
                 Gloucestershire.
@@ -146,7 +176,7 @@ export default async function Home() {
 
               <p>
                 The nearest train station is{" "}
-                <span className="font-bold">
+                <span>
                   <Link
                     href={LINKS.kemble}
                     target="_blank"
@@ -166,83 +196,101 @@ export default async function Home() {
         </Section>
 
         <Section id="taxis" className="flex flex-col gap-4">
-          <div className="flex gap-2">
-            <CarTaxiFront />
-            <h3>A list of local taxi companies:</h3>
+          <Image
+            src="/wedding_svgs/Others/8.svg"
+            alt="wedding car"
+            width={300}
+            height={300}
+          />
+
+          <Heading className="mt-4">taxis</Heading>
+
+          <div className="mt-4">
+            <p>Here&apos;s a list of local taxi companies:</p>
+
+            <ul className="mt-4">
+              <li>Reliance Taxis, Cirencester - 01285-640950</li>
+              <li>Cirencester Taxis 247 - 07735-602648</li>
+              <li>Forum Taxi, Cirencester - 01285-402270</li>
+              <li>First Taxi, Cirencester - 01285-407407</li>
+              <li>Smart Taxi, Cirencester - 01285-270270</li>
+            </ul>
           </div>
-          <ul>
-            <li>Reliance Taxis, Cirencester - 01285-640950</li>
-            <li>Cirencester Taxis 247 - 07735-602648</li>
-            <li>Forum Taxi, Cirencester - 01285-402270</li>
-            <li>First Taxi, Cirencester - 01285-407407</li>
-            <li>Smart Taxi, Cirencester - 01285-270270</li>
-          </ul>
         </Section>
 
         <Section id="schedule" className="flex h-auto flex-col gap-4">
-          <div className="flex gap-2">
-            <CalendarIcon />
-            <h3>Schedule</h3>
-          </div>
+          <Image
+            src="/wedding_svgs/Dinner/Drinks/3.svg"
+            alt="drink"
+            width={200}
+            height={200}
+          />
 
-          <div>
-            <h4>Friday 25 July</h4>
-            <p>
-              18:00-21:00 - Welcome drinks and nibbles at the Golden Cross Inn,
-              Cirencester
-            </p>
-          </div>
+          <Heading className="mt-8">Schedule</Heading>
 
-          <div>
-            <h4>Saturday 26 July</h4>
-            <p>
-              1:30 - Guests arrive at Water&apos;s Edge, Ewen
-              <br />
-              14:00 - Ceremony
-              <br />
-              14:30 - Drinks reception
-              <br />
-              16:30 - Call for Dinner
-              <br />
-              16:45 - Speeches
-              <br />
-              17:00 - Wedding breakfast served
-              <br />
-              19:00 - Cake/Tea & Coffee
-              <br />
-              19:30 - Evening entertainment starts (Band/DJ)
-              <br />
-              21:30 - Evening food served
-              <br />
-              11:30 - Last orders
-              <br />
-              00:00 - Carriages
-            </p>
-          </div>
+          <BodySection className="mx-auto mt-4 flex w-[400px] flex-col gap-4 text-base">
+            <div>
+              <h4 className="font-semibold">Friday 25 July</h4>
+              <p>
+                18:00 - Welcome drinks and nibbles at the Golden Cross Inn,
+                Cirencester
+              </p>
+            </div>
 
-          <div>
-            <p>Sunday 27 July</p>
-            <p>
-              10:00-14:00 - Pub walk and lunch at the Tunnel House Inn, Coates
-              (please let us know via the RSVP form if you&apos;ll be joining!)
-              <br />
-            </p>
-          </div>
+            <div>
+              <h4 className="font-semibold">Saturday 26 July</h4>
+              <p>
+                1:30 - Guests arrive at Water&apos;s Edge, Ewen
+                <br />
+                14:00 - Ceremony
+                <br />
+                14:30 - Drinks reception
+                <br />
+                16:30 - Call for Dinner
+                <br />
+                16:45 - Speeches
+                <br />
+                17:00 - Wedding breakfast served
+                <br />
+                19:00 - Cake/Tea & Coffee
+                <br />
+                19:30 - Evening entertainment starts (Band/DJ)
+                <br />
+                21:30 - Evening food served
+                <br />
+                11:30 - Last orders
+                <br />
+                00:00 - Carriages
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold">Sunday 27 July</h4>
+              <p>
+                10:00-14:00 - Pub walk and lunch at the Tunnel House Inn, Coates
+                (please let us know via the RSVP form if you&apos;ll be
+                joining!)
+              </p>
+            </div>
+          </BodySection>
         </Section>
 
-        <Section id="accommodation">
-          <div className="flex flex-col gap-2">
-            <HouseIcon />
-            <h3>Where should I stay?</h3>
+        <Section id="accommodation" className="pt-24">
+          <Image
+            src="/wedding_svgs/Candles/9.svg"
+            alt="candelabra"
+            width={200}
+            height={200}
+          />
 
+          <Heading className="mt-4">Where to stay</Heading>
+
+          <BodySection>
             <p>
               There are a number of lovely places to stay in the area.
               <br />
               Visit our{" "}
-              <Link
-                href={LINKS.accommodation}
-                className="text-blue-500 underline"
-              >
+              <Link href={LINKS.accommodation} className="hover:underline">
                 accommodation page
               </Link>{" "}
               for more information.
@@ -252,139 +300,160 @@ export default async function Home() {
               We definitely recommend booking early as the area can get busy in
               the summer!
             </p>
-          </div>
-        </Section>
-
-        <Section id="dress-code" className="flex flex-col gap-4">
-          <div className="flex gap-2">
-            <LuggageIcon />
-            <h3>What should I wear?</h3>
-          </div>
-
-          <div>
-            <p>
-              The theme is{" "}
-              <span className="font-semibold">summer garden party</span>.
-              Colourful and fun is encouraged. And don&apos;t forget your
-              dancing shoes!
-            </p>
-            <p>
-              Please note that the ceremony and reception will be held outdoors,
-              so please dress appropriately.
-            </p>
-            <p>
-              If joining for the pub walk on Sunday, you might want to bring
-              some comfortable shoes too.
-            </p>
-          </div>
+          </BodySection>
         </Section>
 
         <Section id="gifts" className="flex flex-col gap-4">
-          <div className="flex gap-2">
-            <GiftIcon />
-            <h3>Gifts</h3>
-          </div>
+          <Image
+            src="/wedding_svgs/Others/9.svg"
+            alt="gift image"
+            width={200}
+            height={200}
+          />
 
-          <div>
+          <Heading className="mt-8">Gifts</Heading>
+
+          <div className="mx-auto mt-8 w-[400px]">
             <p>
               Your company on our big day is the most amazing wedding present we
               could ask for.
             </p>
-            <p>
+            <p className="mt-4">
               However, if you wish to honour us with a gift, please donate to
               our favourite charities or make a contribution to our honeymoon on
               the links below. Thank you!
             </p>
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="mt-4 flex gap-12">
             <Link
               href={LINKS.honeymoonFund}
-              className="text-blue-500 underline"
+              className="font-semibold hover:underline"
             >
-              Charity donation
+              Charity fund
             </Link>
 
-            <Link href={LINKS.charityFund} className="text-blue-500 underline">
+            <Link
+              href={LINKS.charityFund}
+              className="font-semibold hover:underline"
+            >
               Honeymoon fund
             </Link>
           </div>
         </Section>
 
-        <Section id="faqs" className="flex flex-col gap-4">
-          <div className="flex gap-2">
-            <CircleHelpIcon />
-            <h3>FAQs</h3>
-          </div>
+        <Section id="faqs" className="flex h-auto flex-col gap-4">
+          <Image
+            src="/wedding_svgs/Dinner/Cakes/2.svg"
+            alt="cake"
+            width={200}
+            height={200}
+          />
 
-          <div>
-            <h3>Is it okay to take pictures during the wedding?</h3>
-            <p>
-              We have two fabulous photographers so please enjoy the phone-free
-              ceremony. But we would love for you to take photos any other time
-              and share them with us on the link below.
-            </p>
-            <Link href={LINKS.photoUpload} className="text-blue-500 underline">
-              Photo upload
-            </Link>
-          </div>
+          <Heading className="mt-8 tracking-[10px]">F.A.Qs</Heading>
 
-          <div>
-            <h3>Can I bring my kids?</h3>
+          <BodySection>
+            <div>
+              <h3 className="font-semibold">What should I wear?</h3>
+              <p>
+                The theme is{" "}
+                <span className="font-semibold">summer garden party</span>.
+                Colourful and fun is encouraged. And don&apos;t forget your
+                dancing shoes!
+              </p>
+              <p>
+                Please note that the ceremony and reception will be held
+                outdoors, so please dress appropriately.
+              </p>
+              <p>
+                If joining for the pub walk on Sunday, you might want to bring
+                some comfortable shoes too.
+              </p>
+            </div>
 
-            <p>
-              As much as we love your little ones, sadly we&apos;re not able to
-              accommodate babies or children outside of those in the wedding
-              party. However, we recognize that some of you will be traveling
-              with your kids, so please know they are welcome at the Friday
-              drinks and Sunday brunch!
-            </p>
+            <div>
+              <h3>Is it okay to take pictures during the wedding?</h3>
+              <p>
+                We have two fabulous photographers so please enjoy the
+                phone-free ceremony. But we would love for you to take photos
+                any other time and share them with us on the link below.
+              </p>
 
-            <p>
-              The venue recommends the following local babysitting services […]
-            </p>
-
-            <p>Please reach out if you have questions!</p>
-          </div>
-
-          <div>
-            <h3>
-              When is the RSVP deadline? And how do I let you know if I have any
-              dietary requirements?
-            </h3>
-            <p>
-              Please RSVP by 30 April 2025. You can let us know about any
-              dietary requirements on the{" "}
-              <Link href={LINKS.rsvp} className="text-blue-500 underline">
-                RSVP form
-              </Link>
-              . You can also email us at{" "}
               <Link
-                href="mailto:ruthieandloz@gmail.com"
+                href={LINKS.photoUpload}
                 className="text-blue-500 underline"
               >
-                ruthieandloz@gmail.com
+                Photo upload
               </Link>
-            </p>
-          </div>
+            </div>
+
+            <div>
+              <h3 className="font-semibold">May I bring my kids?</h3>
+
+              <p>
+                As much as we love your little ones, sadly we&apos;re not able
+                to accommodate babies or children outside of those in the
+                wedding party. However, we recognize that some of you will be
+                traveling with your kids, so please know they are welcome at the
+                Friday drinks and Sunday brunch!
+              </p>
+
+              <p>
+                The venue recommends the following local babysitting services
+                […]
+              </p>
+
+              <p>Please reach out if you have questions!</p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold">
+                When is the RSVP deadline? And how do I let you know if I have
+                any dietary requirements?
+              </h3>
+              <p>
+                Please RSVP by 30 April 2025. You can let us know about any
+                dietary requirements on the{" "}
+                <Link href={LINKS.rsvp} className="text-blue-500 underline">
+                  RSVP form
+                </Link>
+                . You can also email us at{" "}
+                <Link
+                  href="mailto:ruthieandloz@gmail.com"
+                  className="text-blue-500 underline"
+                >
+                  ruthieandloz@gmail.com
+                </Link>
+              </p>
+            </div>
+          </BodySection>
         </Section>
 
-        <Section id="contact">
-          <div className="flex gap-2">
-            <PhoneIcon />
-            <h3>I have questions - who should I ask?</h3>
-          </div>
-          <p>
-            Just drop an email to{" "}
-            <Link href="mailto:ruthieandloz@gmail.com">
-              ruthieandloz@gmail.com
-            </Link>
-            .
-          </p>
-          <h3>
-            Questions on the day? Call or Whatsapp our Maid of Honour Ness on
-            [Ness phone number], or Best Man Adam on [Adam phone number].
-          </h3>
+        <Section id="contact" className="pt-16">
+          <Image
+            src="/wedding_svgs/Others/5.svg"
+            alt="dove"
+            width={200}
+            height={200}
+          />
+
+          <Heading className="mt-8">Contact us</Heading>
+
+          <BodySection>
+            <p className="mt-4">
+              <span className="font-semibold">Questions for us?</span> Just drop
+              an email to{" "}
+              <Link href="mailto:ruthieandloz@gmail.com">
+                ruthieandloz@gmail.com
+              </Link>
+              .
+            </p>
+            <p>
+              <span className="font-semibold">Questions on the day?</span> Call
+              or Whatsapp our Maid of Honour Ness on [Ness phone number], or
+              Best Man Adam on [Adam phone number].
+            </p>
+          </BodySection>
         </Section>
 
         <div id="gallery"></div>

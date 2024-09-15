@@ -16,7 +16,7 @@ const homepageLinks = [
   {
     name: "taxis",
     id: "taxis",
-    imageSrc: "/wedding_svgs/Cupids/5.svg",
+    imageSrc: "/wedding_svgs/Others/8.svg",
   },
   {
     name: "schedule",
@@ -34,7 +34,7 @@ const homepageLinks = [
     imageSrc: "/wedding_svgs/Others/9.svg",
   },
   {
-    name: "faq",
+    name: "faqs",
     id: "faqs",
     imageSrc: "/wedding_svgs/Dinner/Cakes/2.svg",
   },
@@ -48,7 +48,7 @@ const homepageLinks = [
 export function HomepageNav() {
   return (
     <nav className="h-screen w-[68px]">
-      <ul className="flex h-full w-full flex-col border-r-2 border-slate-100">
+      <ul className="flex h-full w-full flex-col border-r border-dashed border-slate-800">
         {homepageLinks.map((link) => {
           return (
             <li key={link.name} className="w-full flex-1">
