@@ -58,8 +58,6 @@ export function RSVPPage() {
     resetGetGuest();
   };
 
-  console.log("guestFormError", guestFormError);
-
   return (
     <div className="mx-auto flex h-full max-w-[300px] flex-col items-center justify-center gap-4">
       <div className="flex w-full items-center justify-between">

@@ -6,6 +6,7 @@ import { Button } from "~/components/Button";
 import { Input } from "~/components/Input";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getGuestFirstName } from "./RSVP";
+import { cn } from "~/lib/cn.util";
 
 export function PlusOneRSVP({
   form,
@@ -23,6 +24,8 @@ export function PlusOneRSVP({
   const plusOneFirstName = plusOneName
     ? getGuestFirstName(plusOneName ?? "")
     : null;
+
+  const plusOneRSVP = watch("plusOneRSVP");
 
   return (
     <div className="flex h-full flex-col items-center justify-between">
@@ -117,7 +120,12 @@ export function PlusOneRSVP({
           name="plusOneDietaryRequirements"
           render={({ fieldState: { error }, field: { value, onChange } }) => {
             return (
-              <FormItem>
+              <FormItem
+                className={cn(
+                  plusOneRSVP ? "opacity-100" : "opacity-0",
+                  "transition-opacity duration-300",
+                )}
+              >
                 <h2 className="mt-4 text-lg">
                   And do they have any dietary requirements?
                 </h2>

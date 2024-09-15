@@ -20,6 +20,7 @@ export function Submit({
 }) {
   const isComing = form.watch("rsvp");
   const dietaryRequirements = form.watch("dietaryRequirements");
+  const hasPlusOne = form.watch("hasPlusOne");
   const plusOneRSVP = form.watch("plusOneRSVP");
   const plusOneName = form.watch("plusOneName");
   const plusOneDietaryRequirements = form.watch("plusOneDietaryRequirements");
@@ -51,7 +52,7 @@ export function Submit({
             </div>
           ) : null}
 
-          {plusOneRSVP ? (
+          {hasPlusOne ? (
             <>
               <div>
                 {plusOneName ?? "Your plus one"} is coming:{" "}

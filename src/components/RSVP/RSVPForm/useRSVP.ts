@@ -9,7 +9,11 @@ export function useRSVP(
 ) {
   const form = useForm<ParsedGuest>({
     resolver: zodResolver(parsedGuestSchema),
-    defaultValues: { ...guest, dietaryRequirements: "none" },
+    defaultValues: {
+      ...guest,
+      dietaryRequirements: "none",
+      plusOneDietaryRequirements: guest.hasPlusOne ? "none" : "",
+    },
   });
 
   const { mutate, data, isPending, error, isSuccess } =
