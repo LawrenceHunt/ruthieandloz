@@ -289,7 +289,7 @@ export default async function Home() {
           </BodySection>
         </Section>
 
-        <Section id="taxis" className="pt-24">
+        <Section id="taxis">
           <Image
             src="/wedding_svgs/Others/8.svg"
             alt="wedding car"
@@ -312,7 +312,7 @@ export default async function Home() {
           </div>
         </Section>
 
-        <Section id="schedule" className="flex flex-col gap-4">
+        <Section id="schedule">
           <Image
             src="/wedding_svgs/Dinner/Drinks/3.svg"
             alt="drink"
@@ -322,7 +322,7 @@ export default async function Home() {
 
           <Heading className="mt-8">Schedule</Heading>
 
-          <BodySection className="mx-auto mt-4 flex w-[400px] flex-col gap-4 text-base">
+          <BodySection className="text-base">
             <div>
               <h4 className="font-semibold">Friday 25 July</h4>
               <p>
@@ -369,7 +369,7 @@ export default async function Home() {
           </BodySection>
         </Section>
 
-        <Section id="accommodation" className="pt-24">
+        <Section id="accommodation">
           <Image
             src="/wedding_svgs/Candles/9.svg"
             alt="candelabra"
@@ -530,8 +530,8 @@ export default async function Home() {
             <div>
               <p className="font-semibold">Questions on the day?</p>
               <p>
-                Call or Whatsapp our Maid of Honour Ness on [Ness phone number],
-                or Best Man Adam on [Adam phone number].
+                Call or Whatsapp our Maid of Honour Ness on 07704-423611, or
+                Best Man Adam on 07515-017052.
               </p>
             </div>
           </BodySection>
