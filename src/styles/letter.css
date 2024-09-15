@@ -96,7 +96,7 @@ body {
 
 .letter-wrapper.active .letter {
   transform: translateY(-420px);
-  height: 60vh;
+  height: 70vh;
   width: 80vw;
   max-width: 500px;
   z-index: 5;

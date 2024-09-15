@@ -170,7 +170,7 @@ export default async function Home() {
               <p>Gloucestershire</p>
             </div>
 
-            <div className="flex w-full flex-col gap-2 text-base">
+            <div className="flex w-full flex-col gap-2 text-base lg:mt-8">
               <p className="">Please</p>
               <Link
                 className={cn(
@@ -365,7 +365,7 @@ export default async function Home() {
 
           <Heading className="mt-8">Gifts</Heading>
 
-          <div className="mx-auto mt-8 w-[400px]">
+          <BodySection className="mt-8">
             <p>
               Your company on our big day is the most amazing wedding present we
               could ask for.
@@ -375,13 +375,13 @@ export default async function Home() {
               our favourite charities or make a contribution to our honeymoon on
               the links below. Thank you!
             </p>
-          </div>
 
-          <div className="mt-4 flex gap-12">
-            <A href={LINKS.honeymoonFund}>Charity fund</A>
+            <div className="mt-4 flex gap-12">
+              <A href={LINKS.honeymoonFund}>Charity fund</A>
 
-            <A href={LINKS.charityFund}>Honeymoon fund</A>
-          </div>
+              <A href={LINKS.charityFund}>Honeymoon fund</A>
+            </div>
+          </BodySection>
         </Section>
 
         <Section id="faqs">
