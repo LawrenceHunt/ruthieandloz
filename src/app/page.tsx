@@ -160,16 +160,17 @@ export default async function Home() {
               </h1>
             </div>
 
-            <p className="mx-auto w-full text-left text-2xl">
+            <p className="mx-auto h-[80px] w-full text-left text-2xl">
               are <FlashingMarriageText />
-              <div className="mt-8 text-base">
-                <p className="font-semibold">2pm, 26th July 2025</p>
-                <p>Water&apos;s Edge at Ewen</p>
-                <p>Gloucestershire</p>
-              </div>
             </p>
 
-            <div className="mb-20 mt-8 flex w-full flex-col gap-2 text-base">
+            <div className="text-base">
+              <p className="font-semibold">2pm, 26th July 2025</p>
+              <p>Water&apos;s Edge at Ewen</p>
+              <p>Gloucestershire</p>
+            </div>
+
+            <div className="mb-20 mt-4 flex w-full flex-col gap-2 text-base">
               <p className="">Please</p>
               <Link
                 className={cn(
