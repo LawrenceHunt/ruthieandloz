@@ -22,7 +22,6 @@ const MARRIAGE_EXPRESSIONS = [
   "plighting one's troth",
   "dropping anchor",
   "conjugating",
-  "becoming a family",
   "becoming a unit",
   "deleting the apps",
   "sharing dessert forever",
