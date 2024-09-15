@@ -155,7 +155,8 @@ export default async function Home() {
                 <p className="text-2xl">are tying the knot!</p>
 
                 <div className="mt-8 text-base">
-                  <p>2pm on 26th July 2025</p>
+                  <p>Please join us</p>
+                  <p className="font-semibold">2pm on 26th July 2025</p>
                   <p>Water&apos;s Edge at Ewen</p>
                   <p>Gloucestershire</p>
                 </div>
@@ -398,29 +399,6 @@ export default async function Home() {
                 Colourful and fun is encouraged. And don&apos;t forget your
                 dancing shoes!
               </p>
-
-              <p>
-                If you&apos;re the sort of person who likes to know the colour
-                scheme, here it is...
-              </p>
-
-              <div className="grid grid-cols-3 items-center gap-2 py-8 pl-2">
-                <span>pink</span>
-                <span>purple</span>
-                <span>green</span>
-
-                <div className="bg-pink1 h-8 w-8 rounded-full" />
-                <div className="bg-purple1 h-8 w-8 rounded-full"></div>
-                <div className="bg-green1 h-8 w-8 rounded-full"></div>
-
-                <div className="bg-pink2 h-8 w-8 rounded-full" />
-                <div className="bg-purple2 h-8 w-8 rounded-full"></div>
-                <div className="bg-green2 h-8 w-8 rounded-full"></div>
-
-                <div className="bg-pink3 h-8 w-8 rounded-full" />
-                <div className="bg-purple3 h-8 w-8 rounded-full"></div>
-                <div className="bg-green3 h-8 w-8 rounded-full"></div>
-              </div>
 
               <p>
                 Please note that the ceremony and reception will be held
