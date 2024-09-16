@@ -324,7 +324,7 @@ export default async function Home() {
 
           <BodySection>
             <p>
-              There are a number of lovely places to stay in the area. We would
+              There are a number of great places to stay in the area. We would
               love to make a weekend of it with you!
             </p>
             <p>
