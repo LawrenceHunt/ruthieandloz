@@ -259,16 +259,16 @@ export default async function Home() {
             <p>Here&apos;s a list of local taxi companies:</p>
 
             <ul className="mt-4">
-              <li>Siren Cars - 01285652388</li>
-              <li>Cirencester Taxis 247 - 07735602648</li>
-              <li>Forum Taxi, Cirencester - 01285402270</li>
-              <li>First Taxi, Cirencester - 01285407407</li>
-              <li>Smart Taxi, Cirencester - 01285270270</li>
-              <li>Cirencester taxi - 01285408407</li>
-              <li>Radio cars - 01285650850</li>
-              <li>Home James - 01285641339</li>
-              <li>A2B - 01285655651</li>
-              <li>Reliance - 01285640950</li>
+              <li>A2B - 01285-655651</li>
+              <li>Cirencester taxi - 01285-408407</li>
+              <li>Cirencester Taxis 247 - 07735-602648</li>
+              <li>First Taxi - 01285-407407</li>
+              <li>Forum Taxi - 01285402270</li>
+              <li>Home James - 01285-641339</li>
+              <li>Radio cars - 01285-650850</li>
+              <li>Reliance - 01285-640950</li>
+              <li>Siren Cars - 01285-652388</li>
+              <li>Smart Taxi - 01285-270270</li>
             </ul>
           </div>
         </Section>
