@@ -5,9 +5,13 @@ import { motion } from "framer-motion";
 
 const MARRIAGE_EXPRESSIONS = [
   "getting married",
+  "Jumping the broom",
+  "Joining the old ball and chain",
+  "Putting a ring on it",
   "tying the knot",
   "getting hitched",
   "taking the plunge",
+  "signing the life sentence",
   "celebrating their nuptials",
   "saying “I do”",
   "becoming one",
@@ -20,16 +24,16 @@ const MARRIAGE_EXPRESSIONS = [
   "becoming husband and wife",
   "walking down the aisle",
   "joining in holy matrimony",
-  "becoming a thing",
   "plighting one's troth",
   "dropping anchor",
-  "conjugating",
-  "becoming a unit",
   "deleting the apps",
   "sharing dessert forever",
   "going fully legal",
   "settling down",
   "taking their vows",
+  "locking it down",
+  "updating the relationship status",
+  "sealing the deal",
 ];
 
 function getRandomMarriageExpression() {
