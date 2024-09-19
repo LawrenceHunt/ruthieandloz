@@ -5,8 +5,7 @@ import { motion } from "framer-motion";
 
 const MARRIAGE_EXPRESSIONS = [
   "getting married",
-  "Jumping the broom",
-  "Joining the old ball and chain",
+  "jumping the broom",
   "Putting a ring on it",
   "tying the knot",
   "getting hitched",
@@ -29,10 +28,9 @@ const MARRIAGE_EXPRESSIONS = [
   "deleting the apps",
   "sharing dessert forever",
   "going fully legal",
-  "settling down",
   "taking their vows",
   "locking it down",
-  "updating the relationship status",
+  "updating their relationship status",
   "sealing the deal",
 ];
 
