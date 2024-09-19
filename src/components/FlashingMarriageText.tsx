@@ -18,7 +18,6 @@ const MARRIAGE_EXPRESSIONS = [
   "making it official",
   "getting spliced",
   "sailing into the sunset",
-  "joining hands in marriage",
   "becoming husband and wife",
   "walking down the aisle",
   "joining in holy matrimony",
