@@ -10,7 +10,6 @@ const MARRIAGE_EXPRESSIONS = [
   "tying the knot",
   "getting hitched",
   "taking the plunge",
-  "signing the life sentence",
   "celebrating their nuptials",
   "saying “I do”",
   "becoming one",
