@@ -161,11 +161,11 @@ export default async function Home() {
             </div>
 
             <p className="mx-auto h-[85px] text-center text-2xl">
-              are <FlashingMarriageText />
+              <FlashingMarriageText />
             </p>
 
             <div className="text-center text-base">
-              <p className="font-semibold">2pm, 26 July 2025</p>
+              <p className="font-semibold">26 July 2025</p>
               <p>Water&apos;s Edge at Ewen</p>
               <p>Gloucestershire</p>
             </div>
@@ -207,19 +207,9 @@ export default async function Home() {
                 <A href={LINKS.venue}>Water&apos;s Edge</A> is located in the
                 leafy village of Ewen in the Cotswolds.
               </p>
-              <p>
+              <p className="mt-3">
                 It&apos;s 10 minutes drive from the nearby town of Cirencester.
               </p>
-            </div>
-
-            <div>
-              <div className="mt-4 flex gap-2">
-                <h4>Address:</h4>
-              </div>
-              <p>Water&apos;s Edge at Ewen</p>
-              <p>Cirencester</p>
-              <p> Gloucestershire</p>
-              <p>GL7 6BY</p>
             </div>
 
             <div className="mt-4">
@@ -234,9 +224,18 @@ export default async function Home() {
               <TrainFrontIcon className="mr-2 inline" />
               <span>
                 The nearest train station is <A href={LINKS.kemble}>Kemble</A>.
-                It&apos;s 2 hours from Paddington, and a 5-minute drive from the
-                venue.
+                It is 1 hour 10 minutes direct train from London Paddington. The
+                station is a 30-minute walk or a 5-minute taxi ride from the
+                venue. See <A href="#taxis">taxis</A> section.
               </span>
+            </div>
+
+            <div>
+              <h4>Address:</h4>
+              <p>Water&apos;s Edge at Ewen</p>
+              <p>Cirencester</p>
+              <p> Gloucestershire</p>
+              <p>GL7 6BY</p>
             </div>
           </BodySection>
         </Section>
@@ -286,16 +285,13 @@ export default async function Home() {
           <BodySection className="items-start">
             <div>
               <h4 className="font-semibold">Friday 25 July</h4>
-              <p>
-                18:00 - Welcome drinks [location TBC] Join us for a pre-marital
-                mingle.
-              </p>
+              <p>18:00 - Welcome drinks [location TBC]</p>
             </div>
 
             <div>
               <h4 className="font-semibold">Saturday 26 July</h4>
               <p>
-                1:30 - Guests arrive at Water&apos;s Edge, Ewen
+                13:30 - Guests arrive at Water&apos;s Edge, Ewen
                 <br />
                 14:00 - Ceremony
                 <br />
@@ -335,6 +331,11 @@ export default async function Home() {
               If you want to extend your stay beyond the weekend, here are some
               suggestions of things to do.
             </p>
+
+            <p>
+              We definitely recommend booking ASAP as the area can get busy in
+              the summer!
+            </p>
           </BodySection>
         </Section>
 
@@ -355,9 +356,9 @@ export default async function Home() {
             </p>
 
             <p className="mt-4">
-              However, if you wish to honour us with a gift, please donate to
-              our favourite charities or make a contribution to our honeymoon on
-              the links below. Thank you!
+              However, if you&apos;d like to give a gift, please donate to our
+              favourite charities or make a contribution to our honeymoon on the
+              links below.
             </p>
 
             <div className="mt-4 flex gap-12">
@@ -382,7 +383,7 @@ export default async function Home() {
             <div>
               <h3 className="font-semibold">What should I wear?</h3>
               <p>
-                The theme is{" "}
+                The dress code is{" "}
                 <span className="font-semibold text-green2">
                   summer garden party
                 </span>
@@ -391,7 +392,7 @@ export default async function Home() {
               </p>
 
               <p>
-                Please note that the ceremony and reception will be held
+                Please note that the ceremony and reception drinks will be held
                 outdoors, so please dress appropriately.
               </p>
 
@@ -412,8 +413,8 @@ export default async function Home() {
               <p>
                 As much as we love your little ones, sadly we&apos;re not able
                 to accommodate babies or children outside of those in the
-                wedding party. However, we recognize that some of you will be
-                traveling with your kids, so please know they are welcome at the
+                wedding party. However, we recognise that some of you will be
+                traveling with kids, so please know they are welcome at the
                 Friday drinks and Sunday brunch!
               </p>
 
@@ -440,17 +441,6 @@ export default async function Home() {
               </ul>
 
               <p>Please reach out if you have questions!</p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold">
-                Is it okay to take pictures during the wedding?
-              </h3>
-              <p>
-                We have two fabulous photographers so please enjoy the
-                phone-free ceremony. But we would love for you to take photos
-                any other time - and share them with us!
-              </p>
             </div>
 
             <div>

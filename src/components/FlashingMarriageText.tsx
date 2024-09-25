@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const MARRIAGE_EXPRESSIONS = [
   "getting married",
   "jumping the broom",
-  "Putting a ring on it",
+  "putting a ring on it",
   "tying the knot",
   "getting hitched",
   "taking the plunge",
@@ -64,7 +64,7 @@ export function FlashingMarriageText() {
       transition={{ duration: 2, ease: "easeInOut" }}
       className="text-center text-pink1"
     >
-      {currentExpression}
+      are {currentExpression}
     </motion.span>
   );
 }
