@@ -25,9 +25,13 @@ export function GetUserForm({
   return (
     <Form {...form}>
       <form onSubmit={onSubmitForm} className={className}>
-        <p className="text-slate-500">Thanks for getting back to us!</p>
+        <p className="text-center text-slate-500">
+          Thanks for getting back to us!
+        </p>
 
-        <h1 className="mt-2 text-3xl text-slate-700">What&apos;s your name?</h1>
+        <h1 className="mt-2 text-center text-3xl text-slate-700">
+          What&apos;s your name?
+        </h1>
 
         <FormField
           control={control}

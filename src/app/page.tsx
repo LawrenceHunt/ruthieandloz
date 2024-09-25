@@ -201,7 +201,7 @@ export default async function Home() {
 
           <Heading className="mt-8">the Venue</Heading>
 
-          <BodySection className="mt-8">
+          <BodySection className="mt-8 items-start">
             <div>
               <p>
                 <A href={LINKS.venue}>Water&apos;s Edge</A> is located in the
@@ -258,7 +258,7 @@ export default async function Home() {
             </p>
             <p>Here&apos;s a list of local taxi companies:</p>
 
-            <ul className="mt-4">
+            <ul className="ml-4 mt-4 list-disc">
               <li>A2B - 01285-655651</li>
               <li>Cirencester taxi - 01285-408407</li>
               <li>Cirencester Taxis 247 - 07735-602648</li>
@@ -283,7 +283,7 @@ export default async function Home() {
 
           <Heading className="mt-8">Schedule</Heading>
 
-          <BodySection>
+          <BodySection className="items-start">
             <div>
               <h4 className="font-semibold">Friday 25 July</h4>
               <p>
@@ -481,7 +481,7 @@ export default async function Home() {
 
           <Heading className="mt-8">Contact us</Heading>
 
-          <BodySection>
+          <BodySection className="items-start">
             <div>
               <p className="font-semibold">Questions for us?</p>
               <p>
