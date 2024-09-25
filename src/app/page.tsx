@@ -212,6 +212,14 @@ export default async function Home() {
               </p>
             </div>
 
+            <div>
+              <h4>Address:</h4>
+              <p>Water&apos;s Edge at Ewen</p>
+              <p>Cirencester</p>
+              <p> Gloucestershire</p>
+              <p>GL7 6BY</p>
+            </div>
+
             <div className="mt-4">
               <ParkingCircleIcon className="mr-2 inline" />
               <span>
@@ -226,16 +234,12 @@ export default async function Home() {
                 The nearest train station is <A href={LINKS.kemble}>Kemble</A>.
                 It is 1 hour 10 minutes direct train from London Paddington. The
                 station is a 30-minute walk or a 5-minute taxi ride from the
-                venue. See <A href="#taxis">taxis</A> section.
+                venue. See{" "}
+                <A href="#taxis" target="_self">
+                  taxis
+                </A>{" "}
+                below.
               </span>
-            </div>
-
-            <div>
-              <h4>Address:</h4>
-              <p>Water&apos;s Edge at Ewen</p>
-              <p>Cirencester</p>
-              <p> Gloucestershire</p>
-              <p>GL7 6BY</p>
             </div>
           </BodySection>
         </Section>
