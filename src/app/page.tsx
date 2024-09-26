@@ -482,21 +482,11 @@ export default async function Home() {
           <Heading className="mt-8">Contact us</Heading>
 
           <BodySection className="items-start">
-            <div>
-              <p className="font-semibold">Questions for us?</p>
-              <p>
-                Just drop an email to{" "}
-                <A href={LINKS.ruthieAndLozEmail}>ruthieandloz@gmail.com</A>.
-              </p>
-            </div>
-
-            <div>
-              <p className="font-semibold">Questions on the day?</p>
-              <p>
-                Call or Whatsapp our Maid of Honour Ness on 07704-423611, or
-                Best Man Adam on 07515-017052.
-              </p>
-            </div>
+            <p className="font-semibold">Questions for us?</p>
+            <p>
+              Just drop an email to{" "}
+              <A href={LINKS.ruthieAndLozEmail}>ruthieandloz@gmail.com</A>.
+            </p>
           </BodySection>
         </Section>
 
