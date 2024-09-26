@@ -63,6 +63,10 @@ function getPlusOneDietaryRequirementsFromRow(row: NotionGuestDBRow) {
   return getContentFromRichText(row.properties["Plus One Dietary"].rich_text);
 }
 
+function getEmailFromRow(row: NotionGuestDBRow) {
+  return row.properties.Email.email;
+}
+
 async function getGuestDBRows(): Promise<NotionGuestDBRow[]> {
   const response = await client.databases.query({
     database_id: env.NOTION_GUEST_DB_ID,
@@ -124,6 +128,11 @@ export async function updateGuestDBRow(updatedGuest: ParsedGuest) {
           },
         ],
       },
+      Email: {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        email: updatedGuest.email,
+      },
     },
   });
 
@@ -139,6 +148,7 @@ function parseGuestDBRow(row: NotionGuestDBRow): ParsedGuest {
   const plusOneName = getPlusOneNameFromRow(row);
   const plusOneRSVP = getPlusOneRSVPFromRow(row);
   const plusOneDietaryRequirements = getPlusOneDietaryRequirementsFromRow(row);
+  const email = getEmailFromRow(row);
 
   const guest = {
     id: row.id,
@@ -150,6 +160,7 @@ function parseGuestDBRow(row: NotionGuestDBRow): ParsedGuest {
     plusOneName,
     plusOneRSVP,
     plusOneDietaryRequirements,
+    email,
   };
 
   const parsedGuest = parsedGuestSchema.safeParse(guest);
@@ -215,11 +226,4 @@ export const guestsRouter = createTRPCRouter({
         response,
       };
     }),
-
-  getGuests: publicProcedure.query(async () => {
-    const guests = await getGuestDBRows();
-    return {
-      guests,
-    };
-  }),
 });

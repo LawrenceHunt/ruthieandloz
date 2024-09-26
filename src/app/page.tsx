@@ -51,7 +51,7 @@ function BodySection({
   return (
     <div
       className={cn(
-        "mx-auto mt-8 flex w-[400px] max-w-full flex-col items-center gap-4",
+        "mx-auto mt-8 flex w-[400px] max-w-full flex-col items-center",
         className,
       )}
     >
@@ -160,9 +160,12 @@ export default async function Home() {
               </h1>
             </div>
 
-            <p className="mx-auto h-[85px] text-center text-2xl">
-              <FlashingMarriageText />
-            </p>
+            <div className="flex flex-col items-center px-2 text-2xl">
+              <p>are</p>
+              <p className="h-[85px] w-[250px] text-center lg:w-[380px]">
+                <FlashingMarriageText />
+              </p>
+            </div>
 
             <div className="text-center text-base">
               <p className="font-semibold">26 July 2025</p>
@@ -170,7 +173,7 @@ export default async function Home() {
               <p>Gloucestershire</p>
             </div>
 
-            <div className="flex w-full flex-col gap-2 text-center text-base lg:mt-8">
+            <div className="mt-4 flex w-full flex-col gap-2 text-center text-base lg:mt-8">
               <p className="">Please</p>
               <Link
                 className={cn(

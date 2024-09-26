@@ -129,7 +129,15 @@ export function DietaryRequirements({
                 Back
               </Button>
 
-              <Button onClick={onSubmit} className="gap-1">
+              <Button
+                onClick={async () => {
+                  const response = await form.trigger("dietaryRequirements");
+                  if (response) {
+                    onSubmit();
+                  }
+                }}
+                className="gap-1"
+              >
                 Next
                 <ArrowRight className="h-4 w-4" />
               </Button>

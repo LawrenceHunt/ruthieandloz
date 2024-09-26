@@ -14,7 +14,7 @@ const MARRIAGE_EXPRESSIONS = [
   "saying “I do”",
   "becoming one",
   "becoming Mr & Mrs",
-  "upgrading their home contents insurance",
+  "upgrading their home insurance",
   "making it official",
   "getting spliced",
   "sailing into the sunset",
@@ -30,6 +30,7 @@ const MARRIAGE_EXPRESSIONS = [
   "locking it down",
   "updating their relationship status",
   "sealing the deal",
+  "sharing a Netflix account",
 ];
 
 function getRandomMarriageExpression() {
@@ -64,7 +65,7 @@ export function FlashingMarriageText() {
       transition={{ duration: 2, ease: "easeInOut" }}
       className="text-center text-pink1"
     >
-      are {currentExpression}
+      {currentExpression}
     </motion.span>
   );
 }

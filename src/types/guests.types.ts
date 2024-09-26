@@ -71,11 +71,22 @@ export const parsedGuestSchema = z.object({
   name: z.string(),
   hasRSVPd: z.boolean(),
   rsvp: z.boolean(),
-  dietaryRequirements: z.string(),
+  dietaryRequirements: z.string().refine(
+    (value) => {
+      if (value.startsWith("other:")) {
+        return value.length > 6; // "other:" is 6 characters long, so it should be longer than 6
+      }
+      return true;
+    },
+    {
+      message: "Please supply additional details.",
+    },
+  ),
   hasPlusOne: z.boolean(),
   plusOneName: z.string().nullable(),
   plusOneRSVP: z.boolean().nullable(),
   plusOneDietaryRequirements: z.string().nullable(),
+  email: z.string().email(),
 });
 
 export type ParsedGuest = z.infer<typeof parsedGuestSchema>;
