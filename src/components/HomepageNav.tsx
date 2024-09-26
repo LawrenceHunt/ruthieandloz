@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const homepageLinks = [
   {
@@ -52,16 +53,13 @@ export function HomepageNav() {
         {homepageLinks.map((link) => {
           return (
             <li key={link.name} className="w-full flex-1">
-              <button
-                onClick={() => {
-                  const element = document.getElementById(link.id);
-                  element?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="hover:bg-pink1/10 flex h-full w-full flex-col items-center justify-center gap-1"
+              <Link
+                href={`#${link.id}`}
+                className="flex h-full w-full flex-col items-center justify-center gap-1 hover:bg-pink1/10"
               >
                 <Image width={40} height={40} src={link.imageSrc} alt="image" />
                 <span className="text-[10px] uppercase">{link.name}</span>
-              </button>
+              </Link>
             </li>
           );
         })}
