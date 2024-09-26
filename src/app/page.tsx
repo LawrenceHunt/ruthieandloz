@@ -167,7 +167,7 @@ export default async function Home() {
               </p>
             </div>
 
-            <div className="text-center text-base">
+            <div className="text-center text-base lg:text-lg">
               <p className="font-semibold">26 July 2025</p>
               <p>Water&apos;s Edge at Ewen</p>
               <p>Gloucestershire</p>
@@ -247,38 +247,6 @@ export default async function Home() {
           </BodySection>
         </Section>
 
-        <Section id="taxis">
-          <Image
-            src="/wedding_svgs/Others/8.svg"
-            alt="wedding car"
-            width={200}
-            height={200}
-          />
-
-          <Heading className="mt-8">taxis</Heading>
-
-          <div className="mt-8">
-            <p>
-              In the lovely rural Cotswolds, you will need to book taxis in
-              advance.
-            </p>
-            <p>Here&apos;s a list of local taxi companies:</p>
-
-            <ul className="ml-4 mt-4 list-disc">
-              <li>A2B - 01285-655651</li>
-              <li>Cirencester Taxi - 01285408407</li>
-              <li>Cirencester Taxis 247 - 07735602648</li>
-              <li>First Taxi - 01285407407</li>
-              <li>Forum Taxi - 01285402270</li>
-              <li>Home James - 01285641339</li>
-              <li>Radio Cars - 01285650850</li>
-              <li>Reliance - 01285640950</li>
-              <li>Siren Cars - 01285652388</li>
-              <li>Smart Taxi - 01285270270</li>
-            </ul>
-          </div>
-        </Section>
-
         <Section id="schedule">
           <Image
             src="/wedding_svgs/Dinner/Drinks/3.svg"
@@ -349,6 +317,38 @@ export default async function Home() {
               the summer!
             </p>
           </BodySection>
+        </Section>
+
+        <Section id="taxis">
+          <Image
+            src="/wedding_svgs/Others/8.svg"
+            alt="wedding car"
+            width={200}
+            height={200}
+          />
+
+          <Heading className="mt-8">taxis</Heading>
+
+          <div className="mt-8">
+            <p>
+              In the lovely rural Cotswolds, you will need to book taxis in
+              advance.
+            </p>
+            <p>Here&apos;s a list of local taxi companies:</p>
+
+            <ul className="ml-4 mt-4 list-disc">
+              <li>A2B - 01285-655651</li>
+              <li>Cirencester Taxi - 01285408407</li>
+              <li>Cirencester Taxis 247 - 07735602648</li>
+              <li>First Taxi - 01285407407</li>
+              <li>Forum Taxi - 01285402270</li>
+              <li>Home James - 01285641339</li>
+              <li>Radio Cars - 01285650850</li>
+              <li>Reliance - 01285640950</li>
+              <li>Siren Cars - 01285652388</li>
+              <li>Smart Taxi - 01285270270</li>
+            </ul>
+          </div>
         </Section>
 
         <Section id="gifts" className="flex flex-col gap-4">

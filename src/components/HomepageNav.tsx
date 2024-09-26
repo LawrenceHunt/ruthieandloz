@@ -15,11 +15,6 @@ const homepageLinks = [
     imageSrc: "/wedding_svgs/Others/4.svg",
   },
   {
-    name: "taxis",
-    id: "taxis",
-    imageSrc: "/wedding_svgs/Others/8.svg",
-  },
-  {
     name: "schedule",
     id: "schedule",
     imageSrc: "/wedding_svgs/Dinner/Drinks/3.svg",
@@ -28,6 +23,11 @@ const homepageLinks = [
     name: "accomm.",
     id: "accommodation",
     imageSrc: "/wedding_svgs/Candles/9.svg",
+  },
+  {
+    name: "taxis",
+    id: "taxis",
+    imageSrc: "/wedding_svgs/Others/8.svg",
   },
   {
     name: "gifts",
