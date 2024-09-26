@@ -189,7 +189,7 @@ export default async function Home() {
               >
                 RSVP
               </Link>
-              <p className="mt-2">by 30th April 2025</p>
+              <p className="mt-2">by 30 April 2025</p>
             </div>
           </BodySection>
         </Section>
@@ -266,15 +266,15 @@ export default async function Home() {
 
             <ul className="ml-4 mt-4 list-disc">
               <li>A2B - 01285-655651</li>
-              <li>Cirencester taxi - 01285-408407</li>
-              <li>Cirencester Taxis 247 - 07735-602648</li>
-              <li>First Taxi - 01285-407407</li>
+              <li>Cirencester Taxi - 01285408407</li>
+              <li>Cirencester Taxis 247 - 07735602648</li>
+              <li>First Taxi - 01285407407</li>
               <li>Forum Taxi - 01285402270</li>
-              <li>Home James - 01285-641339</li>
-              <li>Radio cars - 01285-650850</li>
-              <li>Reliance - 01285-640950</li>
-              <li>Siren Cars - 01285-652388</li>
-              <li>Smart Taxi - 01285-270270</li>
+              <li>Home James - 01285641339</li>
+              <li>Radio Cars - 01285650850</li>
+              <li>Reliance - 01285640950</li>
+              <li>Siren Cars - 01285652388</li>
+              <li>Smart Taxi - 01285270270</li>
             </ul>
           </div>
         </Section>
@@ -289,15 +289,16 @@ export default async function Home() {
 
           <Heading className="mt-8">Schedule</Heading>
 
-          <BodySection className="items-start">
+          <BodySection className="items-start gap-4">
             <div>
               <h4 className="font-semibold">Friday 25 July</h4>
-              <p>18:00 - Welcome drinks [location TBC]</p>
+              <p className="text-sm lg:text-base">18:00 - Welcome drinks</p>
+              <p className="text-sm lg:text-base">[location TBC]</p>
             </div>
 
             <div>
               <h4 className="font-semibold">Saturday 26 July</h4>
-              <p>
+              <p className="text-sm lg:text-base">
                 13:30 - Guests arrive at Water&apos;s Edge, Ewen
                 <br />
                 14:00 - Ceremony
@@ -310,22 +311,26 @@ export default async function Home() {
 
             <div>
               <h4 className="font-semibold">Sunday 27 July</h4>
-              <p>11:00 - Happily ever afterparty! [location TBC]</p>
+              <p className="text-sm lg:text-base">
+                11:00 - Happily ever afterparty!
+              </p>
+              <p className="text-sm lg:text-base">[location TBC]</p>
             </div>
           </BodySection>
         </Section>
 
-        <Section id="accommodation">
+        <Section id="accommodation" className="pt-0">
           <Image
             src="/wedding_svgs/Candles/9.svg"
             alt="candelabra"
             width={200}
             height={200}
+            className="translate-y-[-5px]"
           />
 
           <Heading className="mt-4">Where to stay</Heading>
 
-          <BodySection>
+          <BodySection className="gap-4">
             <p>
               There are a number of great places to stay in the area. We would
               love to make a weekend of it with you!
@@ -359,19 +364,17 @@ export default async function Home() {
           <BodySection className="mt-8">
             <p>
               Spending our big day with you is the most amazing wedding present
-              we could ask for.
+              we could ask for!
             </p>
 
             <p className="mt-4">
               However, if you&apos;d like to give a gift, please donate to our
               favourite charities or make a contribution to our honeymoon on the
-              links below.
+              link below.
             </p>
 
             <div className="mt-4 flex gap-12">
-              <A href={LINKS.honeymoonFund}>Charity fund</A>
-
-              <A href={LINKS.charityFund}>Honeymoon fund</A>
+              <A href={LINKS.honeymoonFund}>Charity & Honeymoon fund</A>
             </div>
           </BodySection>
         </Section>
@@ -386,8 +389,8 @@ export default async function Home() {
 
           <Heading className="mt-8 tracking-[10px]">F.A.Qs</Heading>
 
-          <BodySection>
-            <div>
+          <BodySection className="gap-4">
+            <div className="flex flex-col gap-3">
               <h3 className="font-semibold">What should I wear?</h3>
               <p>
                 The dress code is{" "}
@@ -414,7 +417,7 @@ export default async function Home() {
               </p>
             </div>
 
-            <div>
+            <div className="flex flex-col gap-3">
               <h3 className="font-semibold">May I bring my kids?</h3>
 
               <p>
@@ -450,7 +453,7 @@ export default async function Home() {
               <p>Please reach out if you have questions!</p>
             </div>
 
-            <div>
+            <div className="flex flex-col gap-3">
               <h3 className="font-semibold">
                 When is the RSVP deadline? And how do I let you know if I have
                 any dietary requirements?

@@ -51,7 +51,7 @@ export function FlashingMarriageText() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentExpression(getRandomMarriageExpression());
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
