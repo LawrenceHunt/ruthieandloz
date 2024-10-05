@@ -60,7 +60,7 @@ export function RSVPPage() {
 
   return (
     <div className="mx-auto flex h-full max-w-[300px] flex-col items-center justify-center gap-4">
-      <div className="flex w-full items-center justify-between">
+      <div className="flex w-full items-center justify-between pt-2">
         <Link href="/" className="underline">
           Home
         </Link>
@@ -81,7 +81,10 @@ export function RSVPPage() {
       <h1 className="self-center text-3xl text-slate-500">- RSVP -</h1>
 
       <div
-        className={cn("flex min-h-[300px] w-full flex-col items-center gap-4")}
+        className={cn(
+          "flex w-full flex-col items-center gap-4",
+          "min-h-[300px]",
+        )}
       >
         {guestIsLoading ? (
           <div className="flex h-full w-full items-center justify-center">
@@ -98,9 +101,11 @@ export function RSVPPage() {
         ) : null}
 
         {guestFormError ? (
-          <p className="flex h-full w-full items-center justify-center text-base text-red-500">
-            {guestFormError}
-          </p>
+          <AnimateIn>
+            <p className="flex h-full w-full items-center justify-center text-base text-pink1">
+              {guestFormError}
+            </p>
+          </AnimateIn>
         ) : null}
 
         {guest?.hasRSVPd ? (
@@ -139,19 +144,17 @@ export function RSVPPage() {
         ) : null}
       </div>
 
-      <div className="">
-        <AnimatedLetter
-          wrapperClassName={guest && !guest?.hasRSVPd ? "active" : ""}
-        >
-          {guest && !guest?.hasRSVPd ? (
-            <RSVPForm
-              guest={guest}
-              onSuccess={refetchUser}
-              onClickBack={onClickBack}
-            />
-          ) : null}
-        </AnimatedLetter>
-      </div>
+      <AnimatedLetter
+        wrapperClassName={guest && !guest?.hasRSVPd ? "active" : ""}
+      >
+        {guest && !guest?.hasRSVPd ? (
+          <RSVPForm
+            guest={guest}
+            onSuccess={refetchUser}
+            onClickBack={onClickBack}
+          />
+        ) : null}
+      </AnimatedLetter>
     </div>
   );
 }

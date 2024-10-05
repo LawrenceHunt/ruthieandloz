@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 const MARRIAGE_EXPRESSIONS = [
   "getting married",
@@ -13,7 +12,7 @@ const MARRIAGE_EXPRESSIONS = [
   "celebrating their nuptials",
   "saying “I do”",
   "becoming one",
-  "becoming Mr & Mrs",
+  "becoming Mr and Mrs",
   "upgrading their home insurance",
   "making it official",
   "getting spliced",
@@ -33,39 +32,61 @@ const MARRIAGE_EXPRESSIONS = [
   "sharing a Netflix account",
 ];
 
-function getRandomMarriageExpression() {
-  return MARRIAGE_EXPRESSIONS[
-    Math.floor(Math.random() * MARRIAGE_EXPRESSIONS.length)
-  ]!;
-}
-
-export function FlashingMarriageText() {
-  // A bit of animated text to show the different ways to say "getting married".
-  // Every 3 seconds, the text will change to a different expression.
-  // This will loop through all the expressions and then start again.
-
-  const [currentExpression, setCurrentExpression] = useState<string>(
-    MARRIAGE_EXPRESSIONS[0]!,
-  );
+export function TypingAnimation({
+  words = MARRIAGE_EXPRESSIONS,
+}: {
+  words?: string[];
+}) {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentExpression(getRandomMarriageExpression());
-    }, 3000);
+    const handleTyping = () => {
+      if (isPaused) return;
+
+      if (isDeleting) {
+        if (currentLetterIndex > 0) {
+          setCurrentLetterIndex(currentLetterIndex - 1);
+        } else {
+          setIsDeleting(false);
+          setIsPaused(true);
+
+          setTimeout(() => {
+            setCurrentWordIndex(
+              Math.floor(Math.random() * MARRIAGE_EXPRESSIONS.length),
+            );
+            setIsPaused(false);
+          }, 300);
+        }
+      } else {
+        if (currentLetterIndex < words[currentWordIndex]!.length) {
+          setCurrentLetterIndex(currentLetterIndex + 1);
+        } else {
+          setIsDeleting(true);
+          setIsPaused(true);
+
+          setTimeout(() => {
+            setIsPaused(false);
+          }, 3500);
+        }
+      }
+    };
+
+    const interval = setInterval(handleTyping, 50);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [currentLetterIndex, isDeleting, currentWordIndex, words, isPaused]);
 
-  return currentExpression === null ? null : (
-    <motion.span
-      key={currentExpression}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 2, ease: "easeInOut" }}
-      className="text-center text-pink1"
-    >
-      {currentExpression}
-    </motion.span>
+  return (
+    <>
+      {words[currentWordIndex]!.substring(0, currentLetterIndex)}
+      {isPaused ? (
+        <span className="animate-blink inline-block translate-y-[-2px] text-2xl">
+          |
+        </span>
+      ) : null}
+    </>
   );
 }

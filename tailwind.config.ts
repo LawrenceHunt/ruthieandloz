@@ -23,10 +23,17 @@ export default {
         purple2: "rgb(var(--color-purple2) / <alpha-value>)",
         purple3: "rgb(var(--color-purple3) / <alpha-value>)",
       },
+      animation: {
+        blink: "blink 1.4s step-end infinite",
+      },
+      keyframes: {
+        blink: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
+        },
+      },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    // ...
-  ],
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;

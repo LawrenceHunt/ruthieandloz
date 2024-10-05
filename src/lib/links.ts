@@ -1,5 +1,6 @@
 export const LINKS = {
   venue: "https://www.watersedgeatewen.co.uk/",
+  venueMap: "https://maps.app.goo.gl/xJFPzdJQT3dfNwRB9",
   rsvp: "/rsvp",
   photoUpload: "",
   accommodation: "/accommodation",
