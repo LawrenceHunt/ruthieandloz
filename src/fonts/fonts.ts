@@ -47,3 +47,47 @@ export const reinkies = localFont({
   ],
   variable: "--font-reinkies",
 });
+
+export const birdCharms = localFont({
+  src: [
+    {
+      path: "./bird-charms/regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-bird-charms",
+});
+
+export const boisDeJasmine = localFont({
+  src: [
+    {
+      path: "./bois-de-jasmine/regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-bois-de-jasmine",
+});
+
+export const darlingVintage = localFont({
+  src: [
+    {
+      path: "./darling-vintage/regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-darling-vintage",
+});
+
+export const palomaSignature = localFont({
+  src: [
+    {
+      path: "./paloma-signature/regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-paloma-signature",
+});
