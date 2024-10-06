@@ -16,6 +16,7 @@ export default async function Home() {
 
       <main className="relative h-full flex-1 overflow-x-hidden overflow-y-scroll p-4 py-0">
         <Hands />
+        {/* <Intro /> */}
         <Hero />
         <Venue />
         <Schedule />

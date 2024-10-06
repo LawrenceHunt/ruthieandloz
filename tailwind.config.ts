@@ -9,6 +9,13 @@ export default {
         canela: ["var(--font-canela)", ...fontFamily.sans],
         "vintage-brush": ["var(--font-vintage-brush)", ...fontFamily.sans],
         reinkies: ["var(--font-reinkies)", ...fontFamily.sans],
+        "bird-charms": ["var(--font-bird-charms)", ...fontFamily.sans],
+        "bois-de-jasmine": ["var(--font-bois-de-jasmine)", ...fontFamily.sans],
+        "darling-vintage": ["var(--font-darling-vintage)", ...fontFamily.sans],
+        "paloma-signature": [
+          "var(--font-paloma-signature)",
+          ...fontFamily.sans,
+        ],
       },
       colors: {
         pink1: "rgb(var(--color-pink1) / <alpha-value>)",
