@@ -38,7 +38,7 @@ export default function RootLayout({
         "h-full w-full",
       )}
     >
-      <body className="h-full w-full bg-white font-canela">
+      <body className="h-full w-full bg-[#FFF9F0] font-canela">
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
