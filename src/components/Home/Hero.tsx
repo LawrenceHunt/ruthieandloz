@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { BodySection, Section } from "./Section";
-import { FlashingMarriageText, TypingAnimation } from "../FlashingMarriageText";
+import { TypingAnimation } from "../FlashingMarriageText";
 import Link from "next/link";
 import { cn } from "~/lib/cn.util";
 import { LINKS } from "~/lib/links";
@@ -79,7 +79,6 @@ export function Hero() {
         <div className="flex flex-col items-center px-2 text-2xl">
           <p>are</p>
           <p className="h-[85px] w-[250px] text-center text-pink1 lg:w-[380px]">
-            {/* <FlashingMarriageText /> */}
             <TypingAnimation />
           </p>
         </div>
@@ -95,8 +94,9 @@ export function Hero() {
           <Link
             className={cn(
               "rounded-full",
+              "flex items-center justify-center",
               "px-8 py-2",
-              "text-2xl",
+              "text-[20px]",
               "flex items-center justify-center",
               "border border-black",
               "hover:border-pink1 hover:bg-pink1 hover:text-white",
