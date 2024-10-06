@@ -1,10 +1,19 @@
 import "~/styles/globals.css";
 import "~/styles/letter.css";
 
-import { canela, vintageBrush, reinkies } from "~/fonts/fonts";
+import {
+  canela,
+  vintageBrush,
+  reinkies,
+  birdCharms,
+  boisDeJasmine,
+  darlingVintage,
+  palomaSignature,
+} from "~/fonts/fonts";
 import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import { cn } from "~/lib/cn.util";
 
 export const metadata: Metadata = {
   title: "Ruthie and Loz",
@@ -18,9 +27,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${canela.variable} ${vintageBrush.variable} ${reinkies.variable} h-full w-full`}
+      className={cn(
+        canela.variable,
+        vintageBrush.variable,
+        reinkies.variable,
+        birdCharms.variable,
+        boisDeJasmine.variable,
+        darlingVintage.variable,
+        palomaSignature.variable,
+        "h-full w-full",
+      )}
     >
-      <body className="h-full w-full bg-[#FFF9F0] font-canela">
+      <body className="h-full w-full bg-white font-canela">
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
