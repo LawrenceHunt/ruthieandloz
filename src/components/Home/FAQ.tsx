@@ -50,8 +50,8 @@ export function FAQ() {
           <p>
             As much as we love your little ones, sadly we&apos;re not able to
             accommodate babies or children outside of those in the wedding
-            party. However, we recognise that some of you will be traveling with
-            kids, so please know they are welcome at the Friday drinks and
+            party. However, we recognise that some of you will be travelling
+            with kids, so please know they are welcome at the Friday drinks and
             Sunday brunch!
           </p>
 
