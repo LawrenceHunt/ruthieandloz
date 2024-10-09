@@ -41,6 +41,7 @@ export function TypingAnimation({
   const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [usedIndices, setUsedIndices] = useState<number[]>([]);
 
   useEffect(() => {
     const handleTyping = () => {
@@ -54,9 +55,23 @@ export function TypingAnimation({
           setIsPaused(true);
 
           setTimeout(() => {
-            setCurrentWordIndex(
-              Math.floor(Math.random() * MARRIAGE_EXPRESSIONS.length),
-            );
+            let nextIndex: number;
+            const remainingIndices = words
+              .map((_, index) => index)
+              .filter((index) => !usedIndices.includes(index));
+
+            if (remainingIndices.length === 0) {
+              nextIndex = Math.floor(Math.random() * words.length);
+              setUsedIndices([nextIndex]);
+            } else {
+              nextIndex =
+                remainingIndices[
+                  Math.floor(Math.random() * remainingIndices.length)
+                ]!;
+              setUsedIndices([...usedIndices, nextIndex]);
+            }
+
+            setCurrentWordIndex(nextIndex);
             setIsPaused(false);
           }, 300);
         }
@@ -77,16 +92,21 @@ export function TypingAnimation({
     const interval = setInterval(handleTyping, 50);
 
     return () => clearInterval(interval);
-  }, [currentLetterIndex, isDeleting, currentWordIndex, words, isPaused]);
+  }, [
+    currentLetterIndex,
+    isDeleting,
+    currentWordIndex,
+    words,
+    isPaused,
+    usedIndices,
+  ]);
 
   return (
     <>
       {words[currentWordIndex]!.substring(0, currentLetterIndex)}
-      {isPaused ? (
-        <span className="animate-blink inline-block translate-y-[-2px] text-2xl">
-          |
-        </span>
-      ) : null}
+      <span className="inline-block translate-y-[-2px] animate-blink text-2xl">
+        |
+      </span>
     </>
   );
 }
