@@ -11,7 +11,6 @@ const MARRIAGE_EXPRESSIONS = [
   "taking the plunge",
   "celebrating their nuptials",
   "saying “I do”",
-  "becoming one",
   "becoming Mr and Mrs",
   "upgrading their home insurance",
   "making it official",
@@ -30,6 +29,8 @@ const MARRIAGE_EXPRESSIONS = [
   "updating their relationship status",
   "sealing the deal",
   "sharing a Netflix account",
+  "signing the papers",
+  "consciously coupling",
 ];
 
 export function TypingAnimation({
