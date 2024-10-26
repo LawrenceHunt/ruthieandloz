@@ -11,7 +11,7 @@ const MARRIAGE_EXPRESSIONS = [
   "taking the plunge",
   "celebrating their nuptials",
   "saying “I do”",
-  "becoming Mr and Mrs",
+  "becoming Mr. and Mrs.",
   "upgrading their home insurance",
   "making it official",
   "getting spliced",

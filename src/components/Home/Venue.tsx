@@ -21,8 +21,8 @@ export function Venue() {
       <BodySection className="mt-8 items-start">
         <div>
           <p>
-            <A href={LINKS.venue}>Water&apos;s Edge</A> is located in the leafy
-            village of Ewen in the Cotswolds.
+            <A href={LINKS.venue}>Water&apos;s Edge</A> is in the leafy village
+            of Ewen in the Cotswolds.
           </p>
           <p className="mt-4">
             It&apos;s 10 minutes drive from the nearby town of Cirencester.
@@ -30,7 +30,7 @@ export function Venue() {
         </div>
 
         <div className="mt-4">
-          <h4>Address:</h4>
+          <h4 className="font-semibold">Address:</h4>
           <p>Water&apos;s Edge at Ewen</p>
           <p>Cirencester</p>
           <p> Gloucestershire</p>

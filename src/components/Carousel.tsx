@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
+import Autoplay from "embla-carousel-autoplay";
 import { cn } from "~/lib/cn.util";
 
 export function Carousel({
@@ -21,35 +22,38 @@ export function Carousel({
       axis: isVertical ? "y" : "x",
     },
     [
-      AutoScroll({
-        speed: 0.3,
-        direction: isBackward ? "backward" : "forward",
+      Autoplay({
+        delay: 10000,
+        stopOnInteraction: true,
       }),
     ],
+    // [
+    //   AutoScroll({
+    //     speed: 0.3,
+    //     direction: isBackward ? "backward" : "forward",
+    //   }),
+    // ],
   );
-
-  useEffect(() => {
-    if (emblaApi) {
-      const autoScroll = emblaApi.plugins().autoScroll;
-      if (autoScroll) {
-        autoScroll.play();
-      }
-    }
-  }, [emblaApi]);
 
   return (
     <div
-      className="h-full w-full overflow-scroll"
-      onClick={() => emblaApi?.scrollNext()}
       ref={emblaRef}
+      className="no-scrollbar h-full w-full overflow-x-scroll"
+      onClick={() => emblaApi?.scrollNext()}
     >
       <div
         className={cn(
-          "flex items-center gap-2",
+          "flex h-full items-start gap-2",
           isVertical ? "flex-col" : "flex-row",
         )}
       >
-        {children}
+        {React.Children.map(children, (child) => {
+          return (
+            <div className="h-full w-full flex-shrink-0">
+              {React.cloneElement(child, {})}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

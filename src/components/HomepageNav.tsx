@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { cn } from "~/lib/cn.util";
 
 const homepageLinks = [
   {
@@ -46,9 +47,9 @@ const homepageLinks = [
   },
 ];
 
-export function HomepageNav() {
+export function HomepageNav({ className }: { className?: string }) {
   return (
-    <nav className="h-screen w-[68px]">
+    <nav className={cn("h-screen", className)}>
       <ul className="flex h-full w-full flex-col border-r border-dashed border-slate-800">
         {homepageLinks.map((link) => {
           return (

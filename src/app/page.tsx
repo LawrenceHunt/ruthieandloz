@@ -4,6 +4,7 @@ import { FAQ } from "~/components/Home/FAQ";
 import { Gifts } from "~/components/Home/Gifts";
 import { Hands } from "~/components/Home/Hands";
 import { Hero } from "~/components/Home/Hero";
+import { Intro } from "~/components/Home/Intro";
 import { Schedule } from "~/components/Home/Schedule";
 import { Taxis } from "~/components/Home/Taxis";
 import { Venue } from "~/components/Home/Venue";
@@ -11,21 +12,20 @@ import { HomepageNav } from "~/components/HomepageNav";
 
 export default async function Home() {
   return (
-    <div className="flex h-screen">
-      <HomepageNav />
+    <div className="flex h-full w-full overflow-x-hidden">
+      <HomepageNav className="w-[68px]" />
 
-      <main className="relative h-full flex-1 overflow-x-hidden overflow-y-scroll p-4 py-0">
-        <Hands />
+      <main className="relative inline-block h-full flex-1">
+        {/* <Hands /> */}
+        {/* <Hero /> */}
         {/* <Intro /> */}
-        <Hero />
-        <Venue />
-        <Schedule />
-        <Accommodation />
-        <Taxis />
-        <Gifts />
-        <FAQ />
+        {/* <Venue /> */}
+        {/* <Schedule /> */}
+        {/* <Accommodation /> */}
+        {/* <Taxis /> */}
+        {/* <Gifts /> */}
+        {/* <FAQ /> */}
         <Contact />
-        <div id="gallery"></div>
       </main>
     </div>
   );

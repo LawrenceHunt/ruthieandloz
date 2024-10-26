@@ -30,6 +30,20 @@ export default {
         purple2: "rgb(var(--color-purple2) / <alpha-value>)",
         purple3: "rgb(var(--color-purple3) / <alpha-value>)",
       },
+
+      backgroundImage: {
+        border1: "url('/wedding_svgs/Borders&Frames/1.svg')",
+        border2: "url('/wedding_svgs/Borders&Frames/2.svg')",
+        border3: "url('/wedding_svgs/Borders&Frames/3.svg')",
+        border4: "url('/wedding_svgs/Borders&Frames/4.svg')",
+        border5: "url('/wedding_svgs/Borders&Frames/5.svg')",
+        border6: "url('/wedding_svgs/Borders&Frames/6.svg')",
+        border7: "url('/wedding_svgs/Borders&Frames/7.svg')",
+        border8: "url('/wedding_svgs/Borders&Frames/8.svg')",
+        border9: "url('/wedding_svgs/Borders&Frames/9.svg')",
+        border10: "url('/wedding_svgs/Borders&Frames/10.svg')",
+        border11: "url('/wedding_svgs/Borders&Frames/11.svg')",
+      },
       animation: {
         blink: "blink 1.4s step-end infinite",
       },
