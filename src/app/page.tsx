@@ -16,15 +16,15 @@ export default async function Home() {
       <HomepageNav className="w-[68px]" />
 
       <main className="relative inline-block h-full flex-1">
-        {/* <Hands /> */}
-        {/* <Hero /> */}
-        {/* <Intro /> */}
-        {/* <Venue /> */}
-        {/* <Schedule /> */}
-        {/* <Accommodation /> */}
-        {/* <Taxis /> */}
-        {/* <Gifts /> */}
-        {/* <FAQ /> */}
+        <Hands />
+        <Hero />
+        <Intro />
+        <Venue />
+        <Schedule />
+        <Accommodation />
+        <Taxis />
+        <Gifts />
+        <FAQ />
         <Contact />
       </main>
     </div>
