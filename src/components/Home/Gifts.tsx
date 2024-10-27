@@ -15,7 +15,7 @@ export function Gifts() {
         className="h-[200px] w-[200px] lg:h-[300px] lg:w-[300px]"
       />
 
-      <Heading className="mt-8">Gifts</Heading>
+      <Heading className="mt-2">Gifts</Heading>
 
       <BodySection className="mt-8">
         <p>

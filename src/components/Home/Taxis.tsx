@@ -47,7 +47,7 @@ const taxis = [
 
 export function Taxis() {
   return (
-    <Section id="taxis" className="mt-12">
+    <Section id="taxis" className="">
       <Image
         src="/wedding_svgs/Others/8.svg"
         alt="wedding car"

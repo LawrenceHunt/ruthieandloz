@@ -71,7 +71,9 @@ export function Hero() {
           <h1 className="inline-block font-reinkies">
             <span className="text-[100px] leading-[80px]">Ruthie</span>
             <br />
-            <span className="text-[80px] leading-[60px]">&</span>
+            <span className="inline-block translate-x-[15px] translate-y-[-25px] transform text-[80px] leading-[60px]">
+              &
+            </span>
             <span className="ml-8 text-[100px] leading-[100px]">Loz</span>
           </h1>
         </div>

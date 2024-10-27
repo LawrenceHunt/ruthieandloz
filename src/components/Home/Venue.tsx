@@ -30,6 +30,28 @@ export function Venue() {
         </div>
 
         <div className="mt-4">
+          <TrainFrontIcon className="mr-2 inline" />
+          <span>
+            The nearest train station is <A href={LINKS.kemble}>Kemble</A>.
+            It&apos;s a 1 hour 10 minutes direct train from London Paddington.
+            The station is a 30-minute walk or a 5-minute taxi ride from the
+            venue. See{" "}
+            <A href="#taxis" target="_self">
+              taxis
+            </A>{" "}
+            below.
+          </span>
+        </div>
+
+        <div className="mt-8">
+          <ParkingCircleIcon className="mr-2 inline" />
+          <span>
+            If you&apos;re driving, there&apos;s plenty of parking at the venue.
+            Just rock up!
+          </span>
+        </div>
+
+        <div className="mt-4">
           <h4 className="font-semibold">Address:</h4>
           <p>Water&apos;s Edge at Ewen</p>
           <p>Cirencester</p>
@@ -46,28 +68,6 @@ export function Venue() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-
-        <div className="mt-8">
-          <ParkingCircleIcon className="mr-2 inline" />
-          <span>
-            If you&apos;re driving, there&apos;s plenty of parking at the venue.
-            Just rock up!
-          </span>
-        </div>
-
-        <div className="mt-4">
-          <TrainFrontIcon className="mr-2 inline" />
-          <span>
-            The nearest train station is <A href={LINKS.kemble}>Kemble</A>.
-            It&apos;s a 1 hour 10 minutes direct train from London Paddington.
-            The station is a 30-minute walk or a 5-minute taxi ride from the
-            venue. See{" "}
-            <A href="#taxis" target="_self">
-              taxis
-            </A>{" "}
-            below.
-          </span>
-        </div>
       </BodySection>
     </Section>
   );

@@ -4,21 +4,23 @@ import { Heading } from "./Heading";
 import { Section } from "./Section";
 import { cn } from "~/lib/cn.util";
 
-const photos = [
+type Photo = {
+  src: string;
+  caption: string | JSX.Element;
+  className?: string;
+};
+
+const photos: Photo[] = [
   {
     src: "first_date.jpg",
-    caption: (
-      <span>
-        June 2020 - started dating in lockdown. Loz made a daring journey to
-        Wandsworth. Ruth enforced strict social distancing.
-      </span>
-    ),
-    clasName: "",
+    caption:
+      "June 2020 - 1st date in deepest darkest lockdown. Loz made a daring journey to Wandsworth. Ruth enforced strict social distancing.",
+    className: "",
   },
   {
     src: "whitstable.jpg",
     caption:
-      "July 2020 - Escaped London for a trip to Whitstable. Ruth tried an oyster to impress Loz.",
+      "July 2020 - Escaped London for a trip to Whitstable. Ruth tried an oyster to impress Loz, and just about managed not to throw up on his shoes.",
     className: "object-[32%_100%]",
   },
   {
@@ -28,53 +30,63 @@ const photos = [
     className: "",
   },
   {
+    src: "berlin.jpg",
+    caption:
+      "November 2021 - a weekend in Berlin. We shared the highs of the Berlin Wall and the lows of rejection by nightclub bouncers.",
+    className: "object-[32%_70%]",
+  },
+  {
     src: "salta.jpg",
     caption:
-      "February 2022 - Our favourite trip so far - two weeks in Argentina admirining the scenery and drinking malbec",
+      "February 2022 - Our favourite trip so far - two blissful weeks in Argentina admiring the scenery and drinking malbec!",
     className: "object-[40%_100%]",
   },
-  // {
-  //   src: "getting_ready_to_move.jpg",
-  //   caption:
-  //     "Packing up for South-East Asia - because who needs stability anyway?",
-  //   className: "",
-  // },
+  {
+    src: "eagles.jpg",
+    caption:
+      "July 2022 - Seeing the Eagles in concert, wrinkly rockers that we are",
+  },
   {
     src: "on_the_plane.jpg",
     caption: "August 2022 - On the plane to Vietnam!",
   },
   {
+    src: "motorbike_2.jpg",
+    caption:
+      "Dodging traffic in Hanoi - (no daughters were harmed in the making of this photo)",
+    className: "object-[30%_100%]",
+  },
+  {
     src: "quintessential_vietnam_2.jpg",
-    caption: "Exploring the Mekong Delta...",
+    caption: "Dec 2022 - by now fully immersed in Vietnamese culture...",
     className: "object-[20%_100%]",
   },
   {
-    src: "jeep.jpg",
-    caption: "Christmas in Hoi An - soaking up the festive vibes and sunshine",
+    src: "angkor_wat.jpg",
+    caption: "Exploring the temples of Angkor Wat in Cambodia",
+    className: "",
   },
   {
     src: "engagement_1.jpg",
-    caption: "She said yes! Celebrating our engagement on a beach in Bali!",
+    caption:
+      "August 2023 - She said yes! Getting engaged on a beach in the Gili Islands",
     className: "transform scale-10",
   },
-  {
-    src: "motorbike.jpg",
-    caption: "Navigating the Vietnamese traffic like pros!",
-    className: "",
-  },
-  // { src: "engagement_2.jpg", caption: "", className: "transform scale-10" },
-  // { src: "engagement_3.jpg", caption: "", className: "transform scale-10" },
-  // { src: "engagement_4.jpg", caption: "", className: "transform" },
 ];
 
 export function Intro() {
   return (
-    <Section className="relative flex flex-col items-center">
+    <Section className="relative flex flex-col items-center" id="r_and_l">
       <Heading className="text-center leading-[45px]">
         We can&apos;t wait to celebrate with you
       </Heading>
 
-      <div className="relative mx-auto mt-8 w-[300px] lg:mt-20 lg:w-[700px]">
+      <p className="mt-8">
+        Here&apos;s a little look back at some of the adventures we&apos;ve had
+        together so far...
+      </p>
+
+      <div className="relative mx-auto mt-8 w-[280px] lg:mt-20 lg:w-[700px]">
         <Carousel direction="right">
           {photos.map((photo, index) => {
             return (
@@ -114,7 +126,7 @@ export function Intro() {
                 </div>
 
                 <div className="mt-2 flex w-full items-center justify-center gap-8">
-                  <p className="w-[250px] text-center text-xs lg:text-sm">
+                  <p className="w-[250px] text-center text-sm">
                     {photo.caption}
                   </p>
                 </div>

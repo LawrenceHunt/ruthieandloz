@@ -84,8 +84,8 @@ export function Carousel({
           </div>
         </div>
 
-        {/* <PrevButton className="absolute bottom-[-8%] left-[20%]" />
-        <NextButton className="absolute bottom-[-8%] right-[20%]" /> */}
+        <PrevButton className="absolute bottom-[-5%] left-[20%] z-10 lg:bottom-[50%]" />
+        <NextButton className="absolute bottom-[-5%] right-[20%] z-10 lg:bottom-[50%]" />
       </div>
     </CarouselContext.Provider>
   );

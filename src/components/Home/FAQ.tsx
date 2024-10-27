@@ -50,10 +50,9 @@ export function FAQ() {
 
           <p>
             As much as we love your little ones, sadly we&apos;re not able to
-            accommodate babies or children outside of those in the wedding
-            party. However, we recognise that some of you will be travelling
-            with kids, so please know they are welcome at the Friday drinks and
-            Sunday brunch!
+            accommodate children - with the exception of babes in arms. However,
+            we recognise that some of you will be travelling with kids, so
+            please know they are welcome at the Friday drinks and Sunday brunch!
           </p>
 
           <p>The venue recommends the following local babysitting services:</p>

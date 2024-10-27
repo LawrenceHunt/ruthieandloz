@@ -55,7 +55,7 @@ const accommodationOptions = {
 
 export function Accommodation() {
   return (
-    <Section id="accommodation" className="pt-0">
+    <Section id="accommodation" className="pt-16">
       <Image
         src="/wedding_svgs/Candles/9.svg"
         alt="candelabra"

@@ -5,7 +5,7 @@ import { A } from "./A";
 
 export function Schedule() {
   return (
-    <Section id="schedule" className="pt-8 lg:pt-24">
+    <Section id="schedule" className="pt-24">
       <Image
         src="/wedding_svgs/Dinner/Drinks/3.svg"
         alt="drink"

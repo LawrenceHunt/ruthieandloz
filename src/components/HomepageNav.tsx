@@ -11,6 +11,11 @@ const homepageLinks = [
     imageSrc: "/wedding_svgs/Others/7.svg",
   },
   {
+    name: "R & L",
+    id: "r_and_l",
+    imageSrc: "/wedding_svgs/Cupids/3.svg",
+  },
+  {
     name: "venue",
     id: "venue",
     imageSrc: "/wedding_svgs/Others/4.svg",
