@@ -32,7 +32,7 @@ const photos: Photo[] = [
   {
     src: "berlin.jpg",
     caption:
-      "November 2021 - a weekend in Berlin. We shared the highs of the Berlin Wall and the lows of rejection by nightclub bouncers.",
+      "November 2021 - a weekend in Berlin, our first trip overseas. We shared the highs of the Berlin Wall and the lows of rejection by nightclub bouncers.",
     className: "object-[32%_70%]",
   },
   {
@@ -53,7 +53,7 @@ const photos: Photo[] = [
   {
     src: "motorbike_2.jpg",
     caption:
-      "Dodging traffic in Hanoi - (no daughters were harmed in the making of this photo)",
+      "Dodging traffic in Hanoi (no daughters were harmed in the making of this photo)",
     className: "object-[30%_100%]",
   },
   {
@@ -81,12 +81,20 @@ export function Intro() {
         We can&apos;t wait to celebrate with you
       </Heading>
 
-      <p className="mt-8">
-        Here&apos;s a little look back at some of the adventures we&apos;ve had
-        together so far...
-      </p>
+      <div className="mx-auto mt-8 max-w-[600px]">
+        <p>
+          Here&apos;s a little look back at some of the adventures we&apos;ve
+          had together...
+        </p>
 
-      <div className="relative mx-auto mt-8 w-[280px] lg:mt-20 lg:w-[700px]">
+        <p className="mt-4">
+          We're thrilled to have you with us on our big day, surrounded by some
+          of the good food, wine, scenery, and music that have fueled our
+          journey so far!
+        </p>
+      </div>
+
+      <div className="relative mx-auto mt-8 w-[280px] lg:mt-12 lg:w-[700px]">
         <Carousel direction="right">
           {photos.map((photo, index) => {
             return (
