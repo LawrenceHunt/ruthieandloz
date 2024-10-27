@@ -9,9 +9,8 @@ const photos = [
     src: "first_date.jpg",
     caption: (
       <span>
-        Our first date in lockdown. Loz made a{" "}
-        <span className="line-through">criminal</span> daring journey to
-        Wandsworth, Ruth enforced strict social distancing.
+        June 2020 - started dating in lockdown. Loz made a daring journey to
+        Wandsworth. Ruth enforced strict social distancing.
       </span>
     ),
     clasName: "",
@@ -19,23 +18,30 @@ const photos = [
   {
     src: "whitstable.jpg",
     caption:
-      "Date #6 in Whitstable. Ruth tried an oyster to impress Loz - seafood diplomacy at its finest.",
+      "July 2020 - Escaped London for a trip to Whitstable. Ruth tried an oyster to impress Loz.",
     className: "object-[32%_100%]",
   },
   {
     src: "moving_in.jpg",
-    caption: "Our first home together in Tooting - let the chaos commence!",
+    caption:
+      "August 2021 - Moved into our first home together in Tooting - let the chaos commence!",
     className: "",
   },
   {
-    src: "getting_ready_to_move.jpg",
+    src: "salta.jpg",
     caption:
-      "Packing up for South-East Asia - because who needs stability anyway?",
-    className: "",
+      "February 2022 - Our favourite trip so far - two weeks in Argentina admirining the scenery and drinking malbec",
+    className: "object-[40%_100%]",
   },
+  // {
+  //   src: "getting_ready_to_move.jpg",
+  //   caption:
+  //     "Packing up for South-East Asia - because who needs stability anyway?",
+  //   className: "",
+  // },
   {
     src: "on_the_plane.jpg",
-    caption: "Off to Vietnam - let's see what all the pho-ss is about!",
+    caption: "August 2022 - On the plane to Vietnam!",
   },
   {
     src: "quintessential_vietnam_2.jpg",
@@ -44,14 +50,19 @@ const photos = [
   },
   {
     src: "jeep.jpg",
-    caption: "Christmas Day in sunny Hoi An - festive vibes and sunshine!",
+    caption: "Christmas in Hoi An - soaking up the festive vibes and sunshine",
   },
   {
     src: "engagement_1.jpg",
     caption: "She said yes! Celebrating our engagement on a beach in Bali!",
     className: "transform scale-10",
   },
-  //   { src: "engagement_2.jpg", caption: "", className: "transform scale-10" },
+  {
+    src: "motorbike.jpg",
+    caption: "Navigating the Vietnamese traffic like pros!",
+    className: "",
+  },
+  // { src: "engagement_2.jpg", caption: "", className: "transform scale-10" },
   // { src: "engagement_3.jpg", caption: "", className: "transform scale-10" },
   // { src: "engagement_4.jpg", caption: "", className: "transform" },
 ];
@@ -70,7 +81,10 @@ export function Intro() {
               <div key={photo.src} className="w-full">
                 <div
                   className={cn(
-                    "flex h-full w-full flex-col items-center bg-contain bg-center bg-no-repeat p-8 lg:p-20",
+                    "h-full w-full",
+                    "flex flex-col items-center",
+                    "bg-contain bg-center bg-no-repeat",
+                    "p-8 lg:px-16 lg:py-16",
                     [
                       "bg-border2",
                       "bg-border3",
@@ -89,13 +103,17 @@ export function Intro() {
                     height={3000}
                     alt="Photo"
                     className={cn(
-                      "max-h-[300px] min-h-[300px] w-[200px] flex-1 rounded-md object-cover object-[20%_10%] lg:w-[250px]",
+                      "max-h-[300px] min-h-[300px]",
+                      "lg:max-h-[350px] lg:min-h-[350px]",
+                      "w-[200px] lg:w-[250px]",
+                      "rounded-md",
+                      "object-cover object-[20%_10%]",
                       photo.className ?? "",
                     )}
                   />
                 </div>
 
-                <div className="mt-12 flex w-full items-center justify-center gap-8 lg:mt-4">
+                <div className="mt-2 flex w-full items-center justify-center gap-8">
                   <p className="w-[250px] text-center text-xs lg:text-sm">
                     {photo.caption}
                   </p>

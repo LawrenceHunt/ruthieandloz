@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BodySection, Section } from "./Section";
 import { Heading } from "./Heading";
+import { A } from "./A";
 
 export function Schedule() {
   return (
@@ -18,8 +19,13 @@ export function Schedule() {
       <BodySection className="items-start gap-4">
         <div>
           <h4 className="font-semibold">Friday 25 July</h4>
-          <p className="text-sm lg:text-base">18:00 - Welcome drinks</p>
-          <p className="text-sm lg:text-base">[location TBC]</p>
+          <p className="text-sm lg:text-base">
+            18:00 - Welcome drinks at{" "}
+            <A href="https://maps.app.goo.gl/MenYXp53CHbGeSnD7">
+              The Tavern Inn, Kemble
+            </A>{" "}
+            (next to Kemble Station)
+          </p>
         </div>
 
         <div>
