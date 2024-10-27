@@ -10,8 +10,9 @@ export function Gifts() {
       <Image
         src="/wedding_svgs/Others/9.svg"
         alt="gift image"
-        width={200}
-        height={200}
+        width={2000}
+        height={2000}
+        className="h-[200px] w-[200px] lg:h-[300px] lg:w-[300px]"
       />
 
       <Heading className="mt-8">Gifts</Heading>

@@ -33,7 +33,7 @@ export function BodySection({
   return (
     <div
       className={cn(
-        "mx-auto mt-8 flex min-w-[400px] max-w-full flex-col items-center",
+        "mx-auto mt-8 flex w-[400px] max-w-full flex-col items-center",
         className,
       )}
     >

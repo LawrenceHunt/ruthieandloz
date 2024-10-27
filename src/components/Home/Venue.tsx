@@ -4,16 +4,16 @@ import { Heading } from "./Heading";
 import { ParkingCircleIcon, TrainFrontIcon } from "lucide-react";
 import { A } from "./A";
 import { LINKS } from "~/lib/links";
-import Link from "next/link";
 
 export function Venue() {
   return (
     <Section id="venue">
       <Image
         src="/wedding_svgs/Others/4.svg"
-        width={300}
-        height={300}
+        width={3000}
+        height={3000}
         alt="swans"
+        className="h-[200px] w-[200px] lg:h-[300px] lg:w-[300px]"
       />
 
       <Heading className="mt-8">the Venue</Heading>
@@ -58,10 +58,10 @@ export function Venue() {
         <div className="mt-4">
           <TrainFrontIcon className="mr-2 inline" />
           <span>
-            The nearest train station is <A href={LINKS.kemble}>Kemble</A>. It
-            is 1 hour 10 minutes direct train from London Paddington. The
-            station is a 30-minute walk or a 5-minute taxi ride from the venue.
-            See{" "}
+            The nearest train station is <A href={LINKS.kemble}>Kemble</A>.
+            It&apos;s a 1 hour 10 minutes direct train from London Paddington.
+            The station is a 30-minute walk or a 5-minute taxi ride from the
+            venue. See{" "}
             <A href="#taxis" target="_self">
               taxis
             </A>{" "}

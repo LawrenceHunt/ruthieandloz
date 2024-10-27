@@ -51,8 +51,9 @@ export function Taxis() {
       <Image
         src="/wedding_svgs/Others/8.svg"
         alt="wedding car"
-        width={200}
-        height={200}
+        width={2000}
+        height={2000}
+        className="h-[200px] w-[200px] lg:h-[300px] lg:w-[300px]"
       />
 
       <Heading className="mt-8">taxis</Heading>

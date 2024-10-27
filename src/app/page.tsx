@@ -15,7 +15,7 @@ export default async function Home() {
     <div className="flex h-full w-full overflow-x-hidden">
       <HomepageNav className="w-[68px]" />
 
-      <main className="relative inline-block h-full flex-1">
+      <main className="relative h-full flex-1 overflow-y-auto p-4">
         <Hands />
         <Hero />
         <Intro />

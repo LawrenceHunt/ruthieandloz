@@ -198,7 +198,7 @@ export const guestsRouter = createTRPCRouter({
 
       if (!matchingRow) {
         throw new Error(
-          "Sorry, no guest was found with that specific name. Try again with the name on your invite, or email us at ruthieandloz@gmail.com!",
+          "Sorry, couldn't find that specific name. Try again with the name on your invite, or email us at ruthieandloz@gmail.com!",
         );
       }
 

@@ -10,8 +10,9 @@ export function FAQ() {
       <Image
         src="/wedding_svgs/Dinner/Cakes/2.svg"
         alt="cake"
-        width={200}
-        height={200}
+        width={2000}
+        height={2000}
+        className="h-[200px] w-[200px] lg:h-[300px] lg:w-[300px]"
       />
 
       <Heading className="mt-8 tracking-[10px]">F.A.Qs</Heading>
@@ -39,8 +40,8 @@ export function FAQ() {
           </p>
 
           <p>
-            If joining for the pub walk on Sunday, you might want to bring some
-            comfortable shoes too.
+            Weather permitting we&apos;ll do a pub walk on Sunday - if joining,
+            you might want to bring some comfortable shoes too.
           </p>
         </div>
 
