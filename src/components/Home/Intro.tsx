@@ -88,8 +88,8 @@ export function Intro() {
         </p>
 
         <p className="mt-4">
-          We're thrilled to have you with us on our big day, surrounded by some
-          of the good food, wine, scenery, and music that have fueled our
+          We&apos;re thrilled to have you with us on our big day, surrounded by
+          some of the good food, wine, scenery, and music that have fueled our
           journey so far!
         </p>
       </div>
