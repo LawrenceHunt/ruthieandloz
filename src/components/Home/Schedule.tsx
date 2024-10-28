@@ -17,9 +17,9 @@ export function Schedule() {
       <Heading className="mt-8">Schedule</Heading>
 
       <BodySection className="items-start gap-4">
-        <div>
-          <h4 className="font-semibold">Friday 25 July</h4>
-          <p className="text-sm lg:text-base">
+        <div className="mt-4 w-full">
+          <h4 className="w-full text-center font-semibold">Friday 25 July</h4>
+          <p className="">
             18:00 - Welcome drinks at{" "}
             <A href="https://maps.app.goo.gl/MenYXp53CHbGeSnD7">
               The Tavern Inn, Kemble
@@ -28,9 +28,9 @@ export function Schedule() {
           </p>
         </div>
 
-        <div>
-          <h4 className="font-semibold">Saturday 26 July</h4>
-          <p className="text-sm lg:text-base">
+        <div className="w-full">
+          <h4 className="w-full text-center font-semibold">Saturday 26 July</h4>
+          <p className="">
             1:30PM - Guests arrive at Water&apos;s Edge, Ewen
             <br />
             2PM - Ceremony
@@ -41,11 +41,9 @@ export function Schedule() {
           </p>
         </div>
 
-        <div>
-          <h4 className="font-semibold">Sunday 27 July</h4>
-          <p className="text-sm lg:text-base">
-            11AM - Sunday Brunch, followed by a pub walk
-          </p>
+        <div className="w-full">
+          <h4 className="w-full text-center font-semibold">Sunday 27 July</h4>
+          <p className="">11AM - Sunday Brunch, followed by a pub walk</p>
           <p className="text-sm lg:text-base">[location TBC]</p>
         </div>
       </BodySection>

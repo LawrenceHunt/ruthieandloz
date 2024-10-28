@@ -65,7 +65,7 @@ export function Taxis() {
 
         <p>Here&apos;s a list of local taxi companies:</p>
 
-        <ul className="ml-4 mt-4 list-disc">
+        <ul className="ml-4 mt-4 grid list-disc grid-cols-1 gap-4 lg:grid-cols-2">
           {taxis.map(({ name, number }) => (
             <li key={name}>
               <p className="font-semibold">{name}</p>
