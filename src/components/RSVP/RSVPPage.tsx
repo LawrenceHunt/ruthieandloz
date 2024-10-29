@@ -8,8 +8,9 @@ import { Button } from "../Button";
 import { useGetUser } from "./GetUserForm/useGetUser";
 import { api } from "~/trpc/react";
 import { LoadSpinner } from "../LoadSpinner";
-import Link from "next/link";
 import { AnimateIn } from "../AnimateIn";
+import { ArrowLeftIcon } from "lucide-react";
+import { A } from "../Home/A";
 
 function AnimatedLetter({
   children,
@@ -61,9 +62,9 @@ export function RSVPPage() {
   return (
     <div className="mx-auto flex h-full max-w-[300px] flex-col items-center justify-center gap-4">
       <div className="flex w-full items-center justify-between pt-2">
-        <Link href="/" className="underline">
-          Home
-        </Link>
+        <A href="/" className="flex items-center gap-2" target="_self">
+          <ArrowLeftIcon className="" /> Home
+        </A>
 
         <button
           disabled={!guestForm.formState.isDirty}
@@ -72,7 +73,14 @@ export function RSVPPage() {
             resetGetGuest();
             router.refresh();
           }}
-          className="cursor-pointer rounded-full border border-red-700 px-4 py-1 text-red-700 hover:border-red-300 hover:bg-red-300 hover:text-black disabled:cursor-default disabled:border-slate-200 disabled:bg-slate-200 disabled:text-slate-500"
+          className={cn(
+            "cursor-pointer rounded-full",
+            "border border-red-700",
+            "px-4 py-1",
+            "text-pink1",
+            "hover:pink1 hover:border-pink1 hover:bg-pink1 hover:text-white",
+            "disabled:cursor-default disabled:border-slate-200 disabled:bg-slate-200 disabled:text-slate-500",
+          )}
         >
           Reset
         </button>
@@ -126,12 +134,13 @@ export function RSVPPage() {
 
         {guest?.hasRSVPd ? (
           <AnimateIn>
-            <Link
+            <A
               href="/"
+              target="_self"
               className="hover: flex w-full items-center justify-center rounded-full border border-slate-500 py-2 text-sm font-medium hover:bg-slate-500 hover:text-white"
             >
               Back home
-            </Link>
+            </A>
 
             <Button
               onClick={unsetHasRSVPd}

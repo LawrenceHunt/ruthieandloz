@@ -169,11 +169,7 @@ function parseGuestDBRow(row: NotionGuestDBRow): ParsedGuest {
     accommodation,
   };
 
-  console.log("guest", guest);
-
   const parsedGuest = parsedGuestSchema.safeParse(guest);
-
-  console.log("parsed", parsedGuest);
 
   if (!parsedGuest.success) {
     throw new Error(parsedGuest.error.errors.join(", "));
@@ -187,8 +183,6 @@ export const guestsRouter = createTRPCRouter({
     .input(getUserFormSchema)
     .mutation(async ({ input }) => {
       const rows = await getGuestDBRows();
-
-      console.log("rows", rows);
 
       const inputFullName = `${input.firstName.trim()} ${input.lastName.trim()}`;
 
