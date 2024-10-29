@@ -63,7 +63,7 @@ export function HomepageNav({ className }: { className?: string }) {
                 href={`#${link.id}`}
                 className="flex h-full w-full flex-col items-center justify-center gap-1 hover:bg-pink1/10"
               >
-                <Image width={40} height={40} src={link.imageSrc} alt="image" />
+                <Image width={30} height={30} src={link.imageSrc} alt="image" />
                 <span className="text-[10px] uppercase">{link.name}</span>
               </Link>
             </li>

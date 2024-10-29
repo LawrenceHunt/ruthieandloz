@@ -112,9 +112,25 @@ const accommodationOptions: Record<
       },
     ],
   },
+  crudwell: {
+    description:
+      "Crudwell is a small village near the venue, again about 10 mins drive. It has a few B&Bs and a pub.",
+    options: [
+      {
+        name: "The Rectory Hotel",
+        description: "A beautiful hotel with a pool and spa.",
+        pricePerNight: "£300-£400",
+        links: {
+          website: "https://therectoryhotel.com/",
+          booking: "",
+        },
+        photos: ["rectory_1.jpg", "rectory_2.jpg"],
+      },
+    ],
+  },
   malmesbury: {
     description:
-      "Malmesbury is a beautiful town on a hill with a cathedral and a rich history. It's a bit further away from the venue but still a great place to stay.",
+      "Malmesbury is a beautiful town on a hill with a cathedral and a rich history. It's a bit further away from the venue (~20 mins drive) but a wonderful place to stay.",
     options: [
       {
         name: "The Old Bell Hotel",
@@ -132,7 +148,7 @@ const accommodationOptions: Record<
 
 function HotelEntry({ hotel }: { hotel: TownHotel }) {
   return (
-    <div className="mb-4">
+    <div className="my-4 py-4">
       <h4 className="font-semibold">{hotel.name}</h4>
       <p>{hotel.description}</p>
       <p>Price / room / night: {hotel.pricePerNight}</p>
@@ -218,6 +234,16 @@ export default function AccommodationPage() {
 
         <div className="w-full">
           {accommodationOptions.barnsley!.options.map((option) => (
+            <HotelEntry key={option.name} hotel={option} />
+          ))}
+        </div>
+
+        <h3 className="mt-4 text-2xl font-semibold">Crudwell</h3>
+
+        <p>{accommodationOptions.crudwell!.description}</p>
+
+        <div className="w-full">
+          {accommodationOptions.crudwell!.options.map((option) => (
             <HotelEntry key={option.name} hotel={option} />
           ))}
         </div>

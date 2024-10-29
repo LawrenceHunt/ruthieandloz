@@ -14,7 +14,7 @@ const photos: Photo[] = [
   {
     src: "first_date.jpg",
     caption:
-      "June 2020 - 1st date in deepest darkest lockdown. Loz made a daring journey to Wandsworth. Ruth enforced strict social distancing.",
+      "June 2020 - first date in lockdown! Loz made a daring journey to Wandsworth. Ruth enforced strict social distancing.",
     className: "",
   },
   {
@@ -94,7 +94,7 @@ export function Intro() {
         </p>
       </div>
 
-      <div className="relative mx-auto mt-8 w-[280px] lg:mt-12 lg:w-[700px]">
+      <div className="relative mx-auto mt-8 w-[280px] lg:mt-12 lg:w-[900px]">
         <Carousel direction="right">
           {photos.map((photo, index) => {
             return (

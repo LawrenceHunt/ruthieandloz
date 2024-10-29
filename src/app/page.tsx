@@ -13,7 +13,7 @@ import { HomepageNav } from "~/components/HomepageNav";
 export default async function Home() {
   return (
     <div className="flex h-full w-full overflow-x-hidden">
-      <HomepageNav className="w-[68px]" />
+      <HomepageNav className="w-[60px]" />
 
       <main className="relative h-full flex-1 overflow-y-auto p-4">
         <Hands />

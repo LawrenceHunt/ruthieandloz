@@ -76,6 +76,10 @@ async function getGuestDBRows(): Promise<NotionGuestDBRow[]> {
   return rows;
 }
 
+function getAccommodationFromRow(row: NotionGuestDBRow) {
+  return getContentFromRichText(row.properties.Accommodation.rich_text);
+}
+
 export async function updateGuestDBRow(updatedGuest: ParsedGuest) {
   const response = await client.pages.update({
     page_id: updatedGuest.id,
@@ -149,6 +153,7 @@ function parseGuestDBRow(row: NotionGuestDBRow): ParsedGuest {
   const plusOneRSVP = getPlusOneRSVPFromRow(row);
   const plusOneDietaryRequirements = getPlusOneDietaryRequirementsFromRow(row);
   const email = getEmailFromRow(row);
+  const accommodation = getAccommodationFromRow(row);
 
   const guest = {
     id: row.id,
@@ -161,9 +166,14 @@ function parseGuestDBRow(row: NotionGuestDBRow): ParsedGuest {
     plusOneRSVP,
     plusOneDietaryRequirements,
     email,
+    accommodation,
   };
 
+  console.log("guest", guest);
+
   const parsedGuest = parsedGuestSchema.safeParse(guest);
+
+  console.log("parsed", parsedGuest);
 
   if (!parsedGuest.success) {
     throw new Error(parsedGuest.error.errors.join(", "));
@@ -177,6 +187,8 @@ export const guestsRouter = createTRPCRouter({
     .input(getUserFormSchema)
     .mutation(async ({ input }) => {
       const rows = await getGuestDBRows();
+
+      console.log("rows", rows);
 
       const inputFullName = `${input.firstName.trim()} ${input.lastName.trim()}`;
 
