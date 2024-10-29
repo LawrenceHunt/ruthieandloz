@@ -16,7 +16,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 import { cn } from "~/lib/cn.util";
 
 export const metadata: Metadata = {
-  title: "Ruthie and Loz Wedding",
+  title: "Ruthie and Loz are getting married!",
   description: "We're getting hitched!",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
