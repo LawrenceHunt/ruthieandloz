@@ -25,12 +25,14 @@ export function useGetUser() {
     mutate(formValues);
   };
 
+  const guest = data?.guest ?? null;
+
   return {
     onSubmitForm: form.handleSubmit(onSubmit),
     refetchUser: onSubmit,
     resetGetGuest,
     form,
-    data,
+    guest,
     error: error?.message ?? null,
     isLoading: isPending,
   };

@@ -36,7 +36,7 @@ export function RSVPPage() {
   const router = useRouter();
 
   const {
-    data: guestData,
+    guest,
     onSubmitForm: guestFormOnSubmit,
     refetchUser,
     error: guestFormError,
@@ -44,8 +44,6 @@ export function RSVPPage() {
     form: guestForm,
     isLoading: guestIsLoading,
   } = useGetUser();
-
-  const guest = guestData?.guest ?? null;
 
   const { mutate, isPending: isLoadingUnsetHasRSVPd } =
     api.guests.updateRSVP.useMutation({ onSuccess: refetchUser });

@@ -74,6 +74,17 @@ const photos: Photo[] = [
   },
 ];
 
+const borderClasses = [
+  "bg-border2",
+  "bg-border3",
+  "bg-border4",
+  "bg-border5",
+  "bg-border7",
+  "bg-border9",
+  "bg-border10",
+  "bg-border11",
+];
+
 export function Intro() {
   return (
     <Section className="relative flex flex-col items-center" id="r_and_l">
@@ -105,16 +116,7 @@ export function Intro() {
                     "flex flex-col items-center",
                     "bg-contain bg-center bg-no-repeat",
                     "p-8 lg:px-16 lg:py-16",
-                    [
-                      "bg-border2",
-                      "bg-border3",
-                      "bg-border4",
-                      "bg-border5",
-                      "bg-border7",
-                      "bg-border9",
-                      "bg-border10",
-                      "bg-border11",
-                    ][index % 8],
+                    borderClasses[index % borderClasses.length],
                   )}
                 >
                   <Image
