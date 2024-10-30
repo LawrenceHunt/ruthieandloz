@@ -41,7 +41,7 @@ export function EmailForm({
               <Input
                 type="email"
                 placeholder="Email"
-                value={value}
+                value={value ?? ""}
                 onChange={(e) => setValue("email", e.target.value)}
               />
             </FormItem>
