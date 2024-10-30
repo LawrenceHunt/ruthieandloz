@@ -10,7 +10,7 @@ type TownHotel = {
   pricePerNight: string;
   links: {
     website: string;
-    booking: string;
+    booking?: string;
   };
   photos: string[];
 };
@@ -109,6 +109,16 @@ const accommodationOptions: Record<
           booking: "",
         },
         photos: ["village_pub_1.jpg", "village_pub_2.jpg"],
+      },
+      {
+        name: "T Barn",
+        description:
+          "Prefer to camp /glamp? This is a camping site owned by a friendly local with some additional glamping and 'shepherd's huts'. Also has space for camper vans.",
+        pricePerNight: "£50-£100",
+        links: {
+          website: "https://www.tbarn.co.uk/",
+        },
+        photos: ["t_barn_1.jpg", "t_barn_2.jpg"],
       },
     ],
   },
