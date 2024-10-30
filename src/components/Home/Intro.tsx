@@ -14,19 +14,19 @@ const photos: Photo[] = [
   {
     src: "first_date.jpg",
     caption:
-      "June 2020 - first date in lockdown! Loz made a daring journey to Wandsworth. Ruth enforced strict social distancing.",
+      "June 2020 - our first date in lockdown! Loz made a daring journey to Wandsworth, only for Ruth to enforce strict social distancing.",
     className: "",
   },
   {
     src: "whitstable.jpg",
     caption:
-      "July 2020 - Escaped London for a trip to Whitstable. Ruth tried an oyster to impress Loz, and just about managed not to throw up on his shoes.",
+      "July 2020 - we escaped London for a trip to Whitstable. Ruth tried an oyster to impress Loz, just about managing not to throw up on his shoes.",
     className: "object-[32%_100%]",
   },
   {
     src: "moving_in.jpg",
     caption:
-      "August 2021 - Moved into our first home together in Tooting - let the chaos commence!",
+      "August 2021 - Moving into our first home together in Tooting - let the chaos commence!",
     className: "",
   },
   {
