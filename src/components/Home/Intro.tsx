@@ -3,6 +3,7 @@ import { Carousel } from "../Carousel";
 import { Heading } from "./Heading";
 import { Section } from "./Section";
 import { cn } from "~/lib/cn.util";
+import { PolaroidImage } from "../Polaroid";
 
 type Photo = {
   src: string;
@@ -14,7 +15,7 @@ const photos: Photo[] = [
   {
     src: "first_date.jpg",
     caption:
-      "June 2020 - our first date in lockdown! Loz made a daring journey to Wandsworth, only for Ruth to enforce strict social distancing.",
+      "June 2020 - our first date in lockdown! Loz made a daring journey to Wandsworth. Ruth enforced strict social distancing.",
     className: "",
   },
   {
@@ -48,7 +49,7 @@ const photos: Photo[] = [
   },
   {
     src: "on_the_plane.jpg",
-    caption: "August 2022 - On the plane to Vietnam!",
+    caption: "August 2022 - relocating to Vietnam!",
   },
   {
     src: "motorbike_2.jpg",
@@ -87,21 +88,47 @@ const borderClasses = [
 
 export function Intro() {
   return (
-    <Section className="relative flex flex-col items-center" id="r_and_l">
+    <Section className="flex flex-col items-center" id="r_and_l">
+      {/* <PolaroidImage
+        src="/intro_photos/with_friends/beer_mile.jpg"
+        caption="The infamous beer mile"
+        className="absolute left-5 top-16 h-[250px] w-[250px] rotate-6 transform opacity-0 transition-transform hover:rotate-0 hover:scale-150 lg:opacity-100"
+      />
+
+      <PolaroidImage
+        src="/intro_photos/with_friends/festival.jpg"
+        caption="Seeing Madness perform live"
+        className="absolute bottom-24 left-5 h-[250px] w-[250px] -rotate-3 transform opacity-0 transition-transform hover:rotate-0 hover:scale-150 lg:opacity-100"
+      />
+
+      <PolaroidImage
+        src="/intro_photos/with_friends/train_street.jpg"
+        caption="Train Street, Hanoi"
+        className="absolute bottom-24 right-5 h-[250px] w-[250px] -rotate-3 transform opacity-0 transition-transform hover:rotate-0 hover:scale-150 lg:opacity-100"
+      />
+
+      <PolaroidImage
+        src="/intro_photos/with_friends/pub_shed.jpg"
+        caption="Au Pub"
+        className="absolute right-5 top-24 h-[250px] w-[250px] -rotate-3 transform opacity-0 transition-transform hover:rotate-0 hover:scale-150 lg:opacity-100"
+      /> */}
+
       <Heading className="text-center leading-[45px]">
         We can&apos;t wait to celebrate with you
       </Heading>
 
       <div className="mx-auto mt-8 max-w-[600px]">
         <p>
-          Here&apos;s a little look back at some of the adventures we&apos;ve
-          had together...
+          How has it been four years already? When we met in deepest, darkest
+          lockdown, we never imagined we&apos;d be here today, planning our
+          wedding from Vietnam.
         </p>
 
-        <p className="mt-4">
-          We&apos;re thrilled to have you with us on our big day, surrounded by
-          some of the good food, wine, scenery, and music that have fueled our
-          journey so far!
+        <p>
+          But that time has been filled with so many adventures. And we&apos;re
+          thrilled to have you guys with us on our big day – surrounded by some
+          of the good food, wine, scenery and music that have fueled our journey
+          so far!
         </p>
       </div>
 
