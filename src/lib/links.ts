@@ -4,7 +4,7 @@ export const LINKS = {
   rsvp: "/rsvp",
   photoUpload: "",
   accommodation: "/accommodation",
-  honeymoonFund: "",
+  honeymoonFund: "https://prezola.com/buy/view/199167",
   charityFund: "",
   kemble: "https://maps.app.goo.gl/q8w5VRwQGhQecBN87",
   ruthieAndLozEmail: "mailto:ruthieandloz@gmail.com",
