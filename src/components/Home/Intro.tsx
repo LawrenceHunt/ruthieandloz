@@ -19,6 +19,12 @@ const photos: Photo[] = [
     className: "",
   },
   {
+    src: "lockdown_drinks.jpg",
+    caption:
+      "Dating in and out of lockdown meant spending a lot of our early days indoors...",
+    className: "",
+  },
+  {
     src: "whitstable.jpg",
     caption:
       "July 2020 - we escaped London for a trip to Whitstable. Ruth tried an oyster to impress Loz, and just about managed not to throw up on his shoes.",
