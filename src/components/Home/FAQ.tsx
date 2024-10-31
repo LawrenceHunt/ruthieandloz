@@ -36,11 +36,6 @@ export function FAQ() {
             Ladies - we recommend block heels, wedges or flats to avoid sinking
             into the lawn!
           </p>
-
-          <p>
-            Weather permitting we&apos;ll do a pub walk on Sunday - if joining,
-            you might want to bring some comfortable shoes too.
-          </p>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -50,7 +45,7 @@ export function FAQ() {
             As much as we love your little ones, sadly we&apos;re not able to
             accommodate children - with the exception of babes in arms. However,
             we recognise that some of you will be travelling with kids, so
-            please know they are welcome at the Friday drinks and Sunday brunch!
+            please know they are welcome at the Friday drinks!
           </p>
 
           <p>The venue recommends the following local babysitting services:</p>
