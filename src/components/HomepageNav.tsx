@@ -26,7 +26,7 @@ const homepageLinks = [
     imageSrc: "/wedding_svgs/Dinner/Drinks/3.svg",
   },
   {
-    name: "accomm.",
+    name: "stay",
     id: "accommodation",
     imageSrc: "/wedding_svgs/Candles/9.svg",
   },
