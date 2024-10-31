@@ -10,6 +10,7 @@ import { PlusOneRSVP } from "./PlusOneRSVP";
 import { useRSVP } from "./useRSVP";
 import { Submit } from "./Submit";
 import { AnimateIn } from "~/components/AnimateIn";
+import { EmailForm } from "./EmailForm";
 
 type FormStage = keyof ParsedGuest | "declined" | "submit";
 
@@ -36,17 +37,33 @@ export function RSVPForm({
   const currentDisplay = (() => {
     if (stage === "rsvp") {
       return (
-        <AnimateIn duration={0.5} delay={0.5} key={"rsvp"}>
+        <AnimateIn duration={0.5} delay={0.5} key="rsvp">
           <RSVP
             form={form}
             onSubmit={() => {
               if (rsvp) {
-                setStage("dietaryRequirements");
+                setStage("email");
                 return;
               }
               setStage("submit");
             }}
             onClickBack={onClickBack}
+          />
+        </AnimateIn>
+      );
+    }
+
+    if (stage === "email") {
+      return (
+        <AnimateIn duration={0.5} delay={0} key="email">
+          <EmailForm
+            form={form}
+            onSubmit={() => {
+              setStage("dietaryRequirements");
+            }}
+            onClickBack={() => {
+              setStage("rsvp");
+            }}
           />
         </AnimateIn>
       );

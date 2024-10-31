@@ -11,8 +11,10 @@ export function useRSVP(
     resolver: zodResolver(parsedGuestSchema),
     defaultValues: {
       ...guest,
-      dietaryRequirements: "none",
-      plusOneDietaryRequirements: guest.hasPlusOne ? "none" : "",
+      dietaryRequirements: guest.dietaryRequirements ?? "none",
+      plusOneDietaryRequirements: guest.hasPlusOne
+        ? (guest.plusOneDietaryRequirements ?? "none")
+        : "",
     },
   });
 

@@ -27,14 +27,15 @@ export function EmailForm({
         return (
           <div className="flex h-full flex-col items-center justify-between">
             <Image
-              src="/wedding_svgs/Email/Email.svg"
+              src="/wedding_svgs/Candles/1.svg"
               alt="email"
               width={140}
               height={140}
             />
 
             <h2 className="mt-4 text-center">
-              What&apos;s your email address?
+              Can you confirm your email address, so we can send you any
+              updates?
             </h2>
 
             <FormItem className="mt-4 w-full text-base">
@@ -43,6 +44,11 @@ export function EmailForm({
                 placeholder="Email"
                 value={value ?? ""}
                 onChange={(e) => setValue("email", e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    onSubmit();
+                  }
+                }}
               />
             </FormItem>
 
@@ -52,13 +58,7 @@ export function EmailForm({
                 Back
               </Button>
 
-              <Button
-                onClick={async () => {
-                  onSubmit();
-                  await form.trigger("dietaryRequirements");
-                }}
-                className="gap-1"
-              >
+              <Button onClick={onSubmit} className="gap-1">
                 Next
                 <ArrowRight className="h-4 w-4" />
               </Button>

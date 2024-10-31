@@ -53,8 +53,7 @@ export function DietaryRequirements({
             />
 
             <h2 className="mt-4 text-center">
-              We&apos;re so glad! And do you have any dietary requirements we
-              should know about?
+              And do you have any dietary requirements we should know about?
             </h2>
 
             <FormItem className="mt-4 w-full text-base">
@@ -116,6 +115,11 @@ export function DietaryRequirements({
                     setValue("dietaryRequirements", `other:${e.target.value}`, {
                       shouldTouch: true,
                     });
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      onSubmit();
+                    }
                   }}
                 />
               </div>

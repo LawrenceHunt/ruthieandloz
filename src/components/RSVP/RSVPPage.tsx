@@ -118,7 +118,7 @@ export function RSVPPage() {
           <p className="py-8 text-xl text-slate-500">
             {Boolean(guest.rsvp) ? (
               <AnimateIn>
-                Thank you for RSVP&apos;ing!
+                Thank you!
                 <br /> We can&apos;t wait to see you there.
               </AnimateIn>
             ) : (
