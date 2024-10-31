@@ -20,7 +20,7 @@ export function Schedule() {
         <div className="mt-4 w-full">
           <h4 className="w-full text-center font-semibold">Friday 25 July</h4>
           <p className="">
-            18:00 - Welcome drinks at{" "}
+            6PM - Welcome drinks at{" "}
             <A href="https://maps.app.goo.gl/MenYXp53CHbGeSnD7">
               The Tavern Inn, Kemble
             </A>{" "}
@@ -31,13 +31,13 @@ export function Schedule() {
         <div className="w-full">
           <h4 className="w-full text-center font-semibold">Saturday 26 July</h4>
           <p className="">
-            1:30PM - Guests arrive at Water&apos;s Edge, Ewen
+            1:30PM - Guests arrive
             <br />
             2PM - Ceremony
             <br />
             2:30PM - Celebration time
             <br />
-            Midnight - Carriages
+            12AM - Carriages
           </p>
         </div>
 
