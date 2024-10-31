@@ -15,13 +15,13 @@ const photos: Photo[] = [
   {
     src: "first_date.jpg",
     caption:
-      "June 2020 - our first date in lockdown! Loz made a daring journey to Wandsworth. Ruth enforced strict social distancing.",
+      "June 2020 - dating in lockdown! Loz made a daring journey to Wandsworth. Ruth enforced strict social distancing.",
     className: "",
   },
   {
     src: "lockdown_drinks.jpg",
     caption:
-      "Dating in and out of lockdown meant spending a lot of our early days indoors...",
+      "Bubble fully formed! Spending a lot of our early days indoors, we found ways to amuse ourselves...",
     className: "",
   },
   {
@@ -70,7 +70,8 @@ const photos: Photo[] = [
   },
   {
     src: "angkor_wat.jpg",
-    caption: "Exploring the temples of Angkor Wat in Cambodia",
+    caption:
+      "2 years adventuring in South East Asia! Pictured here exploring the temples of Angkor Wat in Cambodia",
     className: "",
   },
   {
