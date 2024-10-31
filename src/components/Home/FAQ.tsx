@@ -22,10 +22,8 @@ export function FAQ() {
           <h3 className="font-semibold">What should I wear?</h3>
           <p>
             The dress code is{" "}
-            <span className="font-semibold text-green2">
-              summer garden party
-            </span>
-            . Colourful and fun is encouraged. Don&apos;t forget your dancing
+            <span className="font-semibold">summer garden party</span>.
+            Colourful and fun is encouraged. Don&apos;t forget your dancing
             shoes!
           </p>
 

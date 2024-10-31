@@ -23,7 +23,7 @@ export function EmailForm({
     <FormField
       control={form.control}
       name="email"
-      render={({ fieldState: { error }, field: { value } }) => {
+      render={({ field: { value } }) => {
         return (
           <div className="flex h-full flex-col items-center justify-between">
             <Image
