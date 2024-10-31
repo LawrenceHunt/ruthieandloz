@@ -3,7 +3,7 @@ import { Carousel } from "../Carousel";
 import { Heading } from "./Heading";
 import { Section } from "./Section";
 import { cn } from "~/lib/cn.util";
-import { PolaroidImage } from "../Polaroid";
+// import { PolaroidImage } from "../Polaroid";
 
 type Photo = {
   src: string;
@@ -21,7 +21,7 @@ const photos: Photo[] = [
   {
     src: "whitstable.jpg",
     caption:
-      "July 2020 - we escaped London for a trip to Whitstable. Ruth tried an oyster to impress Loz, just about managing not to throw up on his shoes.",
+      "July 2020 - we escaped London for a trip to Whitstable. Ruth tried an oyster to impress Loz, and just about managed not to throw up on his shoes.",
     className: "object-[32%_100%]",
   },
   {
@@ -45,7 +45,7 @@ const photos: Photo[] = [
   {
     src: "eagles.jpg",
     caption:
-      "July 2022 - Seeing the Eagles in concert, wrinkly rockers that we are",
+      "July 2022 - Seeing the Eagles perform live, wrinkly rockers that we are",
   },
   {
     src: "on_the_plane.jpg",
@@ -124,11 +124,11 @@ export function Intro() {
           wedding from Vietnam.
         </p>
 
-        <p>
+        <p className="mt-4">
           But that time has been filled with so many adventures. And we&apos;re
-          thrilled to have you guys with us on our big day – surrounded by some
-          of the good food, wine, scenery and music that have fueled our journey
-          so far!
+          thrilled to have you with us on our big day – surrounded by some of
+          the good food, wine, scenery and music that have fueled our journey so
+          far!
         </p>
       </div>
 
