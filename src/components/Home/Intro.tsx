@@ -21,7 +21,7 @@ const photos: Photo[] = [
   {
     src: "lockdown_drinks.jpg",
     caption:
-      "Bubble fully formed! Spending a lot of our early days indoors, we still found ways to amuse ourselves!",
+      "Bubble fully formed - spending a lot of our early days indoors, we still found ways to amuse ourselves!",
     className: "",
   },
   {
