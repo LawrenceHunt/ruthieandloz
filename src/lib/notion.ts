@@ -177,7 +177,11 @@ export function parseGuestDBRow(row: NotionGuestDBRow): ParsedGuest {
   const parsedGuest = parsedGuestSchema.safeParse(guest);
 
   if (!parsedGuest.success) {
-    throw new Error(parsedGuest.error.errors.join(", "));
+    const errorMessages = parsedGuest.error.issues
+      .map((issue) => issue.message)
+      .join(", ");
+
+    throw new Error(errorMessages);
   }
 
   return parsedGuest.data;
