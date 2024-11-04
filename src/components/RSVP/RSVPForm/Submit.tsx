@@ -74,7 +74,12 @@ export function Submit({
         </div>
       </div>
 
-      {errorMessage ? <div className="text-red-600">{errorMessage}</div> : null}
+      {errorMessage ? (
+        <div className="text-red-600">
+          Sorry, something went wrong - please contact us at
+          ruthieandloz@gmail.com.
+        </div>
+      ) : null}
 
       <div className="flex w-full gap-4">
         <Button onClick={onClickBack} className="gap-1">
