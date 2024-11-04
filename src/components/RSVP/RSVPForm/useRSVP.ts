@@ -15,6 +15,9 @@ export function useRSVP(
       plusOneDietaryRequirements: guest.hasPlusOne
         ? (guest.plusOneDietaryRequirements ?? "none")
         : "",
+      plusOneRSVP: guest.plusOneRSVP ?? false,
+      plusOneName: guest.plusOneName ?? "",
+      email: guest.email ?? "",
     },
   });
 
