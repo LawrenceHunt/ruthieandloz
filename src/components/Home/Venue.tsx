@@ -33,7 +33,7 @@ export function Venue() {
           <TrainFrontIcon className="mr-2 inline" />
           <span>
             The nearest train station is <A href={LINKS.kemble}>Kemble</A>.
-            It&apos;s a 1 hour 10 minutes direct train from London Paddington.
+            It&apos;s a 1 hour 10 minute direct train from London Paddington.
             The station is a 30-minute walk or a 5-minute taxi ride from the
             venue. See{" "}
             <A href="#taxis" target="_self">
