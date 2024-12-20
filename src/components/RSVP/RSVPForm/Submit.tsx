@@ -4,6 +4,7 @@ import { Button } from "~/components/Button";
 import { type ParsedGuest } from "~/types/guests.types";
 import { getDietaryRequirementsText } from "./DietaryRequirements";
 import Image from "next/image";
+import { FormField } from "~/components/Form";
 
 export function Submit({
   form,
@@ -72,6 +73,28 @@ export function Submit({
             </>
           ) : null}
         </div>
+        <FormField
+          control={form.control}
+          name="message"
+          render={({ field: { value, onChange } }) => {
+            return (
+              <div className="mt-4 flex flex-col">
+                <label className="mt-4 text-sm font-semibold" htmlFor="message">
+                  Message (optional)
+                </label>
+
+                <textarea
+                  id="message"
+                  value={value ?? ""}
+                  onChange={(e) => {
+                    onChange(e.target.value);
+                  }}
+                  className="mt-2 h-24 w-full resize-none rounded-md border border-gray-300 p-2 text-sm"
+                />
+              </div>
+            );
+          }}
+        />
       </div>
 
       {errorMessage ? (

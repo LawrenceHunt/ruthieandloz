@@ -18,6 +18,8 @@ export function useRSVP(
       plusOneRSVP: guest.plusOneRSVP ?? false,
       plusOneName: guest.plusOneName ?? "",
       email: guest.email ?? "",
+      accommodation: guest.accommodation ?? "",
+      message: guest.message ?? "",
     },
   });
 

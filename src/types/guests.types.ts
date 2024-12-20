@@ -53,6 +53,7 @@ export type NotionGuestDBRow = PageObjectResponse & {
     "Plus One RSVP": Checkbox;
     "Plus One Dietary": RichText;
     Accommodation: RichText;
+    Message: RichText;
   };
 };
 
@@ -88,7 +89,8 @@ export const parsedGuestSchema = z.object({
   plusOneRSVP: z.boolean().nullable(),
   plusOneDietaryRequirements: z.string().nullable(),
   email: z.string().email().nullable(),
-  accommodation: z.string(),
+  accommodation: z.string().nullable(),
+  message: z.string().nullable(),
 });
 
 export type ParsedGuest = z.infer<typeof parsedGuestSchema>;

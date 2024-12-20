@@ -162,6 +162,11 @@ export function RSVPPage() {
           />
         ) : null}
       </AnimatedLetter>
+
+      <div className="w-full text-sm">
+        Any issues: email us at{" "}
+        <A href="mailto:ruthieandloz@gmail.com">ruthieandloz@gmail.com</A>!
+      </div>
     </div>
   );
 }

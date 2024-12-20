@@ -26,7 +26,7 @@ export const guestsRouter = createTRPCRouter({
 
       if (!rows) {
         throw new Error(
-          "Sorry, we encountered an error while trying to find your RSVP details.",
+          "Sorry, we encountered an error while fetching the guest list.",
         );
       }
 
@@ -54,6 +54,8 @@ export const guestsRouter = createTRPCRouter({
         };
       } catch (error) {
         if (error instanceof Error) {
+          console.info("ERROR!!!", error);
+
           throw new Error(
             `Sorry, we encountered an error while trying to find your RSVP details: ${error.message}`,
           );

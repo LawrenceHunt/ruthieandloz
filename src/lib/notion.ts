@@ -82,6 +82,10 @@ export function getAccommodationFromRow(row: NotionGuestDBRow) {
   return getContentFromRichText(row.properties.Accommodation.rich_text);
 }
 
+export function getMessageFromRow(row: NotionGuestDBRow) {
+  return getContentFromRichText(row.properties.Message.rich_text);
+}
+
 export async function updateGuestDBRow(
   client: Client,
   updatedGuest: ParsedGuest,
@@ -142,6 +146,17 @@ export async function updateGuestDBRow(
         // @ts-expect-error
         email: updatedGuest.email,
       },
+      Message: {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        rich_text: [
+          {
+            text: {
+              content: updatedGuest.message,
+            },
+          },
+        ],
+      },
     },
   });
 
@@ -158,6 +173,7 @@ export function parseGuestDBRow(row: NotionGuestDBRow): ParsedGuest {
   const plusOneRSVP = getPlusOneRSVPFromRow(row);
   const plusOneDietaryRequirements = getPlusOneDietaryRequirementsFromRow(row);
   const email = getEmailFromRow(row);
+  const message = getMessageFromRow(row);
   const accommodation = getAccommodationFromRow(row);
 
   const guest = {
@@ -172,6 +188,7 @@ export function parseGuestDBRow(row: NotionGuestDBRow): ParsedGuest {
     plusOneDietaryRequirements,
     email,
     accommodation,
+    message,
   };
 
   const parsedGuest = parsedGuestSchema.safeParse(guest);
