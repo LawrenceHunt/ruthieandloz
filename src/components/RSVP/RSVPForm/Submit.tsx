@@ -5,6 +5,7 @@ import { type ParsedGuest } from "~/types/guests.types";
 import { getDietaryRequirementsText } from "./DietaryRequirements";
 import Image from "next/image";
 import { FormField } from "~/components/Form";
+import { getGuestFirstName } from "./RSVP";
 
 export function Submit({
   form,
@@ -24,85 +25,96 @@ export function Submit({
   const hasPlusOne = form.watch("hasPlusOne");
   const plusOneRSVP = form.watch("plusOneRSVP");
   const plusOneName = form.watch("plusOneName");
+  const plusOneFirstName = plusOneName
+    ? getGuestFirstName(plusOneName ?? "")
+    : null;
+
   const plusOneDietaryRequirements = form.watch("plusOneDietaryRequirements");
 
   return (
-    <div className="flex h-full w-full flex-col items-center justify-between">
-      <Image
-        src="/wedding_svgs/Others/5.svg"
-        alt="dove"
-        width={140}
-        height={140}
-      />
+    <div className="flex h-full w-full flex-col">
+      <div className="flex h-full w-full flex-col items-center overflow-y-scroll">
+        <Image
+          src="/wedding_svgs/Others/5.svg"
+          alt="dove"
+          width={80}
+          height={80}
+        />
 
-      <div>
-        <h2 className="text-center">Confirm RSVP?</h2>
+        <div>
+          <h2 className="text-center">Confirm RSVP?</h2>
 
-        <div className="mt-4 text-base">
-          <div>
-            Coming:{" "}
-            <span className="font-semibold">{isComing ? "Yes" : "No"}</span>
-          </div>
-
-          {isComing ? (
+          <div className="mt-4 text-base">
             <div>
-              Your dietary Requirements:{" "}
-              <span className="font-semibold">
-                {getDietaryRequirementsText(dietaryRequirements)}
-              </span>
+              Coming:{" "}
+              <span className="font-semibold">{isComing ? "Yes" : "No"}</span>
             </div>
-          ) : null}
 
-          {hasPlusOne ? (
-            <>
+            {isComing ? (
               <div>
-                {plusOneName ?? "Your plus one"} is coming:{" "}
+                Your dietary Requirements:{" "}
                 <span className="font-semibold">
-                  {plusOneRSVP ? "Yes" : "No"}
+                  {getDietaryRequirementsText(dietaryRequirements)}
                 </span>
               </div>
+            ) : null}
 
-              {plusOneDietaryRequirements ? (
+            {hasPlusOne ? (
+              <>
                 <div>
-                  {plusOneName ?? "Your plus one"}&apos;s dietary requirements:{" "}
+                  {plusOneFirstName ?? "Plus one"} is coming:{" "}
                   <span className="font-semibold">
-                    {getDietaryRequirementsText(plusOneDietaryRequirements)}
+                    {plusOneRSVP ? "Yes" : "No"}
                   </span>
                 </div>
-              ) : null}
-            </>
-          ) : null}
-        </div>
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field: { value, onChange } }) => {
-            return (
-              <div className="mt-4 flex flex-col">
-                <label className="mt-4 text-sm font-semibold" htmlFor="message">
-                  Message (optional)
-                </label>
 
-                <textarea
-                  id="message"
-                  value={value ?? ""}
-                  onChange={(e) => {
-                    onChange(e.target.value);
-                  }}
-                  className="mt-2 h-24 w-full resize-none rounded-md border border-gray-300 p-2 text-sm"
-                />
-              </div>
-            );
-          }}
-        />
+                {plusOneDietaryRequirements ? (
+                  <div>
+                    {plusOneFirstName ?? "Your plus one"}&apos;s dietary
+                    requirements:{" "}
+                    <span className="font-semibold">
+                      {getDietaryRequirementsText(plusOneDietaryRequirements)}
+                    </span>
+                  </div>
+                ) : null}
+              </>
+            ) : null}
+          </div>
+
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field: { value, onChange } }) => {
+              return (
+                <div className="mt-2 flex flex-col">
+                  <label
+                    className="mt-4 text-sm font-semibold"
+                    htmlFor="message"
+                  >
+                    Message (optional)
+                  </label>
+
+                  <textarea
+                    id="message"
+                    value={value ?? ""}
+                    onChange={(e) => {
+                      onChange(e.target.value);
+                    }}
+                    className="mt-2 h-24 w-full resize-none rounded-md border border-gray-300 p-2 text-sm"
+                  />
+                </div>
+              );
+            }}
+          />
+        </div>
+
+        {errorMessage ? (
+          <div className="text-red-600">
+            Sorry, something went wrong - please contact us at
+            ruthieandloz@gmail.com.
+          </div>
+        ) : null}
       </div>
-
-      {errorMessage ? (
-        <div className="text-red-600">
-          Sorry, something went wrong - please contact us at
-          ruthieandloz@gmail.com.
-        </div>
-      ) : null}
 
       <div className="flex w-full gap-4">
         <Button onClick={onClickBack} className="gap-1">

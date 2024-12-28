@@ -81,7 +81,7 @@
 
 .letter-wrapper.active .letter {
   transform: translateY(-420px);
-  height: 70vh;
+  height: 80vh;
   width: 80vw;
   max-width: 500px;
   z-index: 5;

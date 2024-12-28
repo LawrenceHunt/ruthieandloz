@@ -4,13 +4,11 @@ import { useWatch } from "react-hook-form";
 import { type ParsedGuest } from "~/types/guests.types";
 import { useState } from "react";
 import { Form } from "../../Form";
-import { DietaryRequirements } from "./DietaryRequirements";
 import { RSVP } from "./RSVP";
-import { PlusOneRSVP } from "./PlusOneRSVP";
 import { useRSVP } from "./useRSVP";
 import { Submit } from "./Submit";
 import { AnimateIn } from "~/components/AnimateIn";
-import { EmailForm } from "./EmailForm";
+import { DietaryRequirements } from "./DietaryRequirements";
 
 type FormStage = keyof ParsedGuest | "declined" | "submit";
 
@@ -42,7 +40,7 @@ export function RSVPForm({
             form={form}
             onSubmit={() => {
               if (rsvp) {
-                setStage("email");
+                setStage("dietaryRequirements");
                 return;
               }
               setStage("submit");
@@ -53,53 +51,16 @@ export function RSVPForm({
       );
     }
 
-    if (stage === "email") {
-      return (
-        <AnimateIn duration={0.5} delay={0} key="email">
-          <EmailForm
-            form={form}
-            onSubmit={() => {
-              setStage("dietaryRequirements");
-            }}
-            onClickBack={() => {
-              setStage("rsvp");
-            }}
-          />
-        </AnimateIn>
-      );
-    }
-
     if (stage === "dietaryRequirements") {
       return (
-        <AnimateIn duration={0.5} delay={0} key="dietaryRequirements">
+        <AnimateIn duration={0.5} delay={0} key="plusOneRSVP">
           <DietaryRequirements
             form={form}
             onSubmit={() => {
-              if (guest.hasPlusOne) {
-                setStage("plusOneRSVP");
-                return;
-              }
-
               setStage("submit");
             }}
             onClickBack={() => {
               setStage("rsvp");
-            }}
-          />
-        </AnimateIn>
-      );
-    }
-
-    if (stage === "plusOneRSVP") {
-      return (
-        <AnimateIn duration={0.5} delay={0} key="plusOneRSVP">
-          <PlusOneRSVP
-            form={form}
-            onSubmit={() => {
-              setStage("submit");
-            }}
-            onClickBack={() => {
-              setStage("dietaryRequirements");
             }}
           />
         </AnimateIn>
@@ -120,11 +81,6 @@ export function RSVPForm({
             onClickBack={() => {
               if (!guest.rsvp) {
                 setStage("rsvp");
-                return;
-              }
-
-              if (guest.hasPlusOne) {
-                setStage("plusOneRSVP");
                 return;
               }
 
