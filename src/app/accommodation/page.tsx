@@ -55,6 +55,17 @@ const accommodationOptions: Record<
         photos: ["barrel_store_1.jpg", "barrel_store_2.jpg"],
       },
       {
+        name: "The Thames Head Inn",
+        pricePerNight: "£50-£100",
+        description:
+          "A pub with some rooms, 1 mile outside Cirencester. Also has a caravan park / campsite.",
+        links: {
+          website:
+            "https://www.thamesheadinn.co.uk/bed-and-breakfast-cotswolds-glos.html",
+        },
+        photos: ["thames_head_1.avif", "thames_head_2.avif"],
+      },
+      {
         name: "Corinium Hotel",
         pricePerNight: "£100-£200",
         description: "Quiet hotel on a historic street in the middle of town.",
