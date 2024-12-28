@@ -79,9 +79,9 @@ export function RSVP({
                         checked={Boolean(
                           (form.getValues("hasRSVPd") || isTouched) && value,
                         )}
-                        onChange={() =>
-                          form.setValue("rsvp", true, { shouldTouch: true })
-                        }
+                        onChange={() => {
+                          form.setValue("rsvp", true, { shouldTouch: true });
+                        }}
                       />
                       <label htmlFor="yes" className="text-sm">
                         Yes
