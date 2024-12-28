@@ -102,6 +102,7 @@ export function Hero() {
               "flex items-center justify-center",
               "border border-black",
               "hover:border-pink1 hover:bg-pink1 hover:text-white",
+              "transition-colors duration-300",
             )}
             href={LINKS.rsvp}
             prefetch
