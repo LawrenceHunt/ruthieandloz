@@ -63,43 +63,46 @@ export function RSVP({
         render={({ fieldState: { error, isTouched }, field: { value } }) => {
           return (
             <div className="flex w-full flex-col items-center">
-              <FormItem className="mt-4">
-                <div className="flex items-center gap-4">
+              <FormItem className="mt-4 w-full">
+                <div className="flex w-full items-center justify-between gap-4 px-10">
                   {/* if no plus one, no need to distinguish as 
                   there's only one RSVP decision to make here */}
                   {hasPlusOne ? (
                     <label className="text-base">{firstName}:</label>
                   ) : null}
 
-                  <div className="flex gap-1">
-                    <input
-                      type="radio"
-                      id="yes"
-                      checked={Boolean(
-                        (form.getValues("hasRSVPd") || isTouched) && value,
-                      )}
-                      onChange={() =>
-                        form.setValue("rsvp", true, { shouldTouch: true })
-                      }
-                    />
-                    <label htmlFor="yes" className="text-sm">
-                      Yes
-                    </label>
-                  </div>
-                  <div className="flex gap-1">
-                    <input
-                      type="radio"
-                      id="no"
-                      checked={Boolean(
-                        (form.getValues("hasRSVPd") || isTouched) && !value,
-                      )}
-                      onChange={() => {
-                        form.setValue("rsvp", false, { shouldTouch: true });
-                      }}
-                    />
-                    <label htmlFor="no" className="text-sm">
-                      No
-                    </label>
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-1">
+                      <input
+                        type="radio"
+                        id="yes"
+                        checked={Boolean(
+                          (form.getValues("hasRSVPd") || isTouched) && value,
+                        )}
+                        onChange={() =>
+                          form.setValue("rsvp", true, { shouldTouch: true })
+                        }
+                      />
+                      <label htmlFor="yes" className="text-sm">
+                        Yes
+                      </label>
+                    </div>
+
+                    <div className="flex items-center gap-1">
+                      <input
+                        type="radio"
+                        id="no"
+                        checked={Boolean(
+                          (form.getValues("hasRSVPd") || isTouched) && !value,
+                        )}
+                        onChange={() => {
+                          form.setValue("rsvp", false, { shouldTouch: true });
+                        }}
+                      />
+                      <label htmlFor="no" className="text-sm">
+                        No
+                      </label>
+                    </div>
                   </div>
                 </div>
 
@@ -118,43 +121,51 @@ export function RSVP({
           render={({ fieldState: { error, isTouched }, field: { value } }) => {
             return (
               <div className="flex w-full flex-col items-center">
-                <FormItem className="mt-2">
-                  <div className="flex gap-2">
+                <FormItem className="mt-2 w-full">
+                  <div className="flex w-full justify-between gap-4 px-10">
                     <label className="text-base">
                       {/* Possible we could give someone an unnamed plus one */}
                       {plusOneFirstName ?? "Your plus one"}:
                     </label>
 
-                    <input
-                      type="radio"
-                      id="yes"
-                      checked={Boolean(
-                        (form.getValues("hasRSVPd") || isTouched) && value,
-                      )}
-                      onChange={() =>
-                        form.setValue("plusOneRSVP", true, {
-                          shouldTouch: true,
-                        })
-                      }
-                    />
-                    <label htmlFor="yes" className="text-sm">
-                      Yes
-                    </label>
-                    <input
-                      type="radio"
-                      id="no"
-                      checked={Boolean(
-                        (form.getValues("hasRSVPd") || isTouched) && !value,
-                      )}
-                      onChange={() => {
-                        form.setValue("plusOneRSVP", false, {
-                          shouldTouch: true,
-                        });
-                      }}
-                    />
-                    <label htmlFor="no" className="text-sm">
-                      No
-                    </label>
+                    <div className="flex gap-4">
+                      <div className="flex items-center gap-1">
+                        <input
+                          type="radio"
+                          id="yes"
+                          checked={Boolean(
+                            (form.getValues("hasRSVPd") || isTouched) && value,
+                          )}
+                          onChange={() =>
+                            form.setValue("plusOneRSVP", true, {
+                              shouldTouch: true,
+                            })
+                          }
+                        />
+
+                        <label htmlFor="yes" className="text-sm">
+                          Yes
+                        </label>
+                      </div>
+
+                      <div className="flex items-center gap-1">
+                        <input
+                          type="radio"
+                          id="no"
+                          checked={Boolean(
+                            (form.getValues("hasRSVPd") || isTouched) && !value,
+                          )}
+                          onChange={() => {
+                            form.setValue("plusOneRSVP", false, {
+                              shouldTouch: true,
+                            });
+                          }}
+                        />
+                        <label htmlFor="no" className="text-sm">
+                          No
+                        </label>
+                      </div>
+                    </div>
                   </div>
 
                   <div>{error?.message ?? ""}</div>
