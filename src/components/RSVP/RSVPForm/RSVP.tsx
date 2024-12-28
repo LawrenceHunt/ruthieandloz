@@ -64,7 +64,7 @@ export function RSVP({
           return (
             <div className="flex w-full flex-col items-center">
               <FormItem className="mt-4 w-full">
-                <div className="flex w-full items-center justify-between gap-4 px-10">
+                <div className="flex w-full max-w-[300px] items-center justify-between gap-4 px-10">
                   {/* if no plus one, no need to distinguish as 
                   there's only one RSVP decision to make here */}
                   {hasPlusOne ? (
@@ -122,7 +122,7 @@ export function RSVP({
             return (
               <div className="flex w-full flex-col items-center">
                 <FormItem className="mt-2 w-full">
-                  <div className="flex w-full justify-between gap-4 px-10">
+                  <div className="flex w-full max-w-[300px] justify-between gap-4 px-10">
                     <label className="text-base">
                       {/* Possible we could give someone an unnamed plus one */}
                       {plusOneFirstName ?? "Your plus one"}:
