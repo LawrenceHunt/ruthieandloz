@@ -172,7 +172,7 @@ export function DietaryRequirements({
                     <div className="flex w-full gap-2">
                       <input
                         type="radio"
-                        id="none"
+                        id="plus-one-none"
                         checked={value === "none"}
                         onChange={() => {
                           form.setValue("dietaryRequirements", "none", {
@@ -180,11 +180,11 @@ export function DietaryRequirements({
                           });
                         }}
                       />
-                      <label htmlFor="none">None</label>
+                      <label htmlFor="plus-one-none">None</label>
 
                       <input
                         type="radio"
-                        id="vegetarian"
+                        id="plus-one-vegetarian"
                         checked={value === "vegetarian"}
                         onChange={() => {
                           form.setValue(
@@ -196,14 +196,14 @@ export function DietaryRequirements({
                           );
                         }}
                       />
-                      <label htmlFor="vegetarian">Vegetarian</label>
+                      <label htmlFor="plus-one-vegetarian">Vegetarian</label>
                     </div>
 
                     <div className="flex w-full flex-col gap-2">
                       <div className="flex gap-2">
                         <input
                           type="radio"
-                          id="other"
+                          id="plus-one-other"
                           checked={Boolean(value?.startsWith("other:"))}
                           onChange={() => {
                             form.setValue(
@@ -218,7 +218,7 @@ export function DietaryRequirements({
                             }, 100);
                           }}
                         />
-                        <label htmlFor="other">Other</label>
+                        <label htmlFor="plus-one-other">Other</label>
                       </div>
 
                       <Input

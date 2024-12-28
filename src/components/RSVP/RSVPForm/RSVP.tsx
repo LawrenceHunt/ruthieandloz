@@ -132,7 +132,7 @@ export function RSVP({
                       <div className="flex items-center gap-1">
                         <input
                           type="radio"
-                          id="yes"
+                          id="plus-one-yes"
                           checked={Boolean(
                             (form.getValues("hasRSVPd") || isTouched) && value,
                           )}
@@ -143,7 +143,7 @@ export function RSVP({
                           }
                         />
 
-                        <label htmlFor="yes" className="text-sm">
+                        <label htmlFor="plus-one-yes" className="text-sm">
                           Yes
                         </label>
                       </div>
@@ -151,7 +151,7 @@ export function RSVP({
                       <div className="flex items-center gap-1">
                         <input
                           type="radio"
-                          id="no"
+                          id="plus-one-no"
                           checked={Boolean(
                             (form.getValues("hasRSVPd") || isTouched) && !value,
                           )}
@@ -161,7 +161,7 @@ export function RSVP({
                             });
                           }}
                         />
-                        <label htmlFor="no" className="text-sm">
+                        <label htmlFor="plus-one-no" className="text-sm">
                           No
                         </label>
                       </div>
