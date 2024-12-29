@@ -4,6 +4,7 @@ import { type UseFormReturn } from "react-hook-form";
 import { Button } from "~/components/Button";
 import { FormField, FormItem } from "~/components/Form";
 import { Input } from "~/components/Input";
+import { cn } from "~/lib/cn.util";
 import { type ParsedGuest } from "~/types/guests.types";
 
 export function getGuestFirstName(name: string) {
@@ -64,7 +65,14 @@ export function RSVP({
           return (
             <div className="flex w-full flex-col items-center">
               <FormItem className="mt-4 w-full">
-                <div className="flex w-full max-w-[300px] items-center justify-between gap-4 px-10">
+                <div
+                  className={cn(
+                    "flex w-full items-center gap-4 px-10",
+                    hasPlusOne
+                      ? "max-w-[300px] justify-between"
+                      : "justify-center",
+                  )}
+                >
                   {/* if no plus one, no need to distinguish as 
                   there's only one RSVP decision to make here */}
                   {hasPlusOne ? (

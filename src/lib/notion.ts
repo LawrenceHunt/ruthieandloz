@@ -1,4 +1,7 @@
-import { type TextRichTextItemResponse } from "@notionhq/client/build/src/api-endpoints";
+import {
+  type UpdatePageParameters,
+  type TextRichTextItemResponse,
+} from "@notionhq/client/build/src/api-endpoints";
 import { type Client } from "@notionhq/client";
 import {
   parsedGuestSchema,
@@ -18,11 +21,11 @@ export function getValueFromCheckbox(checkbox: Checkbox) {
 }
 
 export function getNameFromRow(row: NotionGuestDBRow) {
-  return getContentFromRichText(row.properties.Name.title);
+  return getContentFromRichText(row.properties.Name.title) ?? "";
 }
 
 export function getAddressFromRow(row: NotionGuestDBRow) {
-  return getContentFromRichText(row.properties.Address.rich_text);
+  return getContentFromRichText(row.properties.Address.rich_text) ?? "";
 }
 
 export function getHasPlusOneFromRow(row: NotionGuestDBRow) {
@@ -31,9 +34,11 @@ export function getHasPlusOneFromRow(row: NotionGuestDBRow) {
 
 export function getPlusOneNameFromRow(row: NotionGuestDBRow) {
   if (!getHasPlusOneFromRow(row)) {
-    return null;
+    return "";
   }
-  return getContentFromRichText(row.properties["Plus One Name"].rich_text);
+  return (
+    getContentFromRichText(row.properties["Plus One Name"].rich_text) ?? ""
+  );
 }
 
 export function getHasRSVPdFromRow(row: NotionGuestDBRow) {
@@ -46,20 +51,22 @@ export function getRSVPFromRow(row: NotionGuestDBRow) {
 
 export function getPlusOneRSVPFromRow(row: NotionGuestDBRow) {
   if (!getHasPlusOneFromRow(row)) {
-    return null;
+    return false;
   }
-  return getValueFromCheckbox(row.properties["Plus One RSVP"]);
+  return getValueFromCheckbox(row.properties["Plus One RSVP"]) ?? false;
 }
 
 export function getDietaryRequirementsFromRow(row: NotionGuestDBRow) {
-  return getContentFromRichText(row.properties.Dietary.rich_text);
+  return getContentFromRichText(row.properties.Dietary.rich_text) ?? "";
 }
 
 export function getPlusOneDietaryRequirementsFromRow(row: NotionGuestDBRow) {
   if (!getHasPlusOneFromRow(row)) {
-    return null;
+    return "";
   }
-  return getContentFromRichText(row.properties["Plus One Dietary"].rich_text);
+  return (
+    getContentFromRichText(row.properties["Plus One Dietary"].rich_text) ?? ""
+  );
 }
 
 export function getEmailFromRow(row: NotionGuestDBRow) {
@@ -90,7 +97,9 @@ export async function updateGuestDBRow(
   client: Client,
   updatedGuest: ParsedGuest,
 ) {
-  const response = await client.pages.update({
+  console.log("updatedGuest", updatedGuest);
+
+  const update: UpdatePageParameters = {
     page_id: updatedGuest.id,
     properties: {
       RSVP: {
@@ -158,7 +167,9 @@ export async function updateGuestDBRow(
         ],
       },
     },
-  });
+  };
+
+  const response = await client.pages.update(update);
 
   return response;
 }
@@ -170,7 +181,9 @@ export function parseGuestDBRow(row: NotionGuestDBRow): ParsedGuest {
   const dietaryRequirements = getDietaryRequirementsFromRow(row);
   const hasPlusOne = getHasPlusOneFromRow(row);
   const plusOneName = getPlusOneNameFromRow(row);
+  console.log("plusOneName", plusOneName);
   const plusOneRSVP = getPlusOneRSVPFromRow(row);
+  console.log("plusOneRSVP", plusOneRSVP);
   const plusOneDietaryRequirements = getPlusOneDietaryRequirementsFromRow(row);
   const email = getEmailFromRow(row);
   const message = getMessageFromRow(row);
