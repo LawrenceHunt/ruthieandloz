@@ -97,8 +97,6 @@ export async function updateGuestDBRow(
   client: Client,
   updatedGuest: ParsedGuest,
 ) {
-  console.log("updatedGuest", updatedGuest);
-
   const update: UpdatePageParameters = {
     page_id: updatedGuest.id,
     properties: {
@@ -181,9 +179,7 @@ export function parseGuestDBRow(row: NotionGuestDBRow): ParsedGuest {
   const dietaryRequirements = getDietaryRequirementsFromRow(row);
   const hasPlusOne = getHasPlusOneFromRow(row);
   const plusOneName = getPlusOneNameFromRow(row);
-  console.log("plusOneName", plusOneName);
   const plusOneRSVP = getPlusOneRSVPFromRow(row);
-  console.log("plusOneRSVP", plusOneRSVP);
   const plusOneDietaryRequirements = getPlusOneDietaryRequirementsFromRow(row);
   const email = getEmailFromRow(row);
   const message = getMessageFromRow(row);
