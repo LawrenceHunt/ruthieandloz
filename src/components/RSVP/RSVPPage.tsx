@@ -48,8 +48,6 @@ export function RSVPPage() {
   const { mutate, isPending: isLoadingUnsetHasRSVPd } =
     api.guests.updateRSVP.useMutation({ onSuccess: refetchUser });
 
-  console.log("guest", guest);
-
   const unsetHasRSVPd = () => {
     if (!guest) return;
     mutate({ ...guest, hasRSVPd: false });
@@ -117,7 +115,7 @@ export function RSVPPage() {
         ) : null}
 
         {guest?.hasRSVPd ? (
-          <p className="py-8 text-xl text-slate-500">
+          <div className="py-8 text-xl text-slate-500">
             {Boolean(guest.rsvp) ? (
               <AnimateIn>
                 Thank you!
@@ -129,7 +127,7 @@ export function RSVPPage() {
                 We&apos;ll miss you!
               </AnimateIn>
             )}
-          </p>
+          </div>
         ) : null}
 
         {guest?.hasRSVPd ? (
