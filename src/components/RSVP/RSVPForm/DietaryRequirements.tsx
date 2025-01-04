@@ -175,7 +175,7 @@ export function DietaryRequirements({
                         id="plus-one-none"
                         checked={value === "none"}
                         onChange={() => {
-                          form.setValue("dietaryRequirements", "none", {
+                          form.setValue("plusOneDietaryRequirements", "none", {
                             shouldTouch: true,
                           });
                         }}
