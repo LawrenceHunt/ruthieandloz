@@ -207,7 +207,7 @@ export function parseGuestDBRow(row: NotionGuestDBRow): ParsedGuest {
       .map((issue) => issue.message)
       .join(", ");
 
-    throw new Error(errorMessages);
+    throw new Error(`error for ${name} - ${errorMessages}`);
   }
 
   return parsedGuest.data;

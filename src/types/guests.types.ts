@@ -88,7 +88,7 @@ export const parsedGuestSchema = z.object({
   plusOneName: z.string().nullable(),
   plusOneRSVP: z.boolean().nullable(),
   plusOneDietaryRequirements: z.string().nullable(),
-  email: z.string().email().nullable(),
+  email: z.string().nullable(),
   accommodation: z.string().nullable(),
   message: z.string().nullable(),
 });
