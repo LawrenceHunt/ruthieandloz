@@ -195,7 +195,7 @@ export function GuestsTable() {
               </tr>
             </thead>
             <tbody>
-              <tr className="[&>td]:p-2">
+              <tr className="[&>td]:text-nowrap [&>td]:p-2">
                 <td>{filteredGuests.length}</td>
                 <td>{totalInvitedForCurrentFilter}</td>
                 <td>{totalRSVPsForCurrentFilter}</td>
@@ -209,6 +209,7 @@ export function GuestsTable() {
           <table className="min-w-full divide-y divide-gray-200">
             <thead>
               <tr className="[&>th]:text-nowrap [&>th]:p-2 [&>th]:text-left [&>th]:text-sm [&>th]:font-medium [&>th]:text-gray-600">
+                <th>#</th>
                 <th>Name</th>
                 <th>RSVP Status</th>
                 <th>Dietary Requirements</th>
@@ -218,11 +219,12 @@ export function GuestsTable() {
               </tr>
             </thead>
             <tbody>
-              {sortedGuests.map((guest) => (
+              {sortedGuests.map((guest, index) => (
                 <tr
                   key={guest.id}
-                  className="border-b [&>td]:p-2 [&>td]:text-sm"
+                  className="border-b [&>td]:text-nowrap [&>td]:p-2 [&>td]:text-sm"
                 >
+                  <td className="px-4 py-2">{index + 1}</td>
                   <td className="px-4 py-2">{guest.name}</td>
                   <td className="px-4 py-2">
                     {guest.hasRSVPd
