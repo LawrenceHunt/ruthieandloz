@@ -233,13 +233,19 @@ export function GuestsTable() {
                         : "Not Attending"
                       : "No RSVP"}
                   </td>
-                  <td className="px-4 py-2">{guest.dietaryRequirements}</td>
+                  <td className="px-4 py-2">
+                    {guest.hasRSVPd ? guest.dietaryRequirements : null}
+                  </td>
                   <td className="px-4 py-2">{guest.plusOneName}</td>
                   <td className="px-4 py-2">
-                    {guest.plusOneRSVP ? "Attending" : "Not Attending"}
+                    {guest.hasRSVPd
+                      ? guest.plusOneRSVP
+                        ? "Attending"
+                        : "Not Attending"
+                      : "No RSVP"}
                   </td>
                   <td className="px-4 py-2">
-                    {guest.plusOneDietaryRequirements}
+                    {guest.hasRSVPd ? guest.plusOneDietaryRequirements : null}
                   </td>
                   <td className="px-4 py-2">
                     <a
