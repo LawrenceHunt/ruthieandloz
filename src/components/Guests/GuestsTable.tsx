@@ -129,11 +129,10 @@ export function GuestsTable() {
     let totalComingForRow = 0;
 
     if (row.hasRSVPd && row.rsvp) {
-      totalComingForRow = 1;
-    }
-
-    if (row.hasPlusOne && row.plusOneRSVP) {
       totalComingForRow += 1;
+      if (row.hasPlusOne && row.plusOneRSVP) {
+        totalComingForRow += 1;
+      }
     }
 
     return total + totalComingForRow;
@@ -238,11 +237,13 @@ export function GuestsTable() {
                   </td>
                   <td className="px-4 py-2">{guest.plusOneName}</td>
                   <td className="px-4 py-2">
-                    {guest.hasRSVPd
-                      ? guest.plusOneRSVP
-                        ? "Attending"
-                        : "Not Attending"
-                      : "No RSVP"}
+                    {guest.hasPlusOne
+                      ? guest.hasRSVPd
+                        ? guest.plusOneRSVP
+                          ? "Attending"
+                          : "Not Attending"
+                        : "No RSVP"
+                      : ""}
                   </td>
                   <td className="px-4 py-2">
                     {guest.hasRSVPd ? guest.plusOneDietaryRequirements : null}
