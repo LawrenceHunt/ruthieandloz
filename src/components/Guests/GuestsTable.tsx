@@ -246,7 +246,9 @@ export function GuestsTable() {
                       : ""}
                   </td>
                   <td className="px-4 py-2">
-                    {guest.hasRSVPd ? guest.plusOneDietaryRequirements : null}
+                    {guest.hasRSVPd && guest.hasPlusOne && guest.plusOneRSVP
+                      ? guest.plusOneDietaryRequirements
+                      : null}
                   </td>
                   <td className="px-4 py-2">
                     <a
