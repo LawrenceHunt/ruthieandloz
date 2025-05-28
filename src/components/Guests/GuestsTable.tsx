@@ -189,7 +189,10 @@ export function GuestsTable() {
                 className="w-[150px]"
                 text={sortedGuests
                   .map((guest) => {
-                    const plusOne = guest.hasPlusOne ? guest.plusOneName : "";
+                    const plusOne =
+                      guest.hasPlusOne && guest.plusOneRSVP
+                        ? guest.plusOneName
+                        : "";
                     return plusOne ? `${guest.name}\n${plusOne}` : guest.name;
                   })
                   .join("\n")}
