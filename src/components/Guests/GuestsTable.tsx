@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { cn } from "~/lib/cn.util";
 import { api } from "~/trpc/react";
+import { Button } from "../Button";
 
 const GUEST_STATUS_OPTIONS = [
   "all",
@@ -182,6 +183,18 @@ export function GuestsTable() {
                 value: option,
               }))}
             />
+            <div className="ml-2">
+              <Button
+                onClick={() => {
+                  const names = sortedGuests
+                    .map((guest) => guest.name)
+                    .join("\n");
+                  void navigator.clipboard.writeText(names);
+                }}
+              >
+                Copy names
+              </Button>
+            </div>
           </div>
 
           <table className="">
