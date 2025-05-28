@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { cn } from "~/lib/cn.util";
 import { api } from "~/trpc/react";
-import { Button } from "../Button";
+import { CopyButton } from "./CopyButton";
 
 const GUEST_STATUS_OPTIONS = [
   "all",
@@ -185,16 +185,11 @@ export function GuestsTable() {
             />
 
             <div className="ml-auto">
-              <Button
-                onClick={() => {
-                  const names = sortedGuests
-                    .map((guest) => guest.name)
-                    .join("\n");
-                  void navigator.clipboard.writeText(names);
-                }}
-              >
-                Copy names
-              </Button>
+              <CopyButton
+                className="w-[150px]"
+                text={sortedGuests.map((guest) => guest.name).join("\n")}
+                buttonText="Copy names"
+              />
             </div>
           </div>
 
