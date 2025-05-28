@@ -187,7 +187,12 @@ export function GuestsTable() {
             <div className="ml-auto">
               <CopyButton
                 className="w-[150px]"
-                text={sortedGuests.map((guest) => guest.name).join("\n")}
+                text={sortedGuests
+                  .map((guest) => {
+                    const plusOne = guest.hasPlusOne ? guest.plusOneName : "";
+                    return plusOne ? `${guest.name}\n${plusOne}` : guest.name;
+                  })
+                  .join("\n")}
                 buttonText="Copy names"
               />
             </div>
