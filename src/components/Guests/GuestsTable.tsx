@@ -183,7 +183,8 @@ export function GuestsTable() {
                 value: option,
               }))}
             />
-            <div className="ml-2">
+
+            <div className="ml-auto">
               <Button
                 onClick={() => {
                   const names = sortedGuests
