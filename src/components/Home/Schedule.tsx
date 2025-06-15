@@ -40,6 +40,17 @@ export function Schedule() {
             12AM - Carriages
           </p>
         </div>
+
+        <div className="w-full">
+          <h4 className="w-full text-center font-semibold">Sunday 27 July</h4>
+          <p className="">
+            11AM - Brunch at{" "}
+            <A href="https://maps.app.goo.gl/9SPHJmNKuxTEszmw6">
+              Great Moor Lake House, GL7 6EA
+            </A>
+            <br />
+          </p>
+        </div>
       </BodySection>
     </Section>
   );
